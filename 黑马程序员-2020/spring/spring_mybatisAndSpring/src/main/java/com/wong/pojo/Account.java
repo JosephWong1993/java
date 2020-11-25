@@ -8,7 +8,7 @@ public class Account {
     
     private String name;
     
-    private double money;
+    private Double money;
     
     @Override
     public String toString() {
