@@ -1,7 +1,6 @@
 package com.wong.dao;
 
 import com.wong.pojo.Account;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

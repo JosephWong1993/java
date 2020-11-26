@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wong</groupId>
-    <artifactId>spring_crud_xml_annotation</artifactId>
+    <artifactId>spring_curd_xml_annotation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>spring_crud_xml_annotation</name>
+    <name>spring_curd_xml_annotation</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
