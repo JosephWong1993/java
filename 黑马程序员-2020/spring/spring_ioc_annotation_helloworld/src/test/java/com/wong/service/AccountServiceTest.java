@@ -1,21 +1,28 @@
 package com.wong.service;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
  * 测试类
  */
+//Spring框架中的Runner对象，替换Junit中的Runner对象
+@RunWith(SpringJUnit4ClassRunner.class)
+//框架启动入口，xml配置文件启动
+@ContextConfiguration(locations = "classpath:beans.xml")
 public class AccountServiceTest {
     
+    //依赖注入
+    @Autowired
+    private AccountService accountService;
+    
     @Test
-    public void saveAccount() {
-        //使用spring框架IOC容器，加载Beans.xml文件，解析了Beans.xml文件，并把所有的Bean标签的内容 存到Map集合中
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-        //获取AccountService对象
-        AccountService accountService = applicationContext.getBean(AccountService.class);
+    public void save() {
         accountService.save();
-        applicationContext.close();
     }
 }
