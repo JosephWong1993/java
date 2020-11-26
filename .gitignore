@@ -23,6 +23,7 @@
 hs_err_pid*
 
 # Java
+c3p0-config.xml
 db.properties
 jdbc.properties
 
