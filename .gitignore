@@ -29,10 +29,11 @@ jdbc.properties
 
 # eclipse
 .metadata
-out
+
 
 # IDEA
 .idea
+out
 target
 *.iml
 
