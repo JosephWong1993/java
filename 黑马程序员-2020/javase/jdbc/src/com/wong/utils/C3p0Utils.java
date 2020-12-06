@@ -36,4 +36,11 @@ public class C3p0Utils {
     public static Connection getConnection() throws SQLException {
         return dataSource.getConnection();
     }
+    
+    /**
+     * 定义方法，获取DataSource接口实现类
+     */
+    public static DataSource getDataSource() {
+        return dataSource;
+    }
 }
