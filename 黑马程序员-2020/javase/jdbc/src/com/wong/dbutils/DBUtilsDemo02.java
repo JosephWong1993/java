@@ -4,8 +4,12 @@ import com.wong.domain.Product;
 import com.wong.utils.DruidUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ColumnListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * 实现查询
@@ -32,7 +36,54 @@ import java.sql.SQLException;
  */
 public class DBUtilsDemo02 {
     public static void main(String[] args) throws SQLException {
-        beanHandler();
+        scalarHandler();
+    }
+    
+    /**
+     * ScalarHandler：适合单值查询，结果集只有一个值 count(*)
+     * 查询的结果集只有一个值，例如聚合函数 avg max min sum
+     * select pname from product where pid =1
+     */
+    public static void scalarHandler() throws SQLException {
+        //创建QueryRunner类对象，构造方法，传递DataSource接口实现类
+        QueryRunner qr = new QueryRunner(DruidUtils.getDataSource());
+        //查询表中共有多少条数据
+        String sql = "select count(pid) from product";
+        Object object = qr.query(sql, new ScalarHandler<Object>());
+        System.out.println(object);
+    }
+    
+    /**
+     * ColumnListHandler：查询数据表中的一个列的数据，存储到List集合
+     */
+    public static void columnListHandler() throws SQLException {
+        //创建QueryRunner类对象，构造方法，传递DataSource接口实现类
+        QueryRunner qr = new QueryRunner(DruidUtils.getDataSource());
+        //拼写查询语句
+        String sql = "SELECT * FROM product";
+        //执行查询语句，传递的对象是ColumnListHandler，要一个列的数据
+        //ColumnListHandler(String columnName)传递参数，是列名
+        List<String> list = qr.query(sql, new ColumnListHandler<String>("pname"));
+        for (String o : list) {
+            System.out.println(o);
+        }
+    }
+    
+    /**
+     * BeanListHandler：查询数据表，数据的每一行存储到JavaBean对象，
+     * 多个JavaBean对象，存储到List集合
+     */
+    public static void beanListHandler() throws SQLException {
+        //创建QueryRunner类对象，构造方法，传递DataSource接口实现类
+        QueryRunner qr = new QueryRunner(DruidUtils.getDataSource());
+        //拼写查询语句
+        String sql = "SELECT * FROM product where pid = ?";
+        //方法query执行SQL语句，传递结果集处理对象 BeanListHandler（传递JavaBean类的class对象）
+        List<Product> list = qr.query(sql, new BeanListHandler<Product>(Product.class), 50);
+        System.out.println(list.size());
+        for (Product product : list) {
+            System.out.println(product);
+        }
     }
     
     /**
