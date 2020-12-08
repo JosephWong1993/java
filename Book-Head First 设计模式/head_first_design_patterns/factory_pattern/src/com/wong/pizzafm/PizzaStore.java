@@ -2,7 +2,8 @@ package com.wong.pizzafm;
 
 public abstract class PizzaStore {
     public Pizza orderPizza(String type) {
-        Pizza pizza = createPizza(type);
+        Pizza pizza;
+        pizza = createPizza(type);
         pizza.prepare();
         pizza.bake();
         pizza.cut();
@@ -10,5 +11,5 @@ public abstract class PizzaStore {
         return pizza;
     }
     
-    abstract Pizza createPizza(String type);
+    protected abstract Pizza createPizza(String type);
 }

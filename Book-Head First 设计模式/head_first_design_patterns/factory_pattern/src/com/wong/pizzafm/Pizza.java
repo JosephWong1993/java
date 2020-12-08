@@ -9,15 +9,15 @@ public abstract class Pizza {
     
     String sauce;
     
-    ArrayList<String> toppings = new ArrayList<String>();
+    ArrayList toppings = new ArrayList();
     
     void prepare() {
-        System.out.println("Prepare " + name);
+        System.out.println("Preparing " + name);
         System.out.println("Tossing dough...");
         System.out.println("Adding sauce...");
         System.out.println("Adding toppings: ");
-        for (String topping : toppings) {
-            System.out.println("   " + topping);
+        for (int i = 0; i < toppings.size(); i++) {
+            System.out.println("   " + toppings.get(i));
         }
     }
     
@@ -26,7 +26,7 @@ public abstract class Pizza {
     }
     
     void cut() {
-        System.out.println("Cut the pizza into diagonal slices");
+        System.out.println("Cutting the pizza into diagonal slices");
     }
     
     void box() {
@@ -35,16 +35,5 @@ public abstract class Pizza {
     
     public String getName() {
         return name;
-    }
-    
-    public String toString() {
-        StringBuffer display = new StringBuffer();
-        display.append("---- " + name + " ----\n");
-        display.append(dough + "\n");
-        display.append(sauce + "\n");
-        for (String topping : toppings) {
-            display.append(topping + "\n");
-        }
-        return display.toString();
     }
 }
