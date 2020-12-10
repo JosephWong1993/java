@@ -1,4 +1,10 @@
-package com.wong.pizzafm;
+package com.wong.pizzafm.pizza_story;
+
+import com.wong.pizzafm.pizza.NYStyleCheesePizza;
+import com.wong.pizzafm.pizza.NYStyleClamPizza;
+import com.wong.pizzafm.pizza.NYStylePepperoniPizza;
+import com.wong.pizzafm.pizza.NYStyleVeggiePizza;
+import com.wong.pizzafm.pizza.Pizza;
 
 public class NYPizzaStore extends PizzaStore {
     protected Pizza createPizza(String item) {

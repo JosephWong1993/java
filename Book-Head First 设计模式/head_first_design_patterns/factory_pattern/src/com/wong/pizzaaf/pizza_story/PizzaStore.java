@@ -1,6 +1,6 @@
-package com.wong.pizzaaf;
+package com.wong.pizzaaf.pizza_story;
 
-import com.wong.pizzaaf.Pizza.Pizza;
+import com.wong.pizzaaf.pizza.Pizza;
 
 public abstract class PizzaStore {
     

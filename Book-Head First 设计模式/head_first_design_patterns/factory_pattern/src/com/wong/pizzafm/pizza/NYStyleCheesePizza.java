@@ -1,4 +1,4 @@
-package com.wong.pizzafm;
+package com.wong.pizzafm.pizza;
 
 public class NYStyleCheesePizza extends Pizza {
     

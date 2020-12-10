@@ -1,12 +1,12 @@
-package com.wong.pizzaaf;
+package com.wong.pizzaaf.pizza_story;
 
-import com.wong.pizzaaf.Pizza.CheesePizza;
-import com.wong.pizzaaf.Pizza.ClamPizza;
-import com.wong.pizzaaf.Pizza.PepperoniPizza;
-import com.wong.pizzaaf.Pizza.Pizza;
-import com.wong.pizzaaf.Pizza.VeggiePizza;
-import com.wong.pizzaaf.ingredient.factory.NYPizzaIngredientFactory;
-import com.wong.pizzaaf.ingredient.factory.PizzaIngredientFactory;
+import com.wong.pizzaaf.pizza.CheesePizza;
+import com.wong.pizzaaf.pizza.ClamPizza;
+import com.wong.pizzaaf.pizza.PepperoniPizza;
+import com.wong.pizzaaf.pizza.Pizza;
+import com.wong.pizzaaf.pizza.VeggiePizza;
+import com.wong.pizzaaf.ingredient_factory.NYPizzaIngredientFactory;
+import com.wong.pizzaaf.ingredient_factory.PizzaIngredientFactory;
 
 public class NYPizzaStore extends PizzaStore {
     

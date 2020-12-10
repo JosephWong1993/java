@@ -1,4 +1,10 @@
-package com.wong.pizzafm;
+package com.wong.pizzafm.pizza_story;
+
+import com.wong.pizzafm.pizza.ChicagoStyleCheesePizza;
+import com.wong.pizzafm.pizza.ChicagoStyleClamPizza;
+import com.wong.pizzafm.pizza.ChicagoStylePepperoniPizza;
+import com.wong.pizzafm.pizza.ChicagoStyleVeggiePizza;
+import com.wong.pizzafm.pizza.Pizza;
 
 public class ChicagoPizzaStore extends PizzaStore {
     

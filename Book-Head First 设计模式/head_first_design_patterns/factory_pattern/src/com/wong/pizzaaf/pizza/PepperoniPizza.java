@@ -1,11 +1,11 @@
-package com.wong.pizzaaf.Pizza;
+package com.wong.pizzaaf.pizza;
 
-import com.wong.pizzaaf.ingredient.factory.PizzaIngredientFactory;
+import com.wong.pizzaaf.ingredient_factory.PizzaIngredientFactory;
 
-public class CheesePizza extends Pizza {
+public class PepperoniPizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
     
-    public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+    public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }
     
@@ -15,5 +15,7 @@ public class CheesePizza extends Pizza {
         dough = ingredientFactory.createDough();
         sauce = ingredientFactory.createSauce();
         cheese = ingredientFactory.createCheese();
+        veggies = ingredientFactory.createVeggies();
+        pepperoni = ingredientFactory.createPepperoni();
     }
 }

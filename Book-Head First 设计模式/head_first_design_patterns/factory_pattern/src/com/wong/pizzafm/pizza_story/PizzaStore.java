@@ -1,4 +1,6 @@
-package com.wong.pizzafm;
+package com.wong.pizzafm.pizza_story;
+
+import com.wong.pizzafm.pizza.Pizza;
 
 public abstract class PizzaStore {
     public Pizza orderPizza(String type) {

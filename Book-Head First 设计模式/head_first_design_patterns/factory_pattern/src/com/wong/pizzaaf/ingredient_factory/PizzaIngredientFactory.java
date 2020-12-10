@@ -1,4 +1,4 @@
-package com.wong.pizzaaf.ingredient.factory;
+package com.wong.pizzaaf.ingredient_factory;
 
 import com.wong.pizzaaf.ingredient.Cheese;
 import com.wong.pizzaaf.ingredient.Clams;

@@ -1,6 +1,6 @@
-package com.wong.pizzaaf.Pizza;
+package com.wong.pizzaaf.pizza;
 
-import com.wong.pizzaaf.ingredient.factory.PizzaIngredientFactory;
+import com.wong.pizzaaf.ingredient_factory.PizzaIngredientFactory;
 
 public class ClamPizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
