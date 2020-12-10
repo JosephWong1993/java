@@ -1,17 +1,17 @@
-package com.wong.pizzaaf;
+package com.wong.pizzaaf.ingredient.factory;
 
 import com.wong.pizzaaf.ingredient.Cheese;
 import com.wong.pizzaaf.ingredient.Clams;
 import com.wong.pizzaaf.ingredient.Dough;
-import com.wong.pizzaaf.ingredient.Impl.FreshClams;
-import com.wong.pizzaaf.ingredient.Impl.Garlic;
-import com.wong.pizzaaf.ingredient.Impl.MarinaraSauce;
-import com.wong.pizzaaf.ingredient.Impl.Mushroom;
-import com.wong.pizzaaf.ingredient.Impl.Onion;
-import com.wong.pizzaaf.ingredient.Impl.RedPepper;
-import com.wong.pizzaaf.ingredient.Impl.ReggianoCheese;
-import com.wong.pizzaaf.ingredient.Impl.SlicedPepperoni;
-import com.wong.pizzaaf.ingredient.Impl.ThinCrustDough;
+import com.wong.pizzaaf.ingredient.FreshClams;
+import com.wong.pizzaaf.ingredient.Garlic;
+import com.wong.pizzaaf.ingredient.MarinaraSauce;
+import com.wong.pizzaaf.ingredient.Mushroom;
+import com.wong.pizzaaf.ingredient.Onion;
+import com.wong.pizzaaf.ingredient.RedPepper;
+import com.wong.pizzaaf.ingredient.ReggianoCheese;
+import com.wong.pizzaaf.ingredient.SlicedPepperoni;
+import com.wong.pizzaaf.ingredient.ThinCrustDough;
 import com.wong.pizzaaf.ingredient.Pepperoni;
 import com.wong.pizzaaf.ingredient.Sauce;
 import com.wong.pizzaaf.ingredient.Veggies;

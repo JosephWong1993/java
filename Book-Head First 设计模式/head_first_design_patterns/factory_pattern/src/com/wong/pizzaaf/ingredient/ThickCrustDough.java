@@ -1,4 +1,4 @@
-package com.wong.pizzaaf.ingredient.Impl;
+package com.wong.pizzaaf.ingredient;
 
 import com.wong.pizzaaf.ingredient.Dough;
 

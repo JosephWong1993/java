@@ -1,4 +1,4 @@
-package com.wong.pizzaaf;
+package com.wong.pizzaaf.Pizza;
 
 import com.wong.pizzaaf.ingredient.Cheese;
 import com.wong.pizzaaf.ingredient.Clams;
@@ -22,25 +22,25 @@ public abstract class Pizza {
     
     Clams clam;
     
-    abstract void prepare();
+    public abstract void prepare();
     
-    void bake() {
+    public void bake() {
         System.out.println("Bake for 25 minutes at 350");
     }
     
-    void cut() {
+    public void cut() {
         System.out.println("Cutting the pizza into diagonal slices");
     }
     
-    void box() {
+    public void box() {
         System.out.println("Place pizza in officialPizzaStore box");
     }
     
-    void setName() {
+    public void setName(String name) {
         this.name = name;
     }
     
-    String getName() {
+    public String getName() {
         return name;
     }
     
