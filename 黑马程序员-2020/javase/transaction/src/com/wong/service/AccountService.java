@@ -25,6 +25,7 @@ public class AccountService {
         try {
             //业务层获取数据库连接对象
             con = DruidUtils.getConnection();
+            //            con.setTransactionIsolation(Connection.TRANSACTION_REPEATABLE_READ);
             con.setAutoCommit(false);
             //dao层方法，查询账户，付款人
             Account accountPayer = accountDao.queryAccount(payerName, con);
