@@ -5,20 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<!--
+<form action="/web03/checkCode" method="post">
+    <!--
     展示验证码
     本质上是一个图片
     img标签，src属性图片路径，写servlet地址
 
     可以实现看不清，换一个
     需要技术 JavaScript js 网页脚本语言
--->
-请输入验证码：<input type="text">
-<!--
-    onclick="change()"
-    点击图片，调用函数change()
--->
-<img id="img" src="/web03/code" onclick="change()">
+    -->
+    请输入验证码：<input type="text" name="code">
+    <!--
+        onclick="change()"
+        点击图片，调用函数change()
+    -->
+    <img id="img" src="/web03/code" onclick="change()">
+    <input type="submit" value="提交查询">
+</form>
+
 
 <script type="text/javascript">
     /*
