@@ -1,16 +1,34 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jiahuiw
-  Date: 2020/12/12
-  Time: 19:08
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.Date" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
+<!--
+    Java代码，嵌入到HTML语言中
+    称为jsp技术
+    < %
+        嵌入Java代码
+        以前怎么写，现在一样
+        判断，循环，调用方法，定义变量...
+    %>
 
+    < %
+        相当于是输出语句
+        变量输出在页面中
+    %>
+-->
+<%
+    Date date = new Date();
+    int a = 1;
+    System.out.println(date.toString());
+%>
+
+<%!
+    double d = 1.5;
+%>
+
+<%=date%>
 </body>
 </html>
