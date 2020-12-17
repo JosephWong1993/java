@@ -1,15 +1,19 @@
 package com.wong.reflect;
 
 public class Student {
-    static {
+    /*static {
         System.out.println("静态代码块");
-    }
+    }*/
     
     private String name;
     
     private int age;
     
     public Student() {
+    }
+    
+    private Student(String name) {
+        this.name = name;
     }
     
     public Student(String name, int age) {
