@@ -91,7 +91,7 @@ System.out.println(loader.getParent().getParent());
 
 **双亲委派机制**：当AppClassLoader收到一个加载类的请求时，会先让他的父类加载器ExtClassLoader尝试加载，ExtClassLoader也会让他的父类加载器Bootstrap尝试加载，如果Bootstrap能加载，就加载该类。如果Bootstrap不能加载，则ExtClassLoader会进行加载，如果也不能加载，AppClassLoader会进行加载。
 
-![](JavaSE15_注解反射/类加载器01.jpg)
+![](img/类加载器01.jpg)
 
 ## 1.6 Class对象创建
 
@@ -107,7 +107,7 @@ System.out.println(loader.getParent().getParent());
   1. 可以在程序运行过程中，操作这些对象。
   2. 可以解耦，提高程序的可扩展性。
 
-![](JavaSE15_注解反射/image29.png)
+![](img/image29.png)
 
 ## 2.2 获取Class对象的方式
 
@@ -350,7 +350,7 @@ public static void main(String[] args)throws Throwable{
 - 黑盒测试：不需要写代码，给输入值，看程序是否能够输出期望的值。
 - 白盒测试：需要写代码的。关注程序具体的执行流程。
 
-![](JavaSE15_注解反射/测试分类.jpg)
+![](img/测试分类.jpg)
 
 ## 3.2 Junit介绍
 
@@ -363,7 +363,7 @@ Junit是一个Java语言的单元测试框架，属于白盒测试，简单理�
 3. @Test修饰的方法要求：public void 方法名() {…} ，方法名自定义建议test开头，没有参数。
 4. 添加Junit库到lib文件夹中，然后进行jar包关联。
 
-![](JavaSE15_注解反射/junit01.png)
+![](img/junit01.png)
 
 使用：点击方法左侧绿色箭头，执行当前方法（方法必须标记@Test）。执行结果红色：代表失败；执行结果绿色：代表成功。
 
@@ -780,10 +780,10 @@ Lombok能通过注解的方式，在编译时自动为属性生成构造器、ge
 
 - 安装完毕后，重启IDEA。
 
-  ![](JavaSE15_注解反射/lombok1.jpg)
+  ![](img/lombok1.jpg)
 
 
-![](JavaSE15_注解反射/lombok2.jpg)
+![](img/lombok2.jpg)
 
 ## 5.3 lombok常用注解
 
@@ -794,14 +794,14 @@ Lombok能通过注解的方式，在编译时自动为属性生成构造器、ge
 - 写在类上，对所有成员变量有效。
 - 注意：静态成员变量无效。
 
-![](JavaSE15_注解反射/lombok3.jpg)
+![](img/lombok3.jpg)
 
 @ToString
 
 - 作用：生成toString()方法。
 - 注解只能写在类上。
 
-![](JavaSE15_注解反射/lombok4.jpg)
+![](img/lombok4.jpg)
 
 @NoArgsConstructor和@AllArgsConstructor
 
@@ -809,19 +809,19 @@ Lombok能通过注解的方式，在编译时自动为属性生成构造器、ge
 - @AllArgsConstructor：满参数构造方法。
 - 注解只能写在类上。
 
-![](JavaSE15_注解反射/lombok5.jpg)
+![](img/lombok5.jpg)
 
 ### @EqualsAndHashCode
 
 - 作用：生成hashCode()和equals()方法。
 - 注解只能写在类上。
 
-![](JavaSE15_注解反射/lombok6.jpg)
+![](img/lombok6.jpg)
 
 ### @Data
 
 - 作用：生成get/set，toString，hashCode，equals，无参构造方法
 - 注解只能写在类上。
 
-![](JavaSE15_注解反射/lombok7.jpg)
+![](img/lombok7.jpg)
 
