@@ -16,13 +16,19 @@ import java.util.List;
  */
 @Service
 public class AccountServiceImpl implements AccountService {
+    private TransactionManager transactionManager;
+    
+    public AccountServiceImpl(TransactionManager transactionManager) {
+        this.transactionManager = transactionManager;
+    }
     
     //依赖注入
-    @Autowired(required = false)
     private AccountDao accountDao;
     
-    @Autowired
-    private TransactionManager transactionManager;
+    @Autowired(required = false)
+    public void setAccountDao(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
     
     //转账
     @Override
