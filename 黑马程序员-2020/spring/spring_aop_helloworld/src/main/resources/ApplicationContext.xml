@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!--配置 service 对象-->
+    <bean id="accountService" class="com.wong.service.impl.AccountServiceImpl"></bean>
+
+    <!--配置 LogUtil 切面类（增强功能）对象-->
+    <bean id="logUtil" class="com.wong.util.LogUtil"></bean>
+
+    <!--配置AOP，实现了对 service中的方法 进行增强（LogUtil）-->
+    <aop:config>
+
+    </aop:config>
+</beans>
