@@ -1,6 +1,7 @@
 package com.wong.service.impl;
 
 import com.wong.service.AccountService;
+import org.springframework.stereotype.Service;
 
 public class AccountServiceImpl implements AccountService {
     @Override

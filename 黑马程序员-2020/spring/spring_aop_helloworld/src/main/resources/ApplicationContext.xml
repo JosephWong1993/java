@@ -14,6 +14,12 @@
 
     <!--配置AOP，实现了对 service中的方法 进行增强（LogUtil）-->
     <aop:config>
+        <!--配置切面-->
+        <aop:aspect id="logUtil" ref="logUtil">
+            <!--配置切入点表达式-->
+            <aop:before method="printLog"
+                        pointcut="execution(public void com.wong.service.impl.AccountServiceImpl.save())"></aop:before>
+        </aop:aspect>
 
     </aop:config>
 </beans>
