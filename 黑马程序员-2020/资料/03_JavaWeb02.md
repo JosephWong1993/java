@@ -2,7 +2,7 @@
 
 ## 1 什么是ServletContext
 
-![1569676908780](JavaWeb02.assets/1569676908780.png)
+![1569676908780](img/1569676908780.png)
 
 在Tomcat服务器中的web的项目 也叫做WEB应用程序。在java中 万物皆对象，那么，应用程序也是对象。
 
@@ -123,7 +123,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 - 获取src目录下的c.txt绝对路径
 - 获取web02 module下的d.txt绝对路径,获取不到
 
-![1569719086103](JavaWeb02.assets/1569719086103.png)
+![1569719086103](img/1569719086103.png)
 
 代码演示：
 
@@ -145,7 +145,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 ## 6 作用三：ServletContext作为域对象
 
-![1569679370111](JavaWeb02.assets/1569679370111.png)
+![1569679370111](img/1569679370111.png)
 
 ### ServletContext作为域对象
 
@@ -203,7 +203,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 - 我们使用的子接口HttpServletResponse, 此接口对象由Tomcat引擎提供
 - 可以实现对客户端的响应, 响应内容包括: 响应行,响应头,响应体
 
-![1568250606347](JavaWeb02.assets/1568250606347.png)
+![1568250606347](img/1568250606347.png)
 
 ## 2 Response设置响应行
 
@@ -275,7 +275,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 ## 4 重定向
 
-![1569721779644](JavaWeb02.assets/1569721779644.png)
+![1569721779644](img/1569721779644.png)
 
 ### 4.1 重定向的写法
 
@@ -545,7 +545,7 @@ request对象是从客户端向服务器发出请求，包括用户提交的信�
 
 - 可以实现客户端向服务器发出请求, 请求内容包括: 请求行,请求头,请求体
 
-  ![1568250883129](JavaWeb02.assets/1568250883129.png)
+  ![1568250883129](img/1568250883129.png)
 
 ## 2 Request对象获取请求行
 
@@ -715,7 +715,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 ### 6.1 导包
 
-![1569684673262](JavaWeb02.assets/1569684673262.png) 
+![1569684673262](img/1569684673262.png) 
 
 ### 6.2 pojo类
 
@@ -766,7 +766,7 @@ public class User {
 
 ### 6.3 页面
 
-![1569684772971](JavaWeb02.assets/1569684772971.png) 
+![1569684772971](img/1569684772971.png) 
 
 ```html
 <!DOCTYPE html>
@@ -831,7 +831,7 @@ public class ServletDemo15 extends HttpServlet {
 
 ### 6.5 原理
 
-![1569685145577](JavaWeb02.assets/1569685145577.png) 
+![1569685145577](img/1569685145577.png) 
 
 ## 7 Request域对象
 
@@ -899,7 +899,7 @@ public class MyServlet2 extends HttpServlet {
 
 ### 8.1 原理
 
-![1569730812798](JavaWeb02.assets/1569730812798.png)
+![1569730812798](img/1569730812798.png)
 
 ### 8.2 请求转发的写法
 
@@ -969,7 +969,7 @@ public class MyServlet2 extends HttpServlet {
 
 ## 9 请求转发和重定向区别
 
-![1568273576107](JavaWeb02.assets/1568273576107.png)
+![1568273576107](img/1568273576107.png)
 
 ### 9.1 区别总结
 
@@ -1055,7 +1055,7 @@ public class MyServlet2 extends HttpServlet {
 
 ### 1.1 分析
 
-![1569687542490](JavaWeb02.assets/1569687542490.png)
+![1569687542490](img/1569687542490.png)
 
 ### 1.2 开发步骤
 
@@ -1090,11 +1090,11 @@ SELECT * FROM tb_user WHERE username='zhangsan' AND `password`='123'
 
 导包和配置文件
 
-![1569686772975](JavaWeb02.assets/1569686772975.png) 
+![1569686772975](img/1569686772975.png) 
 
 ### 1.4 入口页面 
 
-![1569686901654](JavaWeb02.assets/1569686901654.png) 
+![1569686901654](img/1569686901654.png) 
 
 ```html
 <!DOCTYPE html>
@@ -1130,7 +1130,7 @@ SELECT * FROM tb_user WHERE username='zhangsan' AND `password`='123'
 
 ### 1.5 web层
 
-![1569686939089](JavaWeb02.assets/1569686939089.png) 
+![1569686939089](img/1569686939089.png) 
 
 ```java
 package cn.itcast.web;
@@ -1179,7 +1179,7 @@ public class RegisterServlet extends HttpServlet {
 
 ### 1.6 业务层
 
-![1569686989997](JavaWeb02.assets/1569686989997.png) 
+![1569686989997](img/1569686989997.png) 
 
 * 业务层接口
 
@@ -1225,7 +1225,7 @@ public class UserServiceImpl implements UserService {
 
 ### 1.8 数据层
 
-![1569687079946](JavaWeb02.assets/1569687079946.png) 
+![1569687079946](img/1569687079946.png) 
 
 * 数据层接口
 

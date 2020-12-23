@@ -80,11 +80,11 @@ http://www.itcast.cn:80/subject/javaeezly/
   - 硬件：其实就是一台电脑（这台电脑配置要求很高）。 1PB  = 1024TB  ; 1Tb = 1024GB 
   - 软件：需要在这台电脑上安装web服务器的软件。
 
-![1568246822836](JavaWeb01.assets/1568246822836.png)
+![1568246822836](img/1568246822836.png)
 
 重点重点重点
 
-![1569491732576](JavaWeb01.assets/1569491732576.png)
+![1569491732576](img/1569491732576.png)
 
 ## 7 常见的Web服务器
 
@@ -102,7 +102,7 @@ http://www.itcast.cn:80/subject/javaeezly/
 
 ## 1 什么是Tomcat
 
-![1568246860349](JavaWeb01.assets/1568246860349.png)
+![1568246860349](img/1568246860349.png)
 
 - Tomcat就是一个web的服务器，用来发布web项目。
 - tomcat 目前存在很多版本，希望大家了解tomcat的版本，从而知道自己的创建的项目使用的是几版本规范，不同版 本的规范技术可能不同。我们学习的JavaEE 7.0，Servlet规范3.1，tomcat至少使用8.5版本。
@@ -135,19 +135,19 @@ https://tomcat.apache.org/download-80.cgi
 
 步骤一：tomcat解压目录/bin/startup.bat 双击运行启动tomcat
 
-![1568246897019](JavaWeb01.assets/1568246897019.png)
+![1568246897019](img/1568246897019.png)
 
 步骤二：访问路径：<http://localhost:8080/>
 
-![1568246925329](JavaWeb01.assets/1568246925329.png)
+![1568246925329](img/1568246925329.png)
 
-![1569492730797](JavaWeb01.assets/1569492730797.png)
+![1569492730797](img/1569492730797.png)
 
-![1569492753038](JavaWeb01.assets/1569492753038.png)
+![1569492753038](img/1569492753038.png)
 
 关闭tomcat
 
-![1569492789568](JavaWeb01.assets/1569492789568.png)
+![1569492789568](img/1569492789568.png)
 
 ## 4 解决Tomcat服务器启动时遇到的问题
 
@@ -155,7 +155,7 @@ https://tomcat.apache.org/download-80.cgi
 
 Tomcat运行需要依赖Java环境，也就是说需要在电脑上安装了JDK之后才可以安装和启动Tomcat。因为Tomcat启动的时候需要使用JRE的环境。必须要配置JAVA_HOME环境变量，如果没有配置JAVA_HOME环境变量，那么服务器在启动的时候就会一闪然后关闭。
 
-![1568246953399](JavaWeb01.assets/1568246953399.png)
+![1568246953399](img/1568246953399.png)
 
 ### 4.2 Tomcat端口号冲突的问题
 
@@ -173,7 +173,7 @@ Caused by: java.net.BindException: Address already in use: JVM_Bind
 
 通过 `tomcat/conf/server.xml` 修改端口号。
 
-![1568246989713](JavaWeb01.assets/1568246989713.png)
+![1568246989713](img/1568246989713.png)
 
 ## 5 Tomcat目录结构
 
@@ -215,7 +215,7 @@ work：tomcat处理JSP页面的工作目录。
 
 1. 将项目复制到tomcat/webapps中
 
-![1568247057624](JavaWeb01.assets/1568247057624.png)
+![1568247057624](img/1568247057624.png)
 
 2. 启动Tomcat服务器，双击 startup.bat
 3. 访问项目
@@ -224,20 +224,20 @@ work：tomcat处理JSP页面的工作目录。
 http://localhost:8080/aaa/index.html
 ```
 
-![1568247111880](JavaWeb01.assets/1568247111880.png)
+![1568247111880](img/1568247111880.png)
 
 
 
 ## 7 IDEA 中集成 Tomcat
 
 - 步骤1：首先打开idea开发工具，然后点击Run菜单，选择`Edit Configurations...`菜单，会进入`Run/Debug Configurations`对话框
-- ![1568247383607](JavaWeb01.assets/1568247383607.png)
+- ![1568247383607](img/1568247383607.png)
 
 - 步骤2：按图操作，完成Idea中添加Tomcat服务器，进行Tomcat软件关联
 
 - VM options填写内容（可省略）：`-Xms128m -Xmx256m -XX:PermSize=128m -XX:MaxPermSize=256m`
 
-  ![1568247422059](JavaWeb01.assets/1568247422059.png)
+  ![1568247422059](img/1568247422059.png)
 
 ## 8 IDEA中发布web项目
 
@@ -247,13 +247,13 @@ http://localhost:8080/aaa/index.html
 
 - 步骤1：在idea中New Module/Web Application
 
-  ![1568247458336](JavaWeb01.assets/1568247458336.png)
+  ![1568247458336](img/1568247458336.png)
 
 
 
 - 步骤2：创建模块
 
-  ![1568247493219](JavaWeb01.assets/1568247493219.png)
+  ![1568247493219](img/1568247493219.png)
 
 ### 发布web项目
 
@@ -261,17 +261,17 @@ http://localhost:8080/aaa/index.html
 
   首先打开idea开发工具，然后点击Run菜单，选择`Edit Configurations...`菜单，打开`Run/Debug Configurations`对话框，进行如图配置
 
-  ![1568247572379](JavaWeb01.assets/1568247572379.png)
+  ![1568247572379](img/1568247572379.png)
 
   
 
 - 步骤2：更改web项目发布路径，到 Tomcat软件的webapps目录下(可选的)
 
-  ![1568247617898](JavaWeb01.assets/1568247617898.png)
+  ![1568247617898](img/1568247617898.png)
 
 - 步骤3：启动Tomcat服务器，访问项目
 
-  ![1568247643294](JavaWeb01.assets/1568247643294.png)
+  ![1568247643294](img/1568247643294.png)
 
 ```http
 http://localhost:8080/web01
@@ -292,7 +292,7 @@ http://localhost:8080/web01
 
 - Idea创建的web项目结构 与 发布到webapps目录下后的web项目结构对比 
 
-  ![1568247676386](JavaWeb01.assets/1568247676386.png)
+  ![1568247676386](img/1568247676386.png)
 
 # 第三章 HTTP协议
 
@@ -302,7 +302,7 @@ http://localhost:8080/web01
 
 HTTP协议：超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。用于定义WEB浏览器与WEB服务器之间交换数据的过程。
 
-![1568247701358](JavaWeb01.assets/1568247701358.png)
+![1568247701358](img/1568247701358.png)
 
 必须先有请求,才会有响应
 
@@ -312,7 +312,7 @@ HTTP协议的作用
 
 - HTTP协议是学习JavaWEB开发的基石，不深入了解HTTP协议，就不能说掌握了WEB开发，更无法管理和维护一些复杂的WEB站点。
 
-  ![1568247723914](JavaWeb01.assets/1568247723914.png)
+  ![1568247723914](img/1568247723914.png)
 
 
 
@@ -346,7 +346,7 @@ HTTP请求报文：由客户端向服务器端发出的报文。
 
 HTTP请求报文格式：包含请求行、请求头、空行、请求体 四个部分
 
-![1568247750782](JavaWeb01.assets/1568247750782.png)
+![1568247750782](img/1568247750782.png)
 
 
 
@@ -395,7 +395,7 @@ HTTP请求报文格式：包含请求行、请求头、空行、请求体 四个
 
 - 创建页面，编写“login.html”，并提供表单，分别设置表单的提交方式为：get和post。将表单提交位置设置成#，表示提交到当前表单。
 
-  ![1568247785301](JavaWeb01.assets/1568247785301.png)
+  ![1568247785301](img/1568247785301.png)
 
 ```html
 <form action="#" method="post">
@@ -410,11 +410,11 @@ HTTP请求报文格式：包含请求行、请求头、空行、请求体 四个
 
 - GET请求抓包数据：
 
-  ![1568247804983](JavaWeb01.assets/1568247804983.png)
+  ![1568247804983](img/1568247804983.png)
 
 - POST请求抓包数据：
 
-  ![1568247881730](JavaWeb01.assets/1568247881730.png)
+  ![1568247881730](img/1568247881730.png)
 
 ### 2.2 Http响应报文详解
 
@@ -422,7 +422,7 @@ HTTP请求报文格式：包含请求行、请求头、空行、请求体 四个
 
 HTTP响应报文格式：响应行、响应头、空行、响应体 四个部分
 
-![1568247904345](JavaWeb01.assets/1568247904345.png)
+![1568247904345](img/1568247904345.png)
 
 
 
@@ -480,7 +480,7 @@ HTTP响应报文格式：响应行、响应头、空行、响应体 四个部分
 
 如下图，我们提供的响应的抓包结果（Chrome浏览器）
 
-![1568247961815](JavaWeb01.assets/1568247961815.png)
+![1568247961815](img/1568247961815.png)
 
 
 
@@ -557,11 +557,11 @@ public class HelloServlet implements Servlet{
 http://localhost:8080/web01/hello
 ```
 
-![1568249272444](JavaWeb01.assets/1568249272444.png)
+![1568249272444](img/1568249272444.png)
 
 ## 3 servlet程序执行原理
 
-![1568249294215](JavaWeb01.assets/1568249294215.png)
+![1568249294215](img/1568249294215.png)
 
 **Tomcat引擎执行的操作**
 
@@ -573,7 +573,7 @@ http://localhost:8080/web01/hello
 6. 数据写在了 reponse对象的缓冲区中
 7. service方法结束后,数据从response对象的缓冲区取出,组装成HTTP的响应信息, 回传给浏览器
 
-![1569549933918](JavaWeb01.assets/1569549933918.png)
+![1569549933918](img/1569549933918.png)
 
 
 
@@ -768,7 +768,7 @@ tomcat获得匹配路径时，访问优先级顺序：完全路径匹配  >  目
 </session-config>
 ```
 
-![1568249423581](JavaWeb01.assets/1568249423581.png)
+![1568249423581](img/1568249423581.png)
 
 # 第五章 HttpServlet
 
@@ -797,7 +797,7 @@ HttpServlet是一个与HTTP协议相关的Servlet，专门用来处理HTTP协议
 
 步骤1 ：创建类，继承MyServlet，复写doGet方法
 
-![1568249516587](JavaWeb01.assets/1568249516587.png)
+![1568249516587](img/1568249516587.png)
 
 ```java
 public class MyServlet extends HttpServlet {
@@ -838,11 +838,11 @@ public class MyServlet extends HttpServlet {
 
 通常情况下，get\post请求要处理的内容代码都是一致的，所以需要让doGet和doPost相互调用可以简化编程。
 
-![1568249553492](JavaWeb01.assets/1568249553492.png)
+![1568249553492](img/1568249553492.png)
 
 ## 4 继承HttpServet执行原理
 
-![1568250261456](JavaWeb01.assets/1568250261456.png)
+![1568250261456](img/1568250261456.png)
 
 ## 5 注解开发取代web.xml
 
@@ -874,7 +874,7 @@ public class MyServlet extends HttpServlet {
 
 ### 5.2 创建注解Servlet
 
-![1568250334425](JavaWeb01.assets/1568250334425.png)
+![1568250334425](img/1568250334425.png)
 
 
 
@@ -884,11 +884,11 @@ public class MyServlet extends HttpServlet {
 
 在网站的首页上,登录的链接,点击登录的链接,可以跳转到登录的页面.在登录的页面中输入用户名和密码点击登录的案例.完成登录的功能.
 
-![1568249827768](JavaWeb01.assets/1568249827768.png)
+![1568249827768](img/1568249827768.png)
 
 ## 2 案例分析:
 
-![1569571729063](JavaWeb01.assets/1569571729063.png)
+![1569571729063](img/1569571729063.png)
 
 ## 3 实现步骤
 
@@ -902,7 +902,7 @@ public class MyServlet extends HttpServlet {
 
 - 编写服务器Servlet
 
-  ![1569573195643](JavaWeb01.assets/1569573195643.png).
+  ![1569573195643](img/1569573195643.png).
 
 ## 4 代码实现
 
@@ -927,7 +927,7 @@ SELECT * FROM tb_user WHERE username='zhangsan' AND `password`='123'
 
 ### 4.2 pojo类
 
-![1569573586978](JavaWeb01.assets/1569573586978.png) .
+![1569573586978](img/1569573586978.png) .
 
 ```java
 package cn.itcast.pojo;
@@ -946,7 +946,7 @@ public class User {
 
 ### 4.3 html页面
 
-![1569573366661](JavaWeb01.assets/1569573366661.png) .
+![1569573366661](img/1569573366661.png) .
 
 ```html
 <!DOCTYPE html>
@@ -978,7 +978,7 @@ public class User {
 
 ### 4.4 LoginServlet
 
-![1569573527254](JavaWeb01.assets/1569573527254.png) .
+![1569573527254](img/1569573527254.png) .
 
 ```java
 package cn.itcast.web;
@@ -1035,7 +1035,7 @@ public class LoginServlet extends HttpServlet {
 
 
 
-![1569569355395](JavaWeb01.assets/1569569355395.png)
+![1569569355395](img/1569569355395.png)
 
 
 

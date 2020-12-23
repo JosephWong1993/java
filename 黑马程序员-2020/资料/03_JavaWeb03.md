@@ -47,7 +47,7 @@ Java程序直接嵌入到了HTML中, 页面称为jsp页面, JSP文件的扩展�
 
 ```
 
-![1568640008518](JavaWeb03.assets/1568640008518.png)
+![1568640008518](img/1568640008518.png)
 
 
 
@@ -78,7 +78,7 @@ Java程序直接嵌入到了HTML中, 页面称为jsp页面, JSP文件的扩展�
 
 ```
 
-![1568640024593](JavaWeb03.assets/1568640024593.png)
+![1568640024593](img/1568640024593.png)
 
 JS表达式 格式三: `<%! java语句; %>`
 
@@ -92,7 +92,7 @@ JS表达式 格式三: `<%! java语句; %>`
 
 - 如何实现的呢? 我们来看执行原理图, 再去看代码
 
-![1568640044047](JavaWeb03.assets/1568640044047.png)
+![1568640044047](img/1568640044047.png)
 
 - jsp页面执行的时候被转成.java文件,编译为.class. 转换后目录如下:
 
@@ -113,7 +113,7 @@ JS表达式 格式三: `<%! java语句; %>`
 
 JSP中一共预先定义了9个这样的对象，分别为：request、response、pageContext、session、application、out、config、page、exception
 
-![1568640062498](JavaWeb03.assets/1568640062498.png)
+![1568640062498](img/1568640062498.png)
 
 | 对象名      | 功能                                                         | 类型                           | 作用域      |
 | ----------- | ------------------------------------------------------------ | ------------------------------ | ----------- |
@@ -161,7 +161,7 @@ web会话可简单理解为：用户开一个浏览器，访问某一个web网�
 - Cookie对象: 客户端浏览器的会话技术，它可以把服务器传递过来的一些数据记录在客户端浏览器中，解决会话从什么时候开始，到什么时候结束。
 - Session对象: 服务器端的会话技术,  它可以把同一用户与服务器多次请求响应的一些数据记录在服务器Session域中, 实现该用户在本次会话中, 可随时获取Session域中的数据, 满足多次请求响应之间 进行数据传递\访问使用.
 
-![1568252184898](JavaWeb03.assets/1568252184898.png)
+![1568252184898](img/1568252184898.png)
 
 
 
@@ -232,7 +232,7 @@ public class SendCookieServlet extends HttpServlet {
 
 访问演示:
 
-![1568253527379](JavaWeb03.assets/1568253527379.png)
+![1568253527379](img/1568253527379.png)
 
 ### 3.2 获取浏览器携带的Cookie
 
@@ -282,7 +282,7 @@ public class GetCookieServlet extends HttpServlet {
 
 访问演示:
 
-![1568253544055](JavaWeb03.assets/1568253544055.png)
+![1568253544055](img/1568253544055.png)
 
 ## 4 Cookie中使用中文问题(扩展)
 
@@ -338,7 +338,7 @@ public class ChinaCookieServlet extends HttpServlet {
 
 访问演示:
 
-![1568253562738](JavaWeb03.assets/1568253562738.png)
+![1568253562738](img/1568253562738.png)
 
 ## 5 Cookie的携带路径
 
@@ -346,13 +346,13 @@ public class ChinaCookieServlet extends HttpServlet {
 
 结论:  浏览器访问服务器,不会携带所有的Cookie进行访问
 
-![1568253623556](JavaWeb03.assets/1568253623556.png)
+![1568253623556](img/1568253623556.png)
 
 ### 5.1 Cookie默认的携带情况
 
 浏览器对Cookie的默认设置
 
-![1568253642786](JavaWeb03.assets/1568253642786.png)
+![1568253642786](img/1568253642786.png)
 
 问: Cookie数据放在请求头, 浏览器访问服务器,每次都会携带所有的Cookie进行访问吗
 
@@ -360,7 +360,7 @@ public class ChinaCookieServlet extends HttpServlet {
 
 看下图:
 
-![1568253693450](JavaWeb03.assets/1568253693450.png)
+![1568253693450](img/1568253693450.png)
 
 - 情况分析:  该Cookie在访问路径 web05/abc/path 下创建
   - 浏览器访问 `web05/abc` 下的任意资源, 会携带该Cookie;  例如访问 `web05/abc/test.jsp`
@@ -461,7 +461,7 @@ public class LifeCookieServlet extends HttpServlet {
 
 查看浏览器Cookie:
 
-![1568253716359](JavaWeb03.assets/1568253716359.png)
+![1568253716359](img/1568253716359.png)
 
 ## 7 删除已存在的Cookie
 
@@ -502,7 +502,7 @@ public class clearCookieServlet extends HttpServlet {
 
 访问演示:
 
-![1568253734372](JavaWeb03.assets/1568253734372.png)
+![1568253734372](img/1568253734372.png)
 
 ## 8 案例 记录上一次的访问时间
 
@@ -510,11 +510,11 @@ public class clearCookieServlet extends HttpServlet {
 
 展示用户上一次访问服务器的时间
 
-![1568253751457](JavaWeb03.assets/1568253751457.png)
+![1568253751457](img/1568253751457.png)
 
 ### 8.2 分析:
 
-![1568253772095](JavaWeb03.assets/1568253772095.png)
+![1568253772095](img/1568253772095.png)
 
 ### 8.3 实现步骤:
 
@@ -714,7 +714,7 @@ public class Session2Servlet extends HttpServlet {
 
 每个session对象都有个唯一标识 JSESSIONID, 服务通过Cookie对象, 将JSESSIONID存储在客户端Cookie中, 就可以实现持久化Session对象.	
 
-![1568253802462](JavaWeb03.assets/1568253802462.png)
+![1568253802462](img/1568253802462.png)
 
 实现步骤:
 
@@ -806,7 +806,7 @@ public class Save2SessionServlet extends HttpServlet {
 
 使用session存储验证码, 完成验证码的校验
 
-![1568253821395](JavaWeb03.assets/1568253821395.png)
+![1568253821395](img/1568253821395.png)
 
 ### 5.2 分析
 
@@ -827,13 +827,13 @@ public class Save2SessionServlet extends HttpServlet {
 
 ### 5.4 代码实现
 
-![1570375578267](JavaWeb03.assets/1570375578267.png) .
+![1570375578267](img/1570375578267.png) .
 
 
 
 #### 5.4.1 入口页面 login.jsp
 
-![1570442055076](JavaWeb03.assets/1570442055076.png).
+![1570442055076](img/1570442055076.png).
 
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -889,7 +889,7 @@ public class Save2SessionServlet extends HttpServlet {
 ```
 #### 5.4.2 验证码Servlet
 
-![1570442032167](JavaWeb03.assets/1570442032167.png).
+![1570442032167](img/1570442032167.png).
 
 ```java
 package cn.itcast.web;
@@ -981,7 +981,7 @@ public class checkcodeServlet extends HttpServlet {
 
 #### 5.4.3 登录servlet
 
-![1570442019029](JavaWeb03.assets/1570442019029.png).
+![1570442019029](img/1570442019029.png).
 
 ```java
 package cn.itcast.web;
@@ -1060,7 +1060,7 @@ public class LoginServlet extends HttpServlet {
 
 #### 5.4.4 业务层
 
-![1570442004417](JavaWeb03.assets/1570442004417.png) .
+![1570442004417](img/1570442004417.png) .
 
 ```java
 package cn.itcast.service;
@@ -1104,7 +1104,7 @@ public class UserServiceImpl implements UserService {
 
 #### 5.5.5 数据层
 
-![1570441990436](JavaWeb03.assets/1570441990436.png).
+![1570441990436](img/1570441990436.png).
 
 ```java
 package cn.itcast.dao;
@@ -1148,7 +1148,7 @@ public class UserDaoImpl implements UserDao {
 
 #### 5.5.6 首页
 
-![1570441973011](JavaWeb03.assets/1570441973011.png).
+![1570441973011](img/1570441973011.png).
 
 ```jsp
 <%@ page import="cn.itcast.pojo.User" %>
@@ -1183,7 +1183,7 @@ public class UserDaoImpl implements UserDao {
 
 #### 5.5.7 注销页面
 
-![1570441957787](JavaWeb03.assets/1570441957787.png).
+![1570441957787](img/1570441957787.png).
 
 ```jsp
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
