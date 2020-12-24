@@ -10,7 +10,7 @@
     <bean id="accountService" class="com.wong.service.impl.AccountServiceImpl"></bean>
 
     <!--配置 LogUtil 切面类（增强功能）对象-->
-    <bean id="logUtil" class="com.wong.util.LogUtil"></bean>
+    <bean id="logUtil" class="com.wong.utils.LogUtil"></bean>
 
     <!--配置AOP，实现了对 service中的方法 进行增强（LogUtil）-->
     <aop:config>

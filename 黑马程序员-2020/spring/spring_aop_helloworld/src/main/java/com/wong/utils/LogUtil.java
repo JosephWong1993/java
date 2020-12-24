@@ -1,4 +1,4 @@
-package com.wong.util;
+package com.wong.utils;
 
 /**
  * 日志切面类，提供了AccountServiceImpl类增强方法
