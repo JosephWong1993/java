@@ -1,6 +1,7 @@
 package com.wong.utils;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 
 import java.util.Arrays;
 
@@ -49,5 +50,35 @@ public class LogUtil {
      */
     public void afterPrintLog(JoinPoint joinPoint) throws Throwable {
         System.out.println("最终增强：afterPrintLog");
+    }
+    
+    /**
+     * 配置 环绕通知：包含了（前置增强，后置增强，异常增强，最终增强）
+     *
+     * @param joinPoint
+     * @return
+     * @throws Throwable
+     */
+    public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
+        Object rtValue = null;
+        
+        try {
+            //配置 前置增强
+            System.out.println("前置增强");
+            
+            //获取方法执行时所需的实际参数
+            Object[] arg = joinPoint.getArgs();
+            //原有方法执行
+            rtValue = joinPoint.proceed(arg);
+            //配置 后置增强
+            System.out.println("后置增强");
+        } catch (Throwable throwable) {
+            //配置 异常增强
+            System.out.println("异常增强");
+        } finally {
+            //配置 异常增强
+            System.out.println("最终增强");
+        }
+        return rtValue;
     }
 }

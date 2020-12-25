@@ -11,7 +11,7 @@ public class AccountServiceImpl implements AccountService {
     
     @Override
     public void update(int i) {
-        System.out.println("更新账户...");
+        System.out.println("更新账户..." + i);
     }
     
     @Override
