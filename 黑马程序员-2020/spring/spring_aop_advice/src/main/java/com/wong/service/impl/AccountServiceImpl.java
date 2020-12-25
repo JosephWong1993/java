@@ -6,6 +6,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void save() {
         System.out.println("保存账户...");
+        int i = 1 / 0;
     }
     
     @Override

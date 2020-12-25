@@ -15,6 +15,13 @@
         <aop:aspect id="logUtil" ref="logUtil">
             <!--配置 前置增强：执行时机 在切入点方法执行前执行-->
             <aop:before method="beforePrintLog" pointcut-ref="pc"></aop:before>
+            <!--配置 后置增强：执行时机 在切入点方法执行完毕后，执行；若切入点方法执行过程中产生了异常，后置增强不执行-->
+            <aop:after-returning method="afterReturningPrintLog" pointcut-ref="pc"
+                                 returning="rtValue"></aop:after-returning>
+            <!--配置 异常增强：执行时机 在切入点方法执行过程中 抛出了异常，执行-->
+            <aop:after-throwing method="afterThrowingPrintLog" pointcut-ref="pc" throwing="e"></aop:after-throwing>
+            <!--配置 最终增强：执行时机 在切入点方法执行完毕后，执行(无论是否有异常，最终增强都执行)-->
+            <aop:after method="afterPrintLog" pointcut-ref="pc"></aop:after>
         </aop:aspect>
     </aop:config>
 </beans>
