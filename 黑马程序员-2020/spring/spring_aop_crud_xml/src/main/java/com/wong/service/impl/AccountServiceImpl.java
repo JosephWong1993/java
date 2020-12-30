@@ -18,6 +18,7 @@ public class AccountServiceImpl implements AccountService {
         this.accountDao = accountDao;
     }
 
+
     @Override
     public void transfer(String source, String target, double money) {
         //1.根据name获取账户对象
@@ -30,6 +31,7 @@ public class AccountServiceImpl implements AccountService {
         targetAccount.setMoney(targetAccount.getMoney() + money);
         //3.数据库持久化更新
         accountDao.update(sourceAccount);
+        int i = 1 / 0;
         accountDao.update(targetAccount);
     }
 
