@@ -5,6 +5,7 @@ import com.wong.our.BookShelf;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
+import java.util.Arrays;
 
 /**
  * 注解解析：
@@ -50,6 +51,12 @@ public class AnnotationAnalysis {
         //方法 判断是否有注解
         //参数，传递注解的class文件对象
         boolean b = method.isAnnotationPresent(Book.class);
-        System.out.println(b);
+        //method对象调用方法，获取注解
+        Book book = method.getAnnotation(Book.class);
+        //获取出Book注解的属性
+        String bookName = book.bookName();
+        double price = book.price();
+        String[] strings = book.author();
+        System.out.println(bookName + price + Arrays.toString(strings));
     }
 }
