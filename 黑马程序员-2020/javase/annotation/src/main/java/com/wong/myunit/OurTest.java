@@ -1,11 +1,12 @@
 package com.wong.myunit;
 
 public class OurTest {
-    @MyTest
+    //@MyTest
     public void show() {
         System.out.println("show");
     }
 
+    @MyTest
     public void show2() {
         System.out.println("show2");
     }
