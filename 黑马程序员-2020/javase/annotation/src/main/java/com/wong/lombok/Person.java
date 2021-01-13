@@ -19,6 +19,8 @@ import lombok.*;
  * 使用注解，插件帮助写出这些方法
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Person {
     private String name;
     private int age;
