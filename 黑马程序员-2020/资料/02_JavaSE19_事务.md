@@ -90,7 +90,7 @@ update t_account set money = money +100 where name='b';   b=1100
 
  
 
-![img](mysql_事务.assets/wps1.jpg) .
+![img](img/wps1.jpg) .
 
 简单总结：
 
@@ -120,7 +120,7 @@ commit; --- 提交事务，都成功的情况。事务结束，全部成功。
 
 
 
-![img](mysql_事务.assets/wps2.jpg) 
+![img](img/wps2.jpg) 
 
  
 
@@ -140,13 +140,13 @@ insert into account values('b', 1000);
 
 -- 需求1：演示事务回滚 
 
-![img](mysql_事务.assets/wps3.jpg) 
+![img](img/wps3.jpg) 
 
  
 
 需求2：演示事务提交 
 
-![img](mysql_事务.assets/wps4.jpg)  
+![img](img/wps4.jpg)  
 
 ## 3 事务的特性 ACID  (理解)
 
@@ -194,7 +194,7 @@ insert into account values('b', 1000);
 
 ### 4.1 **脏读：指一个事务读取了另外一个事务** 未提交的数据
 
-![img](mysql_事务.assets/wps8.jpg) .
+![img](img/wps8.jpg) .
 
 假设A向B转账100元，对应的sql语句如下：
 
@@ -216,7 +216,7 @@ b走后,a将事务进行回滚，这样B就损失了100元。
 
 和脏读的区别： 不可重复读是读取的已提交数据
 
-![img](mysql_事务.assets/wps9.jpg) 
+![img](img/wps9.jpg) 
 
 l 例如: 银行想查询A账户的余额，第一次查询的结果是200元，A向账户中又存了100元。此时，银行再次查询的结果变成了300元。两次查询的结果不一致，银行就会很困惑，以哪次为准。
 
@@ -234,7 +234,7 @@ l 很多人认为这有啥好困惑的，肯定是以后面的结果为准了。
 
 ### 4.3. **幻读（虚读）**
 
-![img](mysql_事务.assets/wps10.jpg) 
+![img](img/wps10.jpg) 
 
  
 
@@ -282,25 +282,25 @@ set session transaction isolation level 事务隔离级别;
 
 **1、read uncommitted 读未提交**
 
-![img](mysql_事务.assets/wps11.jpg) 
+![img](img/wps11.jpg) 
 
 **2.1 read committed 读已提交 避免脏读**
 
-![img](mysql_事务.assets/wps12.jpg) 
+![img](img/wps12.jpg) 
 
 读已提交，没有解决 不可重复读， 回忆一下什么是不可重复读？
 
-![img](mysql_事务.assets/wps13.jpg) 
+![img](img/wps13.jpg) 
 
 **3、repeatable read 可重复读**
 
 **可重复读的隔离级别可以解决 不可重复读的问题。**
 
-![img](mysql_事务.assets/wps14.jpg) 
+![img](img/wps14.jpg) 
 
 产生了虚读（幻读）:
 
-![img](mysql_事务.assets/wps15.jpg) 
+![img](img/wps15.jpg) 
 
 注意：mysql数据库本身，已经对虚读做了优化处理，所以展示不出虚读的发生。
 
@@ -308,7 +308,7 @@ set session transaction isolation level 事务隔离级别;
 
 **4、serializable 串行化 可以避免所有的问题。数据库执行这个事务，其他事务必须等待当前事务执行完毕，才会执行。**
 
-![img](mysql_事务.assets/wps16.jpg) 
+![img](img/wps16.jpg) 
 
 思考题：为什么串行可以解决所有的问题？ 
 
@@ -360,7 +360,7 @@ oracle 选择 读已提交 -- read committed
 
 
 
-![img](mysql_事务.assets/wps17.jpg) 
+![img](img/wps17.jpg) 
 
 3、事务的特性：(背诵加理解)
 

@@ -20,13 +20,13 @@ Connection对象在JDBC使用的时候就会去创建一个对象,使用结束�
 
   骑之前, 有一个公司生产了很多的自行车, 下了地铁需要骑车, 直接扫码使用就好了, 然后骑完之后, 还回去
 
-  ![1568454825811](mysql03.assets/1568454825811.png)
+  ![1568454825811](img/1568454825811.png)
 
 
 
 #### 连接池原理【重点】
 
-![1568454844828](mysql03.assets/1568454844828.png)
+![1568454844828](img/1568454844828.png)
 
 1. 程序一开始就创建一定数量的连接，放在一个容器中，这个容器称为连接池(相当于碗柜/容器)。
 2. 使用的时候直接从连接池中取一个已经创建好的连接对象。
@@ -306,7 +306,7 @@ INSERT INTO product(pid,pname,price,category_id) VALUES(13,'果9',1,NULL);
     }
 ```
 
-![1568454932216](mysql03.assets/1568454932216.png)
+![1568454932216](img/1568454932216.png)
 
 ## 5 QueryRunner实现查询操作
 
@@ -319,7 +319,7 @@ INSERT INTO product(pid,pname,price,category_id) VALUES(13,'果9',1,NULL);
 - ScalarHandler：它是用于单数据。例如select count(*) from 表操作。
 - ColumnListHandler：将结果集中指定的列的字段值，封装到一个List集合中
 
-![1568455012693](mysql03.assets/1568455012693.png)
+![1568455012693](img/1568455012693.png)
 
 #### JavaBean
 
@@ -445,7 +445,7 @@ public void demo04() throws SQLException{
 
 ## 6 小结
 
-![1568455038154](mysql03.assets/1568455038154.png)
+![1568455038154](img/1568455038154.png)
 
 DBUtils工具
 

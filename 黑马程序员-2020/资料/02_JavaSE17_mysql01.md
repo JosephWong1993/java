@@ -29,7 +29,7 @@
 
 - 数据库与数据库管理系统的内部结构
 
-  ![1568446598173](mysql01.assets/1568446598173.png)
+  ![1568446598173](img/1568446598173.png)
 
   
 
@@ -37,7 +37,7 @@
 
 数据库中以表为基本单位，进行存储数据。那么使用我们熟悉的java类 与 数据表对比，就会发现以下对应关系。
 
-![1568446560864](mysql01.assets/1568446560864.png)
+![1568446560864](img/1568446560864.png)
 
 - 表记录与java类的对应关系
 
@@ -83,33 +83,33 @@
 
 ### 2.1  安装版关键步骤：
 
-：![img](mysql01.assets/wps1.jpg)
+：![img](img/wps1.jpg)
 
-![img](mysql01.assets/wps2.jpg) 
+![img](img/wps2.jpg) 
 
-![img](mysql01.assets/wps3.jpg) 
+![img](img/wps3.jpg) 
 
 选择数据库的安装位置
 
-![img](mysql01.assets/wps4.jpg) 
+![img](img/wps4.jpg) 
 
 选择数据库 数据文件安装位置
 
-![img](mysql01.assets/wps5.jpg) 
+![img](img/wps5.jpg) 
 
  
 
 设置mysql数据库的默认编码集
 
-![img](mysql01.assets/wps6.jpg) 
+![img](img/wps6.jpg) 
 
  
 
 设置mysql的默认字符集
 
-![img](mysql01.assets/wps7.jpg) 
+![img](img/wps7.jpg) 
 
-![img](mysql01.assets/wps8.jpg) 
+![img](img/wps8.jpg) 
 
  
 
@@ -121,25 +121,25 @@
 
 打开dos窗口测试数据库：
 
-![img](mysql01.assets/wps9.jpg) 
+![img](img/wps9.jpg) 
 
  
 
 显示所有的数据库：
 
-![img](mysql01.assets/wps11.jpg).
+![img](img/wps11.jpg).
 
 注意：书写的所有sql语句， 要求结尾必须有分号。
 
 安装后，MySQL会以windows服务的方式为我们提供数据存储功能。开启和关闭服务的操作：**右键点击我的电脑→管理→服务→可以找到MySQL服务开启或停止**。
 
-![1568446447469](mysql01.assets/1568446447469.png).
+![1568446447469](img/1568446447469.png).
 
-![1568446479700](mysql01.assets/1568446479700.png)
+![1568446479700](img/1568446479700.png)
 
 也可以在DOS窗口，通过命令完成MySQL服务的启动和停止（必须以管理员身份运行cmd命令窗口）
 
-![1568446500723](mysql01.assets/1568446500723.png).
+![1568446500723](img/1568446500723.png).
 
 ## 3 连接MySQL数据库
 
@@ -169,17 +169,17 @@ mysql --host=127.0.0.1  --user=root --password=root
 
 输入用户名、密码，点击连接按钮，进行访问MySQL数据库进行操作
 
-![1568446518891](mysql01.assets/1568446518891.png)
+![1568446518891](img/1568446518891.png)
 
 
 
 下图为 连接mysql以后, 选择了名为"mysql"的数据库, 展示了这个数据库中所有的表。
 
-![1568446546193](mysql01.assets/1568446546193.png)
+![1568446546193](img/1568446546193.png)
 
 # 第3章 SQL语句
 
-![1569032219348](mysql01.assets/1569032219348.png)
+![1569032219348](img/1569032219348.png)
 
 ## 1 SQL概述
 
@@ -187,7 +187,7 @@ mysql --host=127.0.0.1  --user=root --password=root
 
 数据库是不认识JAVA语言的，但是我们同样要与数据库交互，这时需要使用到数据库认识的语言【SQL语句】，它是数据库的代码。结构化查询语言(Structured Query Language)简称SQL，是关系型数据库管理系统都需要遵循的规范。不同的数据库生产厂商都支持SQL语句，但都有特有内容。
 
-![1568446625015](mysql01.assets/1568446625015.png)
+![1568446625015](img/1568446625015.png)
 
 ### SQL语句分类
 
@@ -201,7 +201,7 @@ mysql --host=127.0.0.1  --user=root --password=root
 
   - **数据查询语言：简称DQL(Data Query Language)，用来查询数据库中表的记录。关键字：select，from，where等**
 
-    ![1568971186111](mysql01.assets/1568971186111.png)
+    ![1568971186111](img/1568971186111.png)
 
 
 ### SQL语句的书写语法
@@ -267,7 +267,7 @@ SHOW CREATE DATABASE mydb2;
 需求2 查看mysql数据库的编码
 ```
 
-![1569034499158](mysql01.assets/1569034499158.png)
+![1569034499158](img/1569034499158.png)
 
 ### 2.2 创建数据库
 
@@ -684,7 +684,7 @@ ERROR 1366 (HY000): Incorrect string value: '\xB3\xAC\xC8\xCB' for column 'name'
 show variables like 'character%'; 查看所有mysql的编码
 ```
 
-![1568446720977](mysql01.assets/1568446720977.png)
+![1568446720977](img/1568446720977.png)
 
 1. 需要修改client、connection、results的编码一致（改为GBK编码）
 
@@ -696,7 +696,7 @@ set names gbk;
 
 解决方案2：安装目录下修改my.ini文件，重启服务所有地方生效。
 
-![1568446740086](mysql01.assets/1568446740086.png)
+![1568446740086](img/1568446740086.png)
 
 
 
@@ -1308,7 +1308,7 @@ int totalPage = Math.ceil(totalSize * 1.0 / pageSize); -- 总页数
 
 
 
-![1568446878222](mysql01.assets/1568446878222.png)
+![1568446878222](img/1568446878222.png)
 
 # 第6章 SQL备份与恢复
 
@@ -1336,9 +1336,9 @@ mysqldump  -uroot  -proot day04>d:\day03.sql
 
 选中数据库，右键 ”备份/导出” ， 指定导出路径，保存成.sql文件即可。
 
-![1568446901050](mysql01.assets/1568446901050.png)
+![1568446901050](img/1568446901050.png)
 
-![1568446914500](mysql01.assets/1568446914500.png)
+![1568446914500](img/1568446914500.png)
 
 ## 2 SQL恢复
 
@@ -1360,11 +1360,11 @@ mysqldump  -uroot  -proot day04>d:\day03.sql
 
 数据库列表区域右键“从SQL转储文件导入数据库”， 指定要执行的SQL文件，执行即可。
 
-![1568446926522](mysql01.assets/1568446926522.png)
+![1568446926522](img/1568446926522.png)
 
-![1568446936757](mysql01.assets/1568446936757.png)
+![1568446936757](img/1568446936757.png)
 
-![1568446962902](mysql01.assets/1568446962902.png)
+![1568446962902](img/1568446962902.png)
 
 
 
