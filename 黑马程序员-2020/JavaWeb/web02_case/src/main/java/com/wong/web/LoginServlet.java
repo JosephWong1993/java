@@ -41,6 +41,9 @@ public class LoginServlet extends HttpServlet {
             //响应回原来的登录页面，重定向还是转发
             request.getRequestDispatcher("/login.jsp").forward(request, response);
         } else {
+            //用户信息存在session域对象，目的：不关闭浏览器，走到任何页面，都能展示用户名
+            request.getSession().setAttribute("user", user);
+
             //登录成功的响应
             response.sendRedirect(request.getContextPath() + "/index.jsp");
         }
