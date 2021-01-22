@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/spring_factory/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_ioc_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_ioc_bean/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_ioc_di/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybatisAndSpring/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_crud_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/ioc_annotation_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_ioc_annotation_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_crud_xml_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_curd_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_curd_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_curd_xml_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_curd_annotation2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_transfer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_transfer_threadlocal/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_transfer_proxy/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_advice/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_advice_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_advice_annotation_2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_crud_xml/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_aop_crud_annotation/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
