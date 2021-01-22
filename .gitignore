@@ -27,10 +27,8 @@ hs_err_pid*
 
 
 # IDEA
-.idea
 out
 target
-*.iml
 
 # Java
 #数据库连接配置
