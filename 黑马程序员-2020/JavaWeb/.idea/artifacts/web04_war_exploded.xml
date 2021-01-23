@@ -1,23 +1,23 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="web02:war exploded">
-    <output-path>$PROJECT_DIR$/web02/target/web02</output-path>
+  <artifact type="exploded-war" name="web04:war exploded">
+    <output-path>$PROJECT_DIR$/web04/target/web04</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>web02</module>
+        <module>web04</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="web02" />
+          <element id="module-output" name="web04" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/web02/target/web02/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/web04/target/web04/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="web02/web/Web" />
+      <element id="javaee-facet-resources" facet="web04/web/Web" />
     </root>
   </artifact>
 </component>

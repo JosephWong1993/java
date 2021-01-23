@@ -8,14 +8,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="web02_case" />
-        <module name="web01" />
+        <module name="web04" />
         <module name="web03" />
+        <module name="web02" />
+        <module name="web01" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="web01" target="1.8" />
+      <module name="web02" target="1.8" />
       <module name="web02_case" target="1.8" />
       <module name="web03" target="1.8" />
+      <module name="web04" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
