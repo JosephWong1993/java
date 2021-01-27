@@ -5,9 +5,9 @@
     <file url="file://$PROJECT_DIR$/classloader/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/classloader/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/enums/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javase13/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javase13/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/jdbc/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/properties/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/properties/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/transaction/src/main/java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
