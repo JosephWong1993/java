@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/annotation/pom.xml" />
         <option value="$PROJECT_DIR$/jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/properties/pom.xml" />
       </list>
     </option>
   </component>

@@ -7,11 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="transaction" />
-        <module name="enums" />
-        <module name="jdbc" />
         <module name="annotation" />
+        <module name="properties" />
         <module name="classloader" />
+        <module name="transaction" />
+        <module name="jdbc" />
+        <module name="enums" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -19,6 +20,7 @@
       <module name="classloader" target="1.8" />
       <module name="enums" target="1.8" />
       <module name="jdbc" target="1.8" />
+      <module name="properties" target="1.8" />
       <module name="transaction" target="1.8" />
     </bytecodeTargetLevel>
   </component>
