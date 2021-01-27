@@ -19,7 +19,7 @@
       <module name="annotation" target="1.8" />
       <module name="classloader" target="1.8" />
       <module name="enums" target="1.8" />
-      <module name="javase13" target="1.7" />
+      <module name="javase13" target="1.8" />
       <module name="jdbc" target="1.8" />
       <module name="properties" target="1.8" />
       <module name="transaction" target="1.8" />
