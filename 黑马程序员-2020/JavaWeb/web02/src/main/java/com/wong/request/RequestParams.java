@@ -24,19 +24,19 @@ public class RequestParams extends HttpServlet {
         //String getParameter("表单中name属性值")；获取表单参数
         String user = request.getParameter("user");
         System.out.println(user);
-        
+
         //String[] getParameterValues("表单中name属性值"); 获取表单参数，一个键对应多个值 checkbox
         String[] hobbies = request.getParameterValues("hobby");
         System.out.println(Arrays.toString(hobbies));
         System.out.println("=========");
-        
+
         //Map<String,String[]> getParameterMap(); 获取所有的表单参数
         Map<String, String[]> maps = request.getParameterMap();
         for (String key : maps.keySet()) {
             System.out.println(key + "::" + Arrays.toString(maps.get(key)));
         }
     }
-    
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         doGet(request, response);
