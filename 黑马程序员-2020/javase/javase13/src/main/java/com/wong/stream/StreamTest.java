@@ -24,7 +24,7 @@ public class StreamTest {
         one.add("庄子");
         one.add("孙子");
         one.add("洪七公");
-
+        
         List<String> two = new ArrayList<>();
         two.add("古力娜扎");
         two.add("张无忌");
@@ -33,7 +33,7 @@ public class StreamTest {
         two.add("张二狗");
         two.add("张天爱");
         two.add("张三");
-
+        
         //获取第一组 one集合的流对象
         //filter方法获取三个字的人，要前3个
         Stream<String> oneStream = one.stream().filter(s -> s.length() == 3).limit(3);
