@@ -1,5 +1,8 @@
 package com.wong.design.decorate;
 
+import java.io.*;
+import java.net.URISyntaxException;
+
 /**
  * 装饰者设计模式：
  * 为原有对象增加额外功能
@@ -20,5 +23,16 @@ package com.wong.design.decorate;
  * 装饰对象中，增强功能
  */
 public class DecorateDemo {
-
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        String filePath = DecorateDemo.class.getClassLoader().getResource("config.properties").toURI().getPath();
+        FileReader fileReader = new FileReader(filePath);
+        
+        //创建自己的缓冲区对象
+        MyBufferedReader my=new MyBufferedReader(fileReader);
+        String line=null;
+        while ((line=my.readLine())!=null){
+            System.out.println(line);
+        }
+        my.close();
+    }
 }
