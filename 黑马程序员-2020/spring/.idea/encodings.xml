@@ -28,6 +28,8 @@
     <file url="file://$PROJECT_DIR$/spring_ioc_di/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_ioc_helloworld/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_ioc_helloworld/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_jdbcTemplate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_jdbcTemplate/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_mybatisAndSpring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_mybatisAndSpring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_transfer/src/main/java" charset="UTF-8" />
