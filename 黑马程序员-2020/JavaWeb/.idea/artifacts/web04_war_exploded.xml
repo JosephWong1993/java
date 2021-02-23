@@ -13,6 +13,14 @@
         <element id="directory" name="classes">
           <element id="module-output" name="web04" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.web:jstl-impl:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" />
+        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/web04/target/web04/META-INF/MANIFEST.MF" />
