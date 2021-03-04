@@ -24,6 +24,14 @@ import java.io.IOException;
  * 方法参数 FilterConfig，过滤器配置对象
  * 可以获取到过滤器的名字等待
  * 方法：getServletContext()获取到最大的域对象
+ * <p>
+ * 2：拦截方法 doFilter
+ * 每次访问要拦截的对象，就运行
+ * 访问了非拦截对象，不运行
+ * <p>
+ * 3：对象销毁方法 destroy()
+ * 关闭服务器的时候，过滤器对象销毁
+ * web项目，从服务器中移除
  */
 public class MyFilter1 implements Filter {
     @Override
@@ -44,6 +52,6 @@ public class MyFilter1 implements Filter {
     
     @Override
     public void destroy() {
-    
+        System.out.println("过滤器对象被销毁");
     }
 }

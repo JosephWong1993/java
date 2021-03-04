@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/web02_case/web02_case.iml" filepath="$PROJECT_DIR$/web02_case/web02_case.iml" />
       <module fileurl="file://$PROJECT_DIR$/web03/web03.iml" filepath="$PROJECT_DIR$/web03/web03.iml" />
       <module fileurl="file://$PROJECT_DIR$/web04/web04.iml" filepath="$PROJECT_DIR$/web04/web04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web04_case/web04_case.iml" filepath="$PROJECT_DIR$/web04_case/web04_case.iml" />
     </modules>
   </component>
 </project>
