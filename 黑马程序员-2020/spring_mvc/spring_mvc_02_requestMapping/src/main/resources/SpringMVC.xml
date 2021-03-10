@@ -9,17 +9,13 @@
        https://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/mvc
        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
-    <!--开启SpringIOC容器的注解扫描-->
+    <!--配置SpringIOC容器的注解扫描-->
     <context:component-scan base-package="com.wong.controller"></context:component-scan>
-
-    <!--配置处理器映射器、处理器适配器-->
+    <!--开启SpringMVC的注解扫描-->
     <mvc:annotation-driven></mvc:annotation-driven>
-
-    <!--配置SpringMVC的视图解析器-->
-    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <!--前缀字符串-->
+    <!--配置视图解析器-->
+    <bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
-        <!--后缀字符串-->
         <property name="suffix" value=".jsp"></property>
     </bean>
 </beans>

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/maven_web/maven_web.iml" filepath="$PROJECT_DIR$/maven_web/maven_web.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_01_helloworld/spring_mvc_01_helloworld.iml" filepath="$PROJECT_DIR$/spring_mvc_01_helloworld/spring_mvc_01_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_mvc_02_requestMapping/spring_mvc_02_requestMapping.iml" filepath="$PROJECT_DIR$/spring_mvc_02_requestMapping/spring_mvc_02_requestMapping.iml" />
     </modules>
   </component>
 </project>

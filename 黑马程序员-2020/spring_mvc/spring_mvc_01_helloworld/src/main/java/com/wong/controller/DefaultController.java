@@ -19,8 +19,8 @@ public class DefaultController {
         //封装数据
         modelAndView.addObject("nowDate", new Date());
         //指定页面
-        modelAndView.setViewName("WEB-INF/jsp/result.jsp");
-        
+        //        modelAndView.setViewName("/WEB-INF/jsp/result.jsp");
+        modelAndView.setViewName("result");
         return modelAndView;
     }
 }
