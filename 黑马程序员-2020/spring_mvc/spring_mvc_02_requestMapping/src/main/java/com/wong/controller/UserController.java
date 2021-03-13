@@ -66,15 +66,15 @@ public class UserController {
      * url相同，请求方式相同，请求参数不同
      * @RequestMapping注解属性params
      * id：表示请求必须包含名为 id 的请求参数
-     *        演示: http://localhost:8080/user/gotoResultParamsURL.do?id=11
+     *        演示: http://localhost:8080/spring_mvc_02_requestMapping/user/gotoResultParamsURL.do?id=11
      * !id：表示请求不能包含名为 id 的请求参数
-     *        演示: http://localhost:8080/user/gotoResultParamsURL?id=123
+     *        演示: http://localhost:8080/spring_mvc_02_requestMapping/user/gotoResultParamsURL?id=123
      * id!=100：表示请求包含名为 param1 的请求参数，但其值不能为 100
-     *       演示: http://localhost:8080/user/gotoResultParamsURL.do?id=100
+     *       演示: http://localhost:8080/spring_mvc_02_requestMapping/user/gotoResultParamsURL.do?id=100
      *{“id!=100”, “name”}：请求必须包含名为 id 和 name 的两个请求参数，
-     *      http://localhost:8080/user/gotoResultParamsURL.do?id=123
+     *      http://localhost:8080/user/spring_mvc_02_requestMapping/gotoResultParamsURL.do?id=123
      */
-    @RequestMapping(value = "goto ResultParamsURL", params = { "id" })
+    @RequestMapping(value = "gotoResultParamsURL", params = { "id!=100", "name" })
     public ModelAndView gotoResultParamsURL(ModelAndView modelAndView) {
         //封装数据
         modelAndView.addObject("nowDate", new Date() + "==VIP");
@@ -84,5 +84,4 @@ public class UserController {
     }
     
     //endregion
-    
 }

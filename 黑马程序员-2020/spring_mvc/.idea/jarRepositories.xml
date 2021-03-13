@@ -2,9 +2,29 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="nexus-group" />
+      <option name="url" value="http://49.235.249.194:8081/repository/java-group/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="nexus-group" />
+      <option name="url" value="http://49.235.249.194:8081/repository/nexus-public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://49.235.249.194:8081/repository/java-group/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Maven Central repository" />
       <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus-public" />
+      <option name="name" value="nexus-public" />
+      <option name="url" value="http://49.235.249.194:8081/repository/nexus-public/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -12,9 +32,19 @@
       <option name="url" value="http://maven.aliyun.com/nexus/content/groups/public/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="http://49.235.249.194:8081/repository/nexus-public/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="nexus" />
+      <option name="name" value="java-group" />
+      <option name="url" value="http://49.235.249.194:8081/repository/java-group/" />
     </remote-repository>
   </component>
 </project>
