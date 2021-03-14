@@ -14,7 +14,80 @@
 <h3>请求参数绑定</h3>
 <fieldset>
     <h4>功能1：默认支持ServletAPI</h4>
-    <a href="${pageContext.request.contextPath}/params/gotoParams?id=123&name=LiSi">测试</a>
+    <a href="${pageContext.request.contextPath}/params/gotoParams.do?id=123&name=LiSi">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能2：绑定简单的数据类型</h4>
+    <a href="${pageContext.request.contextPath}/params/gotoParamsBase.do?isVIP=1">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能3：@RequestParam注解使用</h4>
+    <a href="${pageContext.request.contextPath}/params/gotoParamsRequestParam.do?id=1001">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能3：@RequestParam注解使用</h4>
+    <a href="${pageContext.request.contextPath}/params/gotoParamsRequestParam.do?id=1001">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能4：绑定pojo对象</h4>
+    <a href="${pageContext.request.contextPath}/params/gotoParamsPojo.do?id=2&name=LiSi">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能5：绑定pojo对象的包装对象</h4>
+    <a href="${pageContext.request.contextPath}/params/gotoParamsQueryVO.do?user.id=2&user.name=张三">测试</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能6：绑定List集合包装pojo对象</h4>
+    <form action="${pageContext.request.contextPath}/params/gotoParamsList.do" method="get">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>sex</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="userList[0].id" placeholder="请输入ID"></td>
+                <td><input type="text" name="userList[0].name" placeholder="请输入用户名"></td>
+                <td><input type="text" name="userList[0].sex" placeholder="请输入性别"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="userList[1].id" placeholder="请输入ID"></td>
+                <td><input type="text" name="userList[1].name" placeholder="请输入用户名"></td>
+                <td><input type="text" name="userList[1].sex" placeholder="请输入性别"></td>
+            </tr>
+        </table>
+        <input type="submit" value="提交">
+    </form>
+</fieldset>
+
+<fieldset>
+    <h4>功能7：绑定Map集合包装pojo对象</h4>
+    <form action="${pageContext.request.contextPath}/params/gotoParamsMap.do" method="post">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>sex</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="userMap['user001'].id" placeholder="请输入ID"></td>
+                <td><input type="text" name="userMap['user001'].name" placeholder="请输入用户名"></td>
+                <td><input type="text" name="userMap['user001'].sex" placeholder="请输入性别"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="userMap['user002'].id" placeholder="请输入ID"></td>
+                <td><input type="text" name="userMap['user002'].name" placeholder="请输入用户名"></td>
+                <td><input type="text" name="userMap['user002'].sex" placeholder="请输入性别"></td>
+            </tr>
+        </table>
+        <input type="submit" value="提交">
+    </form>
 </fieldset>
 </body>
 </html>
