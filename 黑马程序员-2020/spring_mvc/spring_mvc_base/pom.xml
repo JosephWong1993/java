@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wong</groupId>
+    <artifactId>spring_mvc_base</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <version.num>1.0</version.num>
+        <version.type>-SNAPSHOT</version.type>
+        <package.version>${version.num}${version.type}</package.version>
+
+        <spring.version>5.1.9.RELEASE</spring.version>
+        <jsp.version>2.2</jsp.version>
+        <servlet.version>2.5</servlet.version>
+    </properties>
+
+    <!--<repositories>
+        <repository>
+            <id>nexus-public</id>
+            <url>http://49.235.249.194:8081/repository/nexus-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-public</id>
+            <url>http://49.235.249.194:8081/repository/nexus-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>-->
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-release</id>
+            <name>RELEASE</name>
+            <url>http://49.235.249.194:8081/repository/nexus-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>nexus-snapshot</id>
+            <name>SNAPSHOT</name>
+            <url>http://49.235.249.194:8081/repository/nexus-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>

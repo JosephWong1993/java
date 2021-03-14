@@ -4,9 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wong</groupId>
+    <parent>
+        <groupId>com.wong</groupId>
+        <artifactId>spring_mvc_base</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>maven_web</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${package.version}</version>
     <packaging>war</packaging>
 
     <name>maven_web Maven Webapp</name>
@@ -20,12 +25,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -64,42 +63,4 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <repositories>
-        <repository>
-            <id>nexus-public</id>
-            <url>http://49.235.249.194:8081/repository/nexus-public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>nexus-public</id>
-            <url>http://49.235.249.194:8081/repository/nexus-public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
-
-    <distributionManagement>
-        <repository>
-            <id>nexus-release</id>
-            <name>RELEASE</name>
-            <url>http://49.235.249.194:8081/repository/nexus-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>nexus-snapshot</id>
-            <name>SNAPSHOT</name>
-            <url>http://49.235.249.194:8081/repository/nexus-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 </project>

@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/spring_mvc_01_helloworld/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_02_requestMapping/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_03_params/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_base/pom.xml" />
       </list>
     </option>
   </component>

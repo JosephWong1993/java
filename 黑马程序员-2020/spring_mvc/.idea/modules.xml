@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_01_helloworld/spring_mvc_01_helloworld.iml" filepath="$PROJECT_DIR$/spring_mvc_01_helloworld/spring_mvc_01_helloworld.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_02_requestMapping/spring_mvc_02_requestMapping.iml" filepath="$PROJECT_DIR$/spring_mvc_02_requestMapping/spring_mvc_02_requestMapping.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_03_params/spring_mvc_03_params.iml" filepath="$PROJECT_DIR$/spring_mvc_03_params/spring_mvc_03_params.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" filepath="$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" />
     </modules>
   </component>
 </project>
