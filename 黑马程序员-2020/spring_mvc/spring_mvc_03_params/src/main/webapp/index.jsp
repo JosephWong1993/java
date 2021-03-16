@@ -89,5 +89,22 @@
         <input type="submit" value="提交">
     </form>
 </fieldset>
+
+<fieldset>
+    <h4>功能8：获取请求参数，字符串转成日期对象</h4>
+    <a href="${pageContext.request.contextPath}/params/sendParamsDate.do?date=2012-03-16">字符串转成日期对象</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能9：获取请求头参数，@RequestHeader注解</h4>
+    <a href="${pageContext.request.contextPath}/params/sendParamsHeader.do">获取请求头参数</a>
+</fieldset>
+
+<fieldset>
+    <h4>功能10：获取指定的Cookie的value值，@CookieValue</h4>
+    <a href="${pageContext.request.contextPath}/params/sendParamsCookie.do">获取指定的Cookie的value值</a>
+</fieldset>
+
+
 </body>
 </html>
