@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring_mvc_02_requestMapping" />
+        <module name="spring_mvc_04_result" />
+        <module name="spring_mvc_01_helloworld" />
         <module name="maven_web" />
         <module name="spring_mvc_03_params" />
-        <module name="spring_mvc_01_helloworld" />
+        <module name="spring_mvc_02_requestMapping" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -18,6 +19,7 @@
       <module name="spring_mvc_01_helloworld" target="1.8" />
       <module name="spring_mvc_02_requestMapping" target="1.8" />
       <module name="spring_mvc_03_params" target="1.8" />
+      <module name="spring_mvc_04_result" target="1.8" />
       <module name="spring_mvc_base" target="1.8" />
     </bytecodeTargetLevel>
   </component>
