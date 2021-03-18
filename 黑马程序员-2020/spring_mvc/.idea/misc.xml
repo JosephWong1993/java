@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_02_requestMapping" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_03_params" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_04_result" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc_05_ajax" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -15,10 +16,12 @@
         <option value="$PROJECT_DIR$/spring_mvc_02_requestMapping/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_03_params/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_base/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_04_result/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_05_ajax/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
