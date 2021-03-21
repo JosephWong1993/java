@@ -10,6 +10,7 @@
         <module name="spring_mvc_02_requestMapping" />
         <module name="maven_web" />
         <module name="spring_mvc_01_helloworld" />
+        <module name="spring_mvc_07_upload" />
         <module name="spring_mvc_04_result" />
         <module name="spring_mvc_05_ajax" />
         <module name="spring_mvc_06_restFul" />
@@ -24,6 +25,7 @@
       <module name="spring_mvc_04_result" target="1.8" />
       <module name="spring_mvc_05_ajax" target="1.8" />
       <module name="spring_mvc_06_restFul" target="1.8" />
+      <module name="spring_mvc_07_upload" target="1.8" />
       <module name="spring_mvc_base" target="1.8" />
     </bytecodeTargetLevel>
   </component>
