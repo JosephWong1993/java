@@ -11,7 +11,6 @@
     </parent>
 
     <artifactId>spring_mvc_01_helloworld</artifactId>
-    <version>${package.version}</version>
     <packaging>war</packaging>
 
     <properties>

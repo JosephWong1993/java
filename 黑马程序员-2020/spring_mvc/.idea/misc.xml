@@ -7,6 +7,7 @@
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_03_params" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_04_result" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_05_ajax" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc_06_restFul" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -18,6 +19,7 @@
         <option value="$PROJECT_DIR$/spring_mvc_base/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_04_result/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_05_ajax/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_06_restFul/pom.xml" />
       </list>
     </option>
   </component>
