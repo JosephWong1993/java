@@ -21,19 +21,21 @@ public class UploadController {
         //获取上传文件的文件名
         String filename = uploadFile.getOriginalFilename();
         System.out.println("filename = " + filename);
-
+        
         //指定文件保存到服务器的位置
-        String realPath = request.getSession().getServletContext().getRealPath(request.getContextPath() + "/upload");
+        //        String contextPath = request.getContextPath();
+        //        System.out.println("contextPath = " + contextPath);
+        String realPath = request.getSession().getServletContext().getRealPath("/upload");
         System.out.println("realPath = " + realPath);
         File path = new File(realPath, filename);
-
+        
         //进行文件上传
         try {
             uploadFile.transferTo(path);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        
         return "result";
     }
 }
