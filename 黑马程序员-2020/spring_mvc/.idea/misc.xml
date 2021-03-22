@@ -10,6 +10,7 @@
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_06_restFul" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_07_upload" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_08_exception" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc_09_ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -24,6 +25,7 @@
         <option value="$PROJECT_DIR$/spring_mvc_06_restFul/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_07_upload/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_08_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_09_ssm/pom.xml" />
       </list>
     </option>
   </component>

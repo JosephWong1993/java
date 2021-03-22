@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_06_restFul/spring_mvc_06_restFul.iml" filepath="$PROJECT_DIR$/spring_mvc_06_restFul/spring_mvc_06_restFul.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_07_upload/spring_mvc_07_upload.iml" filepath="$PROJECT_DIR$/spring_mvc_07_upload/spring_mvc_07_upload.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_08_exception/spring_mvc_08_exception.iml" filepath="$PROJECT_DIR$/spring_mvc_08_exception/spring_mvc_08_exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_mvc_09_ssm/spring_mvc_09_ssm.iml" filepath="$PROJECT_DIR$/spring_mvc_09_ssm/spring_mvc_09_ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" filepath="$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" />
     </modules>
   </component>
