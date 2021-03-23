@@ -133,7 +133,17 @@
             },
             //查询
             findPage() {
-
+                //发送Ajax给服务器，获取所有账户信息
+                axios.get("http://localhost:8080/spring_mvc_09_ssm/account/findAll.do")
+                    .then(response => {
+                        //成功，控制台打印
+                        //console.log(response.data);
+                        this.dataList = response.data;
+                    })
+                    .catch(error => {
+                        //失败，控制台打印
+                        console.log(error);
+                    })
             },
             // 新增弹窗
             handleCreate() {

@@ -5,6 +5,17 @@
          version="3.1">
     <display-name>Archetype Created Web Application</display-name>
 
+    <!--监听ServletContext对象的创建-->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!--配置Spring配置文件的加载，当Tomcat启动时，会为每个WEB项目创建一个ServletContext对象，ServletContext对象初始化时会执行context-param标签-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
     <!--配置SpringMVC的前端控制器-->
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
@@ -12,7 +23,7 @@
         <!--加载SpringMVC的配置文件-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring_mvc.xml</param-value>
+            <param-value>classpath:springMVC.xml</param-value>
         </init-param>
         <!--随着Tomcat服务器启动，完成dispatcherServlet的创建-->
         <load-on-startup>1</load-on-startup>

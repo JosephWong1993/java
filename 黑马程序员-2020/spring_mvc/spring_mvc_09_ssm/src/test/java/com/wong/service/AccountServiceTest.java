@@ -9,13 +9,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * dao，service测试类
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
+@ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class AccountServiceTest {
     
     //依赖注入 AccountService
