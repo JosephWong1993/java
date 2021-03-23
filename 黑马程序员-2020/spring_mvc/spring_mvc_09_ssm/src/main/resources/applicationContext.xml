@@ -24,7 +24,7 @@
         <!--配置数据源-->
         <property name="dataSource" ref="druidDataSource"></property>
         <!--配置pojo别名-->
-        <property name="typeAliases" value="com.wong.pojo"></property>
+        <property name="typeAliasesPackage" value="com.wong.pojo"></property>
         <!--加载Mybatis的核心配置文件 SqlMapConfig.xml-->
         <!--<property name="configLocation" value="classpath:SqlMapConfig.xml"></property>-->
     </bean>
