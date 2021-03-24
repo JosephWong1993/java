@@ -25,13 +25,33 @@ public class AccountController {
     }
     
     /**
+     * 增
+     */
+    @RequestMapping("save")
+    public String save(@RequestBody Account account) {
+        //调用service层的添加方法
+        accountService.save(account);
+        return "success";
+    }
+    
+    /**
+     * 删
+     */
+    @RequestMapping("deleteById")
+    public String deleteById(Integer id) {
+        //调用service层的删除方法
+        accountService.deleteById(id);
+        return "success";
+    }
+    
+    /**
      * 改
      */
     @RequestMapping("update")
     public String update(@RequestBody Account account) {
         //调用Service层的修改方法
         accountService.update(account);
-        return "修改成功";
+        return "success";
     }
     
     /**
