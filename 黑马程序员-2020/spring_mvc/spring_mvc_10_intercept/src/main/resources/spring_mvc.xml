@@ -30,5 +30,10 @@
             <mvc:mapping path="/**"/>
             <bean id="myHandlerInterceptor" class="com.wong.interceptor.MyHandlerInterceptor"></bean>
         </mvc:interceptor>
+        <mvc:interceptor>
+            <!--/** 拦截浏览器的所有请求-->
+            <mvc:mapping path="/**"/>
+            <bean id="myHandlerInterceptor2" class="com.wong.interceptor.MyHandlerInterceptor2"></bean>
+        </mvc:interceptor>
     </mvc:interceptors>
 </beans>
