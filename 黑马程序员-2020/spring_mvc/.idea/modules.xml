@@ -13,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_08_exception/spring_mvc_08_exception.iml" filepath="$PROJECT_DIR$/spring_mvc_08_exception/spring_mvc_08_exception.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_09_ssm/spring_mvc_09_ssm.iml" filepath="$PROJECT_DIR$/spring_mvc_09_ssm/spring_mvc_09_ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_10_intercept/spring_mvc_10_intercept.iml" filepath="$PROJECT_DIR$/spring_mvc_10_intercept/spring_mvc_10_intercept.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring_mvc_11_intercept_login/spring_mvc_11_intercept_login.iml" filepath="$PROJECT_DIR$/../spring_mvc_11_intercept_login/spring_mvc_11_intercept_login.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" filepath="$PROJECT_DIR$/spring_mvc_base/spring_mvc_base.iml" />
     </modules>
   </component>
