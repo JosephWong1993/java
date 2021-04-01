@@ -13,6 +13,7 @@
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_09_ssm" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_10_intercept" />
     <file type="web" url="file://$PROJECT_DIR$/spring_mvc_11_intercept_login" />
+    <file type="web" url="file://$PROJECT_DIR$/spring_mvc_11_intercept_login_html" />
     <file type="web" url="file://$PROJECT_DIR$/../spring_mvc_11_intercept_login" />
   </component>
   <component name="MavenProjectsManager">
@@ -33,6 +34,7 @@
         <option value="$PROJECT_DIR$/../spring_mvc_11_intercept_login/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_intercept_login/pom.xml" />
         <option value="$PROJECT_DIR$/spring_mvc_11_intercept_login/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mvc_11_intercept_login_html/pom.xml" />
       </list>
     </option>
   </component>
