@@ -22,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/spring_transfer/spring_transfer.iml" filepath="$PROJECT_DIR$/spring_transfer/spring_transfer.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_transfer_proxy/spring_transfer_proxy.iml" filepath="$PROJECT_DIR$/spring_transfer_proxy/spring_transfer_proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_transfer_threadlocal/spring_transfer_threadlocal.iml" filepath="$PROJECT_DIR$/spring_transfer_threadlocal/spring_transfer_threadlocal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/srping_base/srping_base.iml" filepath="$PROJECT_DIR$/srping_base/srping_base.iml" />
     </modules>
   </component>
 </project>

@@ -10,10 +10,10 @@
         <module name="spring_transfer_proxy" />
         <module name="spring_curd_annotation" />
         <module name="spring_aop_advice_annotation_2" />
-        <module name="spring_aop_crud_xml" />
-        <module name="spring_aop_helloworld" />
         <module name="spring_mybatisAndSpring" />
-        <module name="spring_curd_xml" />
+        <module name="spring_aop_advice" />
+        <module name="spring_transfer_threadlocal" />
+        <module name="spring_factory" />
         <module name="spring_curd_xml_annotation" />
         <module name="spring_ioc_di" />
         <module name="spring_curd_annotation2" />
@@ -21,12 +21,13 @@
         <module name="spring_ioc_annotation_helloworld" />
         <module name="spring_aop_advice_annotation" />
         <module name="spring_transfer" />
-        <module name="spring_factory" />
+        <module name="spring_curd_xml" />
+        <module name="srping_base" />
         <module name="spring_aop_crud_annotation" />
         <module name="spring_ioc_helloworld" />
-        <module name="spring_aop_advice" />
+        <module name="spring_aop_crud_xml" />
+        <module name="spring_aop_helloworld" />
         <module name="spring_ioc_bean" />
-        <module name="spring_transfer_threadlocal" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -50,6 +51,7 @@
       <module name="spring_transfer" target="1.8" />
       <module name="spring_transfer_proxy" target="1.8" />
       <module name="spring_transfer_threadlocal" target="1.8" />
+      <module name="srping_base" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
