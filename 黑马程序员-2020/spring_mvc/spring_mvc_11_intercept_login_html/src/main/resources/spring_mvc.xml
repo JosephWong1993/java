@@ -33,4 +33,11 @@
             <bean id="loginInterceptor" class="com.wong.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
+
+    <!--当web.xml的前端控制器配置为/时，需要对静态资源进行放行-->
+    <!--
+        mapping 对应的浏览器地址栏中的请求路径 /js/** 配置浏览器地址栏中的js 路径及子路径下的任意资源访问
+        location 对应的项目webapp中的 对应的需要放行的文件夹
+    -->
+    <mvc:resources mapping="/js/**" location="/js/"></mvc:resources>
 </beans>
