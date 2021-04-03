@@ -28,6 +28,7 @@ hs_err_pid*
 
 # IDEA
 .idea/dataSources
+.idea/jarRepositories.xml
 libraries
 out
 target
