@@ -28,7 +28,7 @@ hs_err_pid*
 
 # IDEA
 .idea/dataSources
-.idea/jarRepositories.xml
+jarRepositories.xml
 libraries
 out
 target
@@ -42,3 +42,4 @@ druid.properties
 
 # Other
 相关资料
+
