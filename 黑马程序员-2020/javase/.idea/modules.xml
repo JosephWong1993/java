@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/classloader/classloader.iml" filepath="$PROJECT_DIR$/classloader/classloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/enums/enums.iml" filepath="$PROJECT_DIR$/enums/enums.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase13/javase13.iml" filepath="$PROJECT_DIR$/javase13/javase13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_09/javase_09.iml" filepath="$PROJECT_DIR$/javase_09/javase_09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_base/javase_base.iml" filepath="$PROJECT_DIR$/javase_base/javase_base.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
       <module fileurl="file://$PROJECT_DIR$/transaction/transaction.iml" filepath="$PROJECT_DIR$/transaction/transaction.iml" />
     </modules>

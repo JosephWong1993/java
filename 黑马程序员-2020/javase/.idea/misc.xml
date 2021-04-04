@@ -9,6 +9,8 @@
         <option value="$PROJECT_DIR$/jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/transaction/pom.xml" />
         <option value="$PROJECT_DIR$/javase13/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_base/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_09/pom.xml" />
       </list>
     </option>
   </component>
