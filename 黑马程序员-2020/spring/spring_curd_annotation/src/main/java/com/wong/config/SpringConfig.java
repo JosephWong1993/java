@@ -26,9 +26,9 @@ public class SpringConfig {
         DruidDataSource druidDataSource = new DruidDataSource();
         //配置相关信息（驱动，url，用户名，密码）
         druidDataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        druidDataSource.setUrl("jdbc:mysql://49.235.249.194:3306/ssm_practice?serverTimezone=UTC");
+        druidDataSource.setUrl("jdbc:mysql://localhost:3306/ssm_practice?serverTimezone=UTC");
         druidDataSource.setUsername("root");
-        druidDataSource.setPassword("gh1002020");
+        druidDataSource.setPassword("112233");
         return druidDataSource;
     }
     
