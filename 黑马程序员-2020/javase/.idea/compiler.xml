@@ -7,26 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="annotation" />
         <module name="javase_base" />
-        <module name="javase_09" />
-        <module name="classloader" />
-        <module name="transaction" />
-        <module name="enums" />
+        <module name="javase_13" />
+        <module name="javase_19_transaction" />
+        <module name="javase_15_classloader" />
+        <module name="javase_09_thread" />
         <module name="jdbc" />
-        <module name="javase13" />
+        <module name="javase_15_annotation" />
+        <module name="javase_16_enums" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="annotation" target="11" />
-      <module name="classloader" target="1.8" />
-      <module name="enums" target="1.8" />
-      <module name="javase13" target="1.8" />
-      <module name="javase_09" target="11" />
+      <module name="javase_09_thread" target="11" />
+      <module name="javase_13" target="1.8" />
+      <module name="javase_15_annotation" target="11" />
+      <module name="javase_15_classloader" target="1.8" />
+      <module name="javase_16_enums" target="1.8" />
+      <module name="javase_19_transaction" target="1.8" />
       <module name="javase_base" target="11" />
       <module name="jdbc" target="1.8" />
       <module name="properties" target="1.8" />
-      <module name="transaction" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
