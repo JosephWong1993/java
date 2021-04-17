@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>annotation</artifactId>
+    <artifactId>javase_15_annotation</artifactId>
 
     <dependencies>
         <dependency>

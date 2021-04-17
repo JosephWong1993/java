@@ -6,11 +6,17 @@
         <option value="$PROJECT_DIR$/classloader/pom.xml" />
         <option value="$PROJECT_DIR$/enums/pom.xml" />
         <option value="$PROJECT_DIR$/annotation/pom.xml" />
-        <option value="$PROJECT_DIR$/jdbc/pom.xml" />
         <option value="$PROJECT_DIR$/transaction/pom.xml" />
         <option value="$PROJECT_DIR$/javase13/pom.xml" />
         <option value="$PROJECT_DIR$/javase_base/pom.xml" />
         <option value="$PROJECT_DIR$/javase_09/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_09_thread/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_13/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_15_annotation/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_13_lambda/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_15_classloader/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_16_enums/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_19_transaction/pom.xml" />
       </list>
     </option>
   </component>

@@ -4,18 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wong</groupId>
-    <artifactId>javase13</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <parent>
+        <artifactId>javase_base</artifactId>
+        <groupId>com.wong</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
-    <name>javase13</name>
-    <url>http://www.example.com</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-    </properties>
+    <artifactId>javase_13_lambda</artifactId>
 
     <dependencies>
         <dependency>
