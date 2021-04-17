@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="javase_10" />
         <module name="javase_base" />
         <module name="javase_19_transaction" />
         <module name="javase_15_classloader" />
@@ -18,6 +19,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="javase_09_thread" target="11" />
+      <module name="javase_10" target="11" />
       <module name="javase_13_lambda" target="11" />
       <module name="javase_15_annotation" target="11" />
       <module name="javase_15_classloader" target="11" />
