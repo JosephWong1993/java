@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/javase_09_thread/javase_09_thread.iml" filepath="$PROJECT_DIR$/javase_09_thread/javase_09_thread.iml" />
-      <module fileurl="file://$PROJECT_DIR$/javase_10/javase_10.iml" filepath="$PROJECT_DIR$/javase_10/javase_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_10_Thread/javase_10_Thread.iml" filepath="$PROJECT_DIR$/javase_10_Thread/javase_10_Thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase_13_lambda/javase_13_lambda.iml" filepath="$PROJECT_DIR$/javase_13_lambda/javase_13_lambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase_15_annotation/javase_15_annotation.iml" filepath="$PROJECT_DIR$/javase_15_annotation/javase_15_annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/javase_15_classloader/javase_15_classloader.iml" filepath="$PROJECT_DIR$/javase_15_classloader/javase_15_classloader.iml" />

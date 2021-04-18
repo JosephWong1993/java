@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>javase_10</artifactId>
+    <artifactId>javase_10_Thread</artifactId>
 
     <dependencies>
         <dependency>
