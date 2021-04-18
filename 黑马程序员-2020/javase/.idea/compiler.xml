@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="javase_10" />
-        <module name="javase_base" />
         <module name="javase_19_transaction" />
         <module name="javase_15_classloader" />
         <module name="javase_13_lambda" />

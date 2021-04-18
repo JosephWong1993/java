@@ -18,7 +18,7 @@ public class BaoZiPu {
      */
     public synchronized void get() {
         //判断标志位，是否允许消费
-        if (flag == false) {//没有包子，等，不能消费
+        while (flag == false) {//没有包子，等，不能消费
             try {
                 this.wait();
             } catch (InterruptedException e) {
@@ -35,7 +35,7 @@ public class BaoZiPu {
      */
     public synchronized void set() {
         //判断标志位，是否允许生产
-        if (flag == true) {//有包子，不能生产
+        while (flag == true) {//有包子，不能生产
             try {
                 this.wait();
             } catch (InterruptedException e) {
