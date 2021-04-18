@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="javase_19_transaction" />
+        <module name="javase_10_Thread" />
+        <module name="javase_15_classloader" />
+        <module name="javase_13_lambda" />
+        <module name="javase_09_thread" />
+        <module name="javase_16_enums" />
+        <module name="javase_15_annotation" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="javase_09_thread" target="11" />
+      <module name="javase_10_Thread" target="11" />
+      <module name="javase_13_lambda" target="11" />
+      <module name="javase_15_annotation" target="11" />
+      <module name="javase_15_classloader" target="11" />
+      <module name="javase_16_enums" target="11" />
+      <module name="javase_19_transaction" target="11" />
+      <module name="javase_base" target="11" />
+      <module name="jdbc" target="1.8" />
+      <module name="properties" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

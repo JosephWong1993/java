@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring_mvc_08_exception" />
+        <module name="spring_mvc_11_intercept_login_html" />
+        <module name="spring_mvc_10_intercept" />
+        <module name="spring_mvc_11_intercept_login" />
+        <module name="spring_mvc_07_upload" />
+        <module name="spring_mvc_01_helloworld" />
+        <module name="spring_mvc_09_ssm" />
+        <module name="maven_web" />
+        <module name="spring_mvc_02_requestMapping" />
+        <module name="spring_mvc_05_ajax" />
+        <module name="spring_mvc_04_result" />
+        <module name="spring_mvc_03_params" />
+        <module name="spring_mvc_06_restFul" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="maven_web" target="1.8" />
+      <module name="spring_mvc_01_helloworld" target="1.8" />
+      <module name="spring_mvc_02_requestMapping" target="1.8" />
+      <module name="spring_mvc_03_params" target="11" />
+      <module name="spring_mvc_04_result" target="1.8" />
+      <module name="spring_mvc_05_ajax" target="1.8" />
+      <module name="spring_mvc_06_restFul" target="1.8" />
+      <module name="spring_mvc_07_upload" target="1.8" />
+      <module name="spring_mvc_08_exception" target="1.8" />
+      <module name="spring_mvc_09_ssm" target="1.8" />
+      <module name="spring_mvc_10_intercept" target="1.8" />
+      <module name="spring_mvc_11_intercept_login" target="1.8" />
+      <module name="spring_mvc_11_intercept_login_html" target="1.8" />
+      <module name="spring_mvc_base" target="11" />
+      <module name="spring_mvc_intercept_login" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

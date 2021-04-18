@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/javase_09_thread/javase_09_thread.iml" filepath="$PROJECT_DIR$/javase_09_thread/javase_09_thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_10_Thread/javase_10_Thread.iml" filepath="$PROJECT_DIR$/javase_10_Thread/javase_10_Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_13_lambda/javase_13_lambda.iml" filepath="$PROJECT_DIR$/javase_13_lambda/javase_13_lambda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_15_annotation/javase_15_annotation.iml" filepath="$PROJECT_DIR$/javase_15_annotation/javase_15_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_15_classloader/javase_15_classloader.iml" filepath="$PROJECT_DIR$/javase_15_classloader/javase_15_classloader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_16_enums/javase_16_enums.iml" filepath="$PROJECT_DIR$/javase_16_enums/javase_16_enums.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_19_transaction/javase_19_transaction.iml" filepath="$PROJECT_DIR$/javase_19_transaction/javase_19_transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/javase_base/javase_base.iml" filepath="$PROJECT_DIR$/javase_base/javase_base.iml" />
+    </modules>
+  </component>
+</project>

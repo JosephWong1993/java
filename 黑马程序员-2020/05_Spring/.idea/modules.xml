@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_advice/spring_aop_advice.iml" filepath="$PROJECT_DIR$/spring_aop_advice/spring_aop_advice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_advice_annotation/spring_aop_advice_annotation.iml" filepath="$PROJECT_DIR$/spring_aop_advice_annotation/spring_aop_advice_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_advice_annotation_2/spring_aop_advice_annotation_2.iml" filepath="$PROJECT_DIR$/spring_aop_advice_annotation_2/spring_aop_advice_annotation_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_crud_annotation/spring_aop_crud_annotation.iml" filepath="$PROJECT_DIR$/spring_aop_crud_annotation/spring_aop_crud_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_crud_xml/spring_aop_crud_xml.iml" filepath="$PROJECT_DIR$/spring_aop_crud_xml/spring_aop_crud_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_aop_helloworld/spring_aop_helloworld.iml" filepath="$PROJECT_DIR$/spring_aop_helloworld/spring_aop_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_curd_annotation/spring_curd_annotation.iml" filepath="$PROJECT_DIR$/spring_curd_annotation/spring_curd_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_curd_annotation2/spring_curd_annotation2.iml" filepath="$PROJECT_DIR$/spring_curd_annotation2/spring_curd_annotation2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_curd_xml/spring_curd_xml.iml" filepath="$PROJECT_DIR$/spring_curd_xml/spring_curd_xml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_curd_xml_annotation/spring_curd_xml_annotation.iml" filepath="$PROJECT_DIR$/spring_curd_xml_annotation/spring_curd_xml_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_factory/spring_factory.iml" filepath="$PROJECT_DIR$/spring_factory/spring_factory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_ioc_annotation_helloworld/spring_ioc_annotation_helloworld.iml" filepath="$PROJECT_DIR$/spring_ioc_annotation_helloworld/spring_ioc_annotation_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_ioc_bean/spring_ioc_bean.iml" filepath="$PROJECT_DIR$/spring_ioc_bean/spring_ioc_bean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_ioc_di/spring_ioc_di.iml" filepath="$PROJECT_DIR$/spring_ioc_di/spring_ioc_di.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_ioc_helloworld/spring_ioc_helloworld.iml" filepath="$PROJECT_DIR$/spring_ioc_helloworld/spring_ioc_helloworld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_jdbcTemplate/spring_jdbcTemplate.iml" filepath="$PROJECT_DIR$/spring_jdbcTemplate/spring_jdbcTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_mybatisAndSpring/spring_mybatisAndSpring.iml" filepath="$PROJECT_DIR$/spring_mybatisAndSpring/spring_mybatisAndSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_transfer/spring_transfer.iml" filepath="$PROJECT_DIR$/spring_transfer/spring_transfer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_transfer_proxy/spring_transfer_proxy.iml" filepath="$PROJECT_DIR$/spring_transfer_proxy/spring_transfer_proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_transfer_threadlocal/spring_transfer_threadlocal.iml" filepath="$PROJECT_DIR$/spring_transfer_threadlocal/spring_transfer_threadlocal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/srping_base/srping_base.iml" filepath="$PROJECT_DIR$/srping_base/srping_base.iml" />
+    </modules>
+  </component>
+</project>
