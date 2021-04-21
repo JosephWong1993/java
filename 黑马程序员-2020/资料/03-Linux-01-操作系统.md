@@ -453,16 +453,53 @@
   - 由于MySQL解压后没有文件夹，很多文件比较凌乱，必须选创建目录mysql，将所有的文件解压缩到该目录下
 - rpm命令安装
   - 安装MySQL数据库服务器   rpm -ivh MySQL-server-5.6.22-1.el6.i686.rpm 
+  
   - 安装MySQL数据库客户端   rpm -ivh MySQL-client-5.6.22-1.el6.i686.rpm
+  
   - 启动MySQL服务   service mysql start
+  
   - MySQL服务添加到系统中   chkconfig --add mysql
+  
   - 跟随系统启动  chkconfig mysql on
+  
+  - 
+  
+  - MySQL8.0+下的安装顺序：
+  
+  - rpm -ivh mysql-community-common-8.0.24-1.el6.x86_64.rpm
+  
+  -  rpm -ivh mysql-community-client-plugins-8.0.24-1.el6.x86_64.rpm
+  
+  - rpm -ivh mysql-community-libs-8.0.24-1.el6.x86_64.rpm
+  
+  - rpm -ivh mysql-community-client-8.0.24-1.el6.x86_64.rpm
+  
+  - rpm -ivh mysql-community-server-8.0.24-1.el6.x86_64.rpm
+  
+  - ```
+    【查看是否安装成功】
+        mysqladmin --version
+    【查看当前服务是否启动：】
+     	service mysqld stauts
+    ```
+  
+  - ```
+    【启动 mysql 服务：】
+        service mysql start
+    
+    【关闭 mysql 服务：(可选操作)】
+        service mysql stop
+    ```
 - 设置root密码
   - MySQL首次安装的随机密码：/root/.mysql_secret 保存在此文件中
+  - MySQL8.0+下：cat /var/log/mysqld.log | grep password
+  - 
   - 登录MySQL，设置密码： set password = password('root')
+  - MySQL8.0+下的命令：ALTER USER root@localhost IDENTIFIED  BY '123456';
 - 授权远程连接
   - 默认情况下mysql为安全起见，不支持远程登录mysql，所以需要设置开启     远程登录mysql的权限
   - grant all privileges on *.* to 'root' @'%' identified by 'root';flush privileges;
+  - MySQL8.0+下：update user set host='%' where user='root';
 - 开放3306端口
   - /sbin/iptables -I INPUT -p tcp --dport 3306 -j ACCEPT
   - /etc/rc.d/init.d/iptables save
