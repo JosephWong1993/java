@@ -13,7 +13,9 @@
     <file url="file://$PROJECT_DIR$/spring_aop_helloworld/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_aop_helloworld/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_curd_annotation/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_curd_annotation/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_curd_annotation2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_curd_annotation2/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_curd_xml/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_curd_xml/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_curd_xml_annotation/src/main/java" charset="UTF-8" />
@@ -29,11 +31,13 @@
     <file url="file://$PROJECT_DIR$/spring_ioc_helloworld/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_ioc_helloworld/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_jdbcTemplate/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/spring_jdbcTemplate/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_mybatisAndSpring/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_mybatisAndSpring/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_transfer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_transfer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_transfer_proxy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_transfer_proxy/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring_transfer_threadlocal/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring_transfer_threadlocal/src/main/resources" charset="UTF-8" />
   </component>
 </project>
