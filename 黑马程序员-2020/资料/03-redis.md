@@ -219,7 +219,7 @@ select name from 表名;
 安装windows服务: 
 
 ```http
-redis-server.exe --service-install redis.windows.conf --loglevel verbose
+redis-server.exe --service-install redis.windows.conf --loglevel verbose
 ```
 
 卸载windows服务: 
