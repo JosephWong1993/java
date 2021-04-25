@@ -4,26 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wong</groupId>
+    <parent>
+        <artifactId>javaweb_base</artifactId>
+        <groupId>com.wong</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>web04_case</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
-    <name>web04_case Maven Webapp</name>
-    <url>http://www.example.com</url>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-
-        <jstl.version>1.2</jstl.version>
-        <standard.version>1.2.5</standard.version>
-
-        <lombok.version>1.18.18</lombok.version>
-
-        <junit.version>5.8.0-M1</junit.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -65,14 +53,6 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
