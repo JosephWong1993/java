@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="web04_case:war exploded">
-    <output-path>G:/apache-tomcat-8.5.61/webapps/web04_case</output-path>
+    <output-path>$PROJECT_DIR$/web04_case/target/web04_case</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>

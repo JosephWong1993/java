@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="web02" />
         <module name="web01" />
+        <module name="javaweb_33_redis" />
         <module name="web02_case" />
         <module name="web04_case" />
         <module name="web04" />
@@ -16,12 +17,14 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="web01" target="1.8" />
-      <module name="web02" target="1.8" />
-      <module name="web02_case" target="1.8" />
-      <module name="web03" target="1.8" />
-      <module name="web04" target="1.8" />
-      <module name="web04_case" target="1.8" />
+      <module name="javaweb_33_redis" target="11" />
+      <module name="javaweb_base" target="11" />
+      <module name="web01" target="11" />
+      <module name="web02" target="11" />
+      <module name="web02_case" target="11" />
+      <module name="web03" target="11" />
+      <module name="web04" target="11" />
+      <module name="web04_case" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
