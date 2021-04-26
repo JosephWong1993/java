@@ -450,6 +450,7 @@ u1     name	zs
 | lpop key                   | 左边弹出一个 相当于移除第一个           |
 | rpop key                   | 右边弹出一个  相当于移除最后一个        |
 | llen key                   | 返回指定key所对应的list中元素个数       |
+| lrnage key index index     | 查看列表中指定索引的元素                |
 
 #### 2.3.代码演示
 
