@@ -17,6 +17,7 @@
 
         <junit.version>4.13.2</junit.version>
         <jedis.version>3.6.0</jedis.version>
+        <commons-pool2.version>2.9.0</commons-pool2.version>
 
         <jstl.version>1.2</jstl.version>
         <standard.version>1.2.5</standard.version>
