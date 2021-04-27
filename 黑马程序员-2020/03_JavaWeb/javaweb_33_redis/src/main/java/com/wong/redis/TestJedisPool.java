@@ -12,7 +12,9 @@ public class TestJedisPool {
     public static void main(String[] args) {
 //        getString();
 //        setList();
-        getList();
+//        getList();
+//        setHash();
+        getHash();
     }
 
     /**
@@ -47,5 +49,24 @@ public class TestJedisPool {
         for (String s : stringList) {
             System.out.println(s);
         }
+    }
+
+    /**
+     * 存储数据类型，散列hash
+     * String = 值 Map<String,String>
+     */
+    public static void setHash() {
+        Jedis jedis = JedisPoolUtils.getJedis();
+        jedis.hset("mySet", "hehe", "xixi");
+        jedis.close();
+    }
+
+    /**
+     * 取出数据类型，散列hash
+     */
+    public static void getHash() {
+        Jedis jedis = JedisPoolUtils.getJedis();
+        String value = jedis.hget("mySet", "hehe");
+        System.out.println(value);
     }
 }

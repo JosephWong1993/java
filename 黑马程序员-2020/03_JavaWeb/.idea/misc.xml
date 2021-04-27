@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/javaweb_33_vue_crud" />
     <file type="web" url="file://$PROJECT_DIR$/web01" />
     <file type="web" url="file://$PROJECT_DIR$/web02" />
     <file type="web" url="file://$PROJECT_DIR$/web02_case" />
@@ -19,6 +20,7 @@
         <option value="$PROJECT_DIR$/web04_case/pom.xml" />
         <option value="$PROJECT_DIR$/javaweb_33_redis/pom.xml" />
         <option value="$PROJECT_DIR$/javaweb_base/pom.xml" />
+        <option value="$PROJECT_DIR$/javaweb_33_vue_crud/pom.xml" />
       </list>
     </option>
   </component>
