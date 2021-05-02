@@ -13,9 +13,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
-      <module name="dubbo-consumer" target="1.7" />
+      <module name="dubbo-consumer" target="11" />
       <module name="dubbo-interface" target="11" />
-      <module name="dubbo-provider" target="1.7" />
+      <module name="dubbo-provider" target="11" />
       <module name="StudyDubbo" target="11" />
     </bytecodeTargetLevel>
   </component>
