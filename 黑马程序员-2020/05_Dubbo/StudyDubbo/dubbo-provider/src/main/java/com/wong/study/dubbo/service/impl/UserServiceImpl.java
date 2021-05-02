@@ -3,7 +3,10 @@ package com.wong.study.dubbo.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.wong.study.dubbo.service.UserService;
 
-@Service(interfaceClass = UserService.class)
+@Service(interfaceClass = UserService.class
+//        , protocol = "rmi"
+        , loadbalance = "roundrobin"
+)
 public class UserServiceImpl implements UserService {
     @Override
     public boolean login(String username, String password) {

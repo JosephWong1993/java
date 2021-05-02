@@ -16,7 +16,8 @@
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <!--协议-->
     <dubbo:protocol name="dubbo" port="8888"/>
-
+    <!--<dubbo:protocol name="dubbo" port="18888"/>-->
+    <!--<dubbo:protocol name="rmi" port="1099"/>-->
     <!--服务暴露配置-->
     <!--<bean id="userService" class="com.wong.study.dubbo.service.impl.UserServiceImpl"/>-->
     <!--服务暴露-->
