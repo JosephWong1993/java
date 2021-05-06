@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 public class ConcurrentHashMapDemo {
     public static void main(String[] args) throws InterruptedException {
-        Map<String, Integer> map = new ConcurrentHashMap<String, Integer>();
+        Map<String, Integer> map = new ConcurrentHashMap<>();
 //        Map<String, Integer> map = new HashMap<String, Integer>();
         //存储2000个键值对
         for (int x = 0; x < 2000; x++) {
