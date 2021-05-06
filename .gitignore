@@ -27,20 +27,18 @@ hs_err_pid*
 
 
 # IDEA
-.idea/dataSources
-jarRepositories.xml
-libraries
+*.iml
+.idea
 out
 target
 
 # Java
-#数据库连接配置
+#配置文件过滤
 c3p0-config.xml
 db.properties
 jdbc.properties
 druid.properties
+redis.properties
 
 # Other
 相关资料
-
-redis.properties
