@@ -8,7 +8,6 @@
         <option value="$PROJECT_DIR$/annotation/pom.xml" />
         <option value="$PROJECT_DIR$/transaction/pom.xml" />
         <option value="$PROJECT_DIR$/javase13/pom.xml" />
-        <option value="$PROJECT_DIR$/javase_base/pom.xml" />
         <option value="$PROJECT_DIR$/javase_09/pom.xml" />
         <option value="$PROJECT_DIR$/javase_09_thread/pom.xml" />
         <option value="$PROJECT_DIR$/javase_13/pom.xml" />
@@ -19,10 +18,11 @@
         <option value="$PROJECT_DIR$/javase_19_transaction/pom.xml" />
         <option value="$PROJECT_DIR$/javase_10/pom.xml" />
         <option value="$PROJECT_DIR$/javase_10_Thread/pom.xml" />
+        <option value="$PROJECT_DIR$/javase_base/pom.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
