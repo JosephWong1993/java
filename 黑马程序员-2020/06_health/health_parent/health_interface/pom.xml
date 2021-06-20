@@ -11,9 +11,6 @@
     <artifactId>health_interface</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.wong</groupId>
