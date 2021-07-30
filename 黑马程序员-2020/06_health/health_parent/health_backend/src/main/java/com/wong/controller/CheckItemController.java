@@ -1,6 +1,7 @@
 package com.wong.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.wong.constant.MessageConstant;
 import com.wong.entity.Result;
 import com.wong.pojo.CheckItem;
 import com.wong.service.CheckItemService;
@@ -20,8 +21,12 @@ public class CheckItemController {
      */
     @RequestMapping("/add")
     public Result add(@RequestBody CheckItem checkItem) {
-        System.out.println(checkItem);
-        checkItemService.add(checkItem);
-        return null;
+        try {
+            checkItemService.add(checkItem);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.ADD_CHECKITEM_FAIL);
+        }
+        return new Result(true, MessageConstant.ADD_CHECKITEM_SUCCESS);
     }
 }
