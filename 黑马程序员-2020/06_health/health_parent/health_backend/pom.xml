@@ -30,7 +30,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <!-- 指定端口 -->
-                    <port>30082</port>
+                    <port>30000</port>
                     <!-- 请求路径 -->
                     <path>/</path>
                 </configuration>

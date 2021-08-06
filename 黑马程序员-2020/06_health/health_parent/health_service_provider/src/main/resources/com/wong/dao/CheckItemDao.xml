@@ -7,4 +7,12 @@
         insert into t_checkitem(code, name, sex, age, price, type, remark, attention)
         values (#{code}, #{name}, #{sex}, #{age}, #{price}, #{type}, #{remark}, #{attention})
     </insert>
+
+    <select id="selectByCondition" parameterType="string"
+            resultType="com.wong.pojo.CheckItem">
+        select * from t_checkitem
+        <if test="value != null and value.length > 0">
+            where code = #{value} or name = #{value}
+        </if>
+    </select>
 </mapper>

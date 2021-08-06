@@ -1,7 +1,11 @@
 package com.wong.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.wong.dao.CheckItemDao;
+import com.wong.entity.PageResult;
+import com.wong.entity.QueryPageBean;
 import com.wong.pojo.CheckItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,5 +26,16 @@ public class CheckItemServiceImpl implements CheckItemService {
     @Override
     public void add(CheckItem checkItem) {
         checkItemDao.add(checkItem);
+    }
+
+    /**
+     * 分页
+     */
+    @Override
+    public PageResult findPage(QueryPageBean queryPageBean) {
+        //开始分页-设置分页条件
+        PageHelper.startPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize());
+        Page<CheckItem> page = checkItemDao.selectByCondition(queryPageBean.getQueryString());
+        return new PageResult(page.getTotal(), page.getResult());
     }
 }
