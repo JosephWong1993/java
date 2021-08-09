@@ -6,9 +6,13 @@ import com.wong.pojo.CheckItem;
 public interface CheckItemDao {
     public void add(CheckItem checkItem);
 
+    void edit(CheckItem checkItem);
+
     Page<CheckItem> selectByCondition(String queryString);
 
     long findCountByCheckItemId(Integer checkItemId);
 
     void deleteById(Integer id);
+
+    CheckItem findById(Integer id);
 }

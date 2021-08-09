@@ -29,6 +29,11 @@ public class CheckItemServiceImpl implements CheckItemService {
         checkItemDao.add(checkItem);
     }
 
+    @Override
+    public void edit(CheckItem checkItem) {
+        checkItemDao.edit(checkItem);
+    }
+
     /**
      * 分页
      */
@@ -53,5 +58,10 @@ public class CheckItemServiceImpl implements CheckItemService {
         }
         //未被关联，可以删除
         checkItemDao.deleteById(id);
+    }
+
+    @Override
+    public CheckItem findById(Integer id) {
+        return checkItemDao.findById(id);
     }
 }

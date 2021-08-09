@@ -8,8 +8,11 @@ import com.wong.pojo.CheckItem;
 public interface CheckItemService {
     public void add(CheckItem checkItem);
 
+    void edit(CheckItem checkItem);
 
     PageResult findPage(QueryPageBean queryPageBean);
 
     void deleteById(Integer id);
+
+    CheckItem findById(Integer id);
 }

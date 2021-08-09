@@ -233,6 +233,34 @@
         methods: {
             //编辑
             handleEdit() {
+                this.$refs['dataEditForm'].validate((valid) => {
+                    if (valid) {
+                        //如果校验通过，提交表单
+                        axios.post("/checkItem/edit.do", this.formData)
+                            .then(res => {
+                                if (res.data.flag) {
+                                    //新增成功，弹出提示
+                                    this.$message({
+                                        type: 'success',
+                                        message: res.data.message
+                                    });
+
+                                    //关闭新增窗口
+                                    this.dialogFormVisible4Edit = false;
+
+                                } else {
+                                    //失败
+                                    this.$message.error({
+                                        message: res.data.message
+                                    });
+                                }
+                            })
+                            .finally(() => {
+                                //分页
+                                this.findPage();
+                            });
+                    }
+                });
             },
             //添加
             handleAdd() {
@@ -295,6 +323,19 @@
             },
             // 弹出编辑窗口
             handleUpdate(row) {
+                this.dialogFormVisible4Edit = true;
+                //this.formData = row;
+                //发送请求获取检查项信息
+                axios.get("/checkItem/findById.do?id=" + row.id).then((res) => {
+                    if (res.data.flag) {
+                        //设置编辑窗口属性，dialogFormVisible4Edit为true表示显示
+                        this.dialogFormVisible4Edit = true;
+                        //为模型数据设置值，基于VUE双向数据绑定回显到页面
+                        this.formData = res.data.data;
+                    } else {
+                        this.$message.error("获取数据失败，请刷新当前页面");
+                    }
+                });
             },
             //切换页码
             handleCurrentChange(currentPage) {
