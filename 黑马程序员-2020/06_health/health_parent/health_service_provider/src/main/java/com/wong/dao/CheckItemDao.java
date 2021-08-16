@@ -3,6 +3,8 @@ package com.wong.dao;
 import com.github.pagehelper.Page;
 import com.wong.pojo.CheckItem;
 
+import java.util.List;
+
 public interface CheckItemDao {
     public void add(CheckItem checkItem);
 
@@ -15,4 +17,6 @@ public interface CheckItemDao {
     void deleteById(Integer id);
 
     CheckItem findById(Integer id);
+
+    List<CheckItem> findAll();
 }

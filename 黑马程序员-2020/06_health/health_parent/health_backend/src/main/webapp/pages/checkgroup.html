@@ -300,6 +300,14 @@
             handleCreate() {
                 this.dialogFormVisible = true;
                 this.resetForm();
+                //发送ajax请求，查询所有的检查项信息，展示到窗口中（以表格的形式展示）
+                axios.get("/checkItem/findAll.do")
+                    .then((res) => {
+                        if (res.data.flag) {
+                            //成功加载到数据
+                            this.tableData = res.data.data;
+                        }
+                    });
             },
             // 弹出编辑窗口
             handleUpdate(row) {

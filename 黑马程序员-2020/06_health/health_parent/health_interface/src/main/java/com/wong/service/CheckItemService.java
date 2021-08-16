@@ -5,6 +5,8 @@ import com.wong.entity.PageResult;
 import com.wong.entity.QueryPageBean;
 import com.wong.pojo.CheckItem;
 
+import java.util.List;
+
 public interface CheckItemService {
     public void add(CheckItem checkItem);
 
@@ -15,4 +17,6 @@ public interface CheckItemService {
     void deleteById(Integer id);
 
     CheckItem findById(Integer id);
+
+    List<CheckItem> findAll();
 }
