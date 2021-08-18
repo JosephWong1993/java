@@ -311,6 +311,18 @@
             },
             //分页查询
             findPage() {
+                //构造分页查询条件
+                let param = {
+                    currentPage: this.pagination.currentPage,
+                    pageSize: this.pagination.pageSize,
+                    queryString: this.pagination.queryString
+                };
+                //发送ajax请求，进行分页查询
+                axios.post("/checkGroup/findPage.do", param)
+                    .then((res) => {
+                        this.pagination.total = res.data.total;
+                        this.dataList = res.data.rows;
+                    });
             },
             // 重置表单
             resetForm() {
