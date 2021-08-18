@@ -289,7 +289,7 @@
             handleAdd() {
                 //数据校验
                 //发送ajax请求，提交表单数据（包括两个部分。检查组基本信息、检查项id数组）
-                axios.post("/checkItem/add.do?checkItemIds=" + this.checkitemIds, this.formData)
+                axios.post("/checkGroup/add.do?checkItemIds=" + this.checkitemIds, this.formData)
                     .then((res) => {
                         if (res.data.flag) {
                             this.$message({
