@@ -2,6 +2,8 @@ package com.wong.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.wong.constant.MessageConstant;
+import com.wong.entity.PageResult;
+import com.wong.entity.QueryPageBean;
 import com.wong.entity.Result;
 import com.wong.pojo.CheckGroup;
 import com.wong.service.CheckGroupService;
@@ -31,5 +33,10 @@ public class CheckGroupController {
             return new Result(false, MessageConstant.ADD_CHECKGROUP_FAIL);
         }
         return new Result(true, MessageConstant.ADD_CHECKGROUP_SUCCESS);
+    }
+
+    @RequestMapping("/findPage")
+    public PageResult findPage(@RequestBody QueryPageBean queryPageBean) {
+        return checkGroupService.findPage(queryPageBean);
     }
 }

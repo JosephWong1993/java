@@ -1,8 +1,13 @@
 package com.wong.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.wong.dao.CheckGroupDao;
+import com.wong.entity.PageResult;
+import com.wong.entity.QueryPageBean;
 import com.wong.pojo.CheckGroup;
+import com.wong.pojo.CheckItem;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
@@ -25,6 +30,14 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     public void add(Integer[] checkItemIds, CheckGroup checkGroup) {
         checkGroupDao.add(checkGroup);
         setCheckGroupAndCheckItem(checkItemIds, checkGroup.getId());
+    }
+
+    @Override
+    public PageResult findPage(QueryPageBean queryPageBean) {
+        //开始分页-设置分页条件
+        PageHelper.startPage(queryPageBean.getCurrentPage(), queryPageBean.getPageSize());
+        Page<CheckGroup> page = checkGroupDao.selectByCondition(queryPageBean.getQueryString());
+        return new PageResult(page.getTotal(), page.getResult());
     }
 
     /**
