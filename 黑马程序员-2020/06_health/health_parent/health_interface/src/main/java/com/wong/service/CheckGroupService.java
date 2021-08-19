@@ -9,4 +9,6 @@ public interface CheckGroupService {
     void add(Integer[] checkItemIds, CheckGroup checkGroup);
 
     PageResult findPage(QueryPageBean queryPageBean);
+
+    CheckGroup findById(Integer id);
 }

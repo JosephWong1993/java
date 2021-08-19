@@ -39,4 +39,16 @@ public class CheckGroupController {
     public PageResult findPage(@RequestBody QueryPageBean queryPageBean) {
         return checkGroupService.findPage(queryPageBean);
     }
+
+    //根据id查询
+    @RequestMapping("/findById")
+    public Result findById(Integer id) {
+        CheckGroup checkGroup = checkGroupService.findById(id);
+        if (checkGroup != null) {
+            Result result = new Result(true, MessageConstant.QUERY_CHECKGROUP_SUCCESS);
+            result.setData(checkGroup);
+            return result;
+        }
+        return new Result(false, MessageConstant.QUERY_CHECKGROUP_FAIL);
+    }
 }

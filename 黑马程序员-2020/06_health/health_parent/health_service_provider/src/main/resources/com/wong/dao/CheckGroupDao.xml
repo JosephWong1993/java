@@ -24,4 +24,10 @@
             where code = #{value} or name = #{value} or helpCode = #{value}
         </if>
     </select>
+
+    <select id="findById" parameterType="int" resultType="com.wong.pojo.CheckGroup">
+        select *
+        from t_checkgroup
+        where id = #{id}
+    </select>
 </mapper>

@@ -40,6 +40,11 @@ public class CheckGroupServiceImpl implements CheckGroupService {
         return new PageResult(page.getTotal(), page.getResult());
     }
 
+    @Override
+    public CheckGroup findById(Integer id) {
+        return checkGroupDao.findById(id);
+    }
+
     /**
      * 设置关联关系
      */
