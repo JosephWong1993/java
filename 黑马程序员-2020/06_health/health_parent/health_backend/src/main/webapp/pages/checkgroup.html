@@ -337,13 +337,12 @@
                 this.dialogFormVisible = true;
                 this.resetForm();
                 //发送ajax请求，查询所有的检查项信息，展示到窗口中（以表格的形式展示）
-                axios.get("/checkItem/findAll.do")
-                    .then((res) => {
-                        if (res.data.flag) {
-                            //成功加载到数据
-                            this.tableData = res.data.data;
-                        }
-                    });
+                axios.get("/checkItem/findAll.do").then((res) => {
+                    if (res.data.flag) {
+                        //成功加载到数据
+                        this.tableData = res.data.data;
+                    }
+                });
             },
             // 弹出编辑窗口
             handleUpdate(row) {
@@ -351,7 +350,17 @@
                 //发送ajax请求，查询检查组基本信息
                 axios.get("/checkGroup/findById.do?id=" + row.id).then((res) => {
                     if (res.data.flag) {
+                        //基本信息回显
                         this.formData = res.data.data;
+                        //发送ajax请求，回显所有检查项信息
+                        axios.get("/checkItem/findAll.do").then((res) => {
+                            if (res.data.flag) {
+                                //成功加载到数据
+                                this.tableData = res.data.data;
+                                //发送ajax请求，回显需要勾选的检查项
+                                this.checkboxItems = [28, 29, 30];
+                            }
+                        });
                     } else {
                         this.$message.error(res.data.message);
                     }
