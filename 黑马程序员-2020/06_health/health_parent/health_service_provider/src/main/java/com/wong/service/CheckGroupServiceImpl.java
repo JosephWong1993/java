@@ -11,6 +11,7 @@ import com.wong.pojo.CheckItem;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -43,6 +44,11 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     @Override
     public CheckGroup findById(Integer id) {
         return checkGroupDao.findById(id);
+    }
+
+    @Override
+    public List<Integer> findCheckItemIdsByCheckGroupId(Integer id) {
+        return checkGroupDao.findCheckItemIdsByCheckGroupId(id);
     }
 
     /**

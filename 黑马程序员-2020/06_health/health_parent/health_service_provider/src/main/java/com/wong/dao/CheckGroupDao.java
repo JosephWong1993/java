@@ -3,6 +3,7 @@ package com.wong.dao;
 import com.github.pagehelper.Page;
 import com.wong.pojo.CheckGroup;
 
+import java.util.List;
 import java.util.Map;
 
 public interface CheckGroupDao {
@@ -13,4 +14,6 @@ public interface CheckGroupDao {
     Page<CheckGroup> selectByCondition(String queryString);
 
     CheckGroup findById(Integer id);
+
+    List<Integer> findCheckItemIdsByCheckGroupId(Integer id);
 }
