@@ -284,6 +284,24 @@
         methods: {
             //编辑
             handleEdit() {
+                //数据校验
+                //发送ajax请求，提交表单数据（包括两个部分。检查组基本信息、检查项id数组）
+                axios.post("/checkGroup/edit.do?checkItemIds=" + this.checkitemIds, this.formData).then((res) => {
+                    if (res.data.flag) {
+                        this.$message({
+                            type: 'success',
+                            message: res.data.message
+                        });
+                    } else {
+                        this.$message.error(res.data.message);
+                    }
+                }).catch(() => {
+                    this.$message.error("未知错误");
+                }).finally(() => {
+                    //关闭新增窗口
+                    this.dialogFormVisible4Edit = false;
+                    this.findPage();
+                });
             },
             //添加
             handleAdd() {
@@ -329,8 +347,9 @@
             },
             // 重置表单
             resetForm() {
-                this.activeName = 'first';
                 this.formData = {};
+                this.activeName = 'first';
+                this.checkitemIds = [];
             },
             // 弹出添加窗口
             handleCreate() {
