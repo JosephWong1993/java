@@ -65,4 +65,15 @@ public class CheckGroupController {
             return new Result(false, MessageConstant.QUERY_CHECKITEM_FAIL);
         }
     }
+
+    //编辑
+    @RequestMapping("/edit")
+    public Result edit(@RequestBody CheckGroup checkGroup, Integer[] checkItemIds) {
+        try {
+            checkGroupService.edit(checkGroup, checkItemIds);
+        } catch (Exception e) {
+            return new Result(false, MessageConstant.EDIT_CHECKGROUP_FAIL);
+        }
+        return new Result(true, MessageConstant.EDIT_CHECKGROUP_SUCCESS);
+    }
 }

@@ -52,6 +52,19 @@ public class CheckGroupServiceImpl implements CheckGroupService {
     }
 
     /**
+     * 编辑检查组，同时需要关联检查项信息（操作中间关系表 ）
+     */
+    @Override
+    public void edit(CheckGroup checkGroup, Integer[] checkItemIds) {
+        //清理当前检查组和检查项的关联关系
+        checkGroupDao.deleteAssociation(checkGroup.getId());
+        //重新建立关系
+        setCheckGroupAndCheckItem(checkItemIds, checkGroup.getId());
+        //修改基本信息
+        checkGroupDao.edit(checkGroup);
+    }
+
+    /**
      * 设置关联关系
      */
     public void setCheckGroupAndCheckItem(Integer[] checkItemIds, Integer checkGroupId) {
