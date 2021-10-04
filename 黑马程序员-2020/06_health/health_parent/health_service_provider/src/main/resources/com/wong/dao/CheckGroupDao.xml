@@ -69,4 +69,9 @@
         </set>
         where id = #{id}
     </update>
+
+    <select id="findAll" resultType="com.wong.pojo.CheckGroup">
+        select *
+        from t_checkgroup
+    </select>
 </mapper>

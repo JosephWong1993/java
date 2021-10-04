@@ -23,6 +23,8 @@
     </dependencies>
 
     <build>
+        <finalName>health_service_provider</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>

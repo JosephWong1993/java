@@ -1,4 +1,4 @@
-package com.wong.test;
+package com.wong.utils;
 
 import com.google.gson.Gson;
 import com.qiniu.common.QiniuException;
@@ -9,27 +9,50 @@ import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
-import org.junit.Test;
+import com.wong.config.QiNiuConfig;
 
-public class QiniuTest {
-    @Test
-    public void test_1() {
+/**
+ * 七牛云工具类
+ */
+public class QiNiuUtils {
+    public static String accessKey = QiNiuConfig.accessKey;
+    public static String secretKey = QiNiuConfig.secretKey;
+    public static String bucket = QiNiuConfig.bucket;
+
+    //文件上传到七牛云
+    public static void upload2QiNiu(String filePath, String fileName) {
         //构造一个带指定 Region 对象的配置类
-        Configuration cfg = new Configuration(Region.huadong());
-        //...其他参数参考类注释
+        Configuration cfg =  new Configuration(Region.huadong());
         UploadManager uploadManager = new UploadManager(cfg);
-        //...生成上传凭证，然后准备上传
-        String accessKey = "mQUieR_YQQY4pGlx4pwIwsELMecRHlH1hqO6xFCo";
-        String secretKey = "lyKFeqmHtM0azo1jUhGCz0pjZJfxLjO1a3xuEqz-";
-        String bucket = "com-wong-health";
-        //如果是Windows情况下，格式是 D:\\qiniu\\test.png
-        String localFilePath = "C:\\Users\\josep\\OneDrive\\图片\\本机照片\\小橘.jpg";
-        //默认不指定key的情况下，以文件内容的hash值作为文件名
-        String key = "my.jpg";
         Auth auth = Auth.create(accessKey, secretKey);
         String upToken = auth.uploadToken(bucket);
         try {
-            Response response = uploadManager.put(localFilePath, key, upToken);
+            Response response = uploadManager.put(filePath, fileName, upToken);
+            //解析上传成功的结果
+            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+        } catch (QiniuException ex) {
+            Response r = ex.response;
+            try {
+                System.err.println(r.bodyString());
+            } catch (QiniuException ex2) {
+                //ignore
+            }
+        }
+    }
+
+    //上传文件
+    public static void upload2QiNiu(byte[] bytes, String fileName) {
+        //构造一个带指定 Region 对象的配置类
+        Configuration cfg =  new Configuration(Region.huadong());
+        //...其他参数参考类注释
+        UploadManager uploadManager = new UploadManager(cfg);
+
+        //默认不指定key的情况下，以文件内容的hash值作为文件名
+        String key = fileName;
+        Auth auth = Auth.create(accessKey, secretKey);
+        String upToken = auth.uploadToken(bucket);
+        try {
+            Response response = uploadManager.put(bytes, key, upToken);
             //解析上传成功的结果
             DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
             System.out.println(putRet.key);
@@ -45,18 +68,11 @@ public class QiniuTest {
         }
     }
 
-    /**
-     * 删除文件
-     */
-    @Test
-    public void test_2() {
+    //删除文件
+    public static void deleteFileFromQiNiu(String fileName) {
         //构造一个带指定 Region 对象的配置类
-        Configuration cfg = new Configuration(Region.region0());
-        //...其他参数参考类注释
-        String accessKey = "mQUieR_YQQY4pGlx4pwIwsELMecRHlH1hqO6xFCo";
-        String secretKey = "lyKFeqmHtM0azo1jUhGCz0pjZJfxLjO1a3xuEqz-";
-        String bucket = "com-wong-health";
-        String key = "my.jpg";
+        Configuration cfg =  new Configuration(Region.huadong());
+        String key = fileName;
         Auth auth = Auth.create(accessKey, secretKey);
         BucketManager bucketManager = new BucketManager(auth, cfg);
         try {
