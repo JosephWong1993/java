@@ -40,6 +40,9 @@ jdbc.properties
 druid.properties
 redis.properties
 spring-dao.xml
+spring_dao.xml
+spring-redis.xml
+spring_redis.xml
 
 # Other
 相关资料
