@@ -83,7 +83,7 @@
                                     <div class="other-month" v-if="dayobject.day.getMonth()+1 != currentMonth">
                                         {{ dayobject.day.getDate() }}
                                     </div>
-                                    <!-- 当前月 -->
+                                    <!-- 当前月 -->+
                                     <div class="everyday" v-if="dayobject.day.getMonth()+1 == currentMonth">
                                         <span class="datenumber">{{ dayobject.day.getDate()}}</span>
 
@@ -109,7 +109,6 @@
                                                     class="orderbtn">设置
                                             </button>
                                         </template>
-
                                     </div>
                                 </template>
                             </li>
