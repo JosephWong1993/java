@@ -6,7 +6,7 @@ import com.wong.pojo.OrderSetting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 @Transactional
@@ -35,5 +35,37 @@ public class OrderSettingServiceImpl implements OrderSettingService {
                 }
             }
         }
+    }
+
+    /**
+     * 查询某个月份对应的设置信息
+     *
+     * @param orderDate yyyy-MM
+     * @return 设置信息
+     */
+    @Override
+    public List<Map<String, Integer>> getOrderSettingByMonth(String orderDate) {
+        //TODO：日期查询异常
+        String begin = orderDate + "-1";
+        String end = orderDate + "-31";
+        Map<String, String> map = new HashMap<>();
+        map.put("dateBegin", begin);
+        map.put("dateEnd", end);
+        List<OrderSetting> list = orderSettingDao.getOrderSettingByMonth(map);
+        List<Map<String, Integer>> data = new ArrayList<>();
+        if (list != null && list.size() > 0) {
+            for (OrderSetting orderSetting : list) {
+                Date orderDate2 = orderSetting.getOrderDate();
+                int number = orderSetting.getNumber();
+                int reservations = orderSetting.getReservations();
+                int date = orderDate2.getDate();
+                Map<String, Integer> map1 = new HashMap<>();
+                map1.put("date", date);
+                map1.put("number", number);
+                map1.put("reservations", reservations);
+                data.add(map1);
+            }
+        }
+        return data;
     }
 }
