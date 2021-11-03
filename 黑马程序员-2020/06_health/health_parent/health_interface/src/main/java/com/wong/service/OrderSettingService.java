@@ -15,4 +15,6 @@ public interface OrderSettingService {
      * @return 设置信息
      */
     List<Map<String,Integer>> getOrderSettingByMonth(String orderDate);
+
+    void editNumberByDate(OrderSetting orderSetting);
 }
