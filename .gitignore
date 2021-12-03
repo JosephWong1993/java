@@ -44,6 +44,3 @@ druid.properties
 redis.properties
 spring-dao.xml
 spring-redis.xml
-
-# Other
-相关资料
