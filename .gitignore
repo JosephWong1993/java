@@ -42,5 +42,3 @@ db.properties
 jdbc.properties
 druid.properties
 redis.properties
-spring-dao.xml
-spring_redis.xml

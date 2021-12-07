@@ -13,7 +13,7 @@ public class QiNiuConfig {
 
     static {
         //读取配置文件，返回输入流
-        InputStream inputStream = QiNiuConfig.class.getClassLoader().getResourceAsStream("QiNiuConfig.properties");
+        InputStream inputStream = QiNiuConfig.class.getClassLoader().getResourceAsStream("qi_niu_config.properties");
         Properties properties = new Properties();
         try {
             properties.load(inputStream);

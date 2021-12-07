@@ -9,6 +9,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -32,6 +33,11 @@ public class SetMealServiceImpl implements SetMealService {
 
         //新增套餐后需要将图片名称保存到redis
         savePic2Redis(setMeal.getImg());
+    }
+
+    @Override
+    public List<SetMeal> findAll() {
+        return setMealDao.findAll();
     }
 
     //绑定套餐和检查组的多对多关系

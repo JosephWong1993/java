@@ -28,7 +28,7 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-    <!-- 指定应用名称 -->
+    <!--指定应用名称-->
     <dubbo:application name="health_mobile"/>
     <!--指定服务注册中心地址-->
     <dubbo:registry address="zookeeper://10.0.108.15:20010"/>

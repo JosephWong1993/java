@@ -15,8 +15,12 @@
     <!--绑定套餐和检查组多对多关系-->
     <insert id="setSetMealAndCheckGroup" parameterType="hashmap">
         insert into t_setmeal_checkgroup
-            (setmeal_id,checkgroup_id)
-        values
-            (#{setMealId},#{checkGroupId})
+            (setmeal_id, checkgroup_id)
+        values (#{setMealId}, #{checkGroupId})
     </insert>
+
+    <select id="findAll" resultType="com.wong.pojo.SetMeal">
+        select *
+        from t_setmeal
+    </select>
 </mapper>
