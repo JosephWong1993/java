@@ -2,6 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wong.dao.SetMealDao">
+    <resultMap id="baseResultMap" type="com.wong.pojo.SetMeal">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="helpCode" property="helpCode"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="price" property="price"/>
+        <result column="remark" property="remark"/>
+        <result column="attention" property="attention"/>
+        <result column="img" property="img"/>
+    </resultMap>
+    <resultMap id="findByIdResultMap"
+               type="com.wong.pojo.SetMeal"
+               extends="baseResultMap">
+        <collection property="checkGroups"
+                    ofType="com.wong.pojo.CheckGroup"
+                    column="id"
+                    select="com.wong.dao.CheckGroupDao.findCheckGroupBySetMealId">
+        </collection>
+    </resultMap>
+
     <!--新增-->
     <insert id="add" parameterType="com.wong.pojo.SetMeal">
         <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
@@ -22,5 +44,12 @@
     <select id="findAll" resultType="com.wong.pojo.SetMeal">
         select *
         from t_setmeal
+    </select>
+
+    <!--根据提交套餐id查询详情-->
+    <select id="findById" resultMap="findByIdResultMap">
+        select *
+        from t_setmeal
+        where id = #{id}
     </select>
 </mapper>

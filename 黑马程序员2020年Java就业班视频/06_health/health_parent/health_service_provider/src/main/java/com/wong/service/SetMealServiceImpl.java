@@ -40,6 +40,11 @@ public class SetMealServiceImpl implements SetMealService {
         return setMealDao.findAll();
     }
 
+    @Override
+    public SetMeal findById(int id) {
+        return setMealDao.findById(id);
+    }
+
     //绑定套餐和检查组的多对多关系
     private void setSetMealAndCheckGroup(Integer id, Integer[] checkGroupIds) {
         for (Integer checkGroupId : checkGroupIds) {

@@ -11,4 +11,6 @@ public interface SetMealService {
     void add(SetMeal setMeal, Integer[] checkGroupIds);
 
     List<SetMeal> findAll();
+
+    SetMeal findById(int id);
 }

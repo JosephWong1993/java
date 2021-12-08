@@ -27,4 +27,16 @@ public class SetMealController {
             return new Result(true, MessageConstant.GET_SETMEAL_LIST_FAIL);
         }
     }
+
+    //根据id查询套餐信息
+    @RequestMapping("/find_by_id")
+    public Result findById(int id) {
+        try {
+            SetMeal setmeal = setMealService.findById(id);
+            return new Result(true, MessageConstant.QUERY_SETMEAL_SUCCESS, setmeal);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, MessageConstant.QUERY_SETMEAL_FAIL);
+        }
+    }
 }
