@@ -34,7 +34,7 @@
     <div class="contentBox">
         <div class="card">
             <div class="">
-                <img :src="'http://r3sg2vsmd.hd-bkt.clouddn.com/'+setmeal.img" width="100%" height="100%"/>
+                <img alt="" :src="'http://r3sg2vsmd.hd-bkt.clouddn.com/'+setmeal.img" width="100%" height="100%"/>
             </div>
             <div class="project-text">
                 <h4 class="tit">{{setmeal.name}}</h4>
@@ -128,6 +128,14 @@
                 //创建定时器对象，用于30s倒计时
                 validateCodeButton = $('#validateCodeButton')[0];
                 clock = window.setInterval(doLoop, 1000);
+
+                axios.get("/validateCode/send4Order.do?telephone=" + telephone)
+                    .then(res => {
+                        if (!res.data.flag) {
+                            //验证码发送失败
+                            this.$message.error('验证码发送失败，请检查手机号输入是否正确');
+                        }
+                    });
             },
             //提交预约
             submitOrder() {
