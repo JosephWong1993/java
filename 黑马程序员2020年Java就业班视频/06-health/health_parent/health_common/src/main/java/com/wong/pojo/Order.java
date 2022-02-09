@@ -8,7 +8,7 @@ import java.util.Date;
  */
 public class Order implements Serializable{
     public static final String ORDERTYPE_TELEPHONE = "电话预约";
-    public static final String ORDERTYPE_WEIXIN = "微信预约";
+    public static final String ORDER_TYPE_WEIXIN = "微信预约";
     public static final String ORDERSTATUS_YES = "已到诊";
     public static final String ORDERSTATUS_NO = "未到诊";
     private Integer id;

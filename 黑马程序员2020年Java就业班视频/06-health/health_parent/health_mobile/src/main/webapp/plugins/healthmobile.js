@@ -20,10 +20,10 @@ function getUrlParam(paraName) {
 
 //获得当前日期，返回字符串
 function getToday() {
-    var today = new Date();
-    var year = today.getFullYear();
-    var month = today.getMonth() + 1;//0表示1月，1表示2月
-    var day = today.getDate();
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;//0表示1月，1表示2月
+    const day = today.getDate();
     return (year + "-" + month + "-" + day);
 }
 
@@ -43,12 +43,8 @@ function getSpecifiedDate(date, days) {
  3--最后以0-9的9个整数结尾。
  */
 function checkTelephone(telephone) {
-    const reg = /^[1][3,4,5,7,8][0-9]{9}$/;
-    if (!reg.test(telephone)) {
-        return false;
-    } else {
-        return true;
-    }
+    const reg = /^[1][34578][0-9]{9}$/;
+    return reg.test(telephone);
 }
 
 /**
@@ -60,9 +56,9 @@ function checkIdCard(idCard) {
     return reg.test(idCard);
 }
 
-var clock = '';//定时器对象，用于页面30秒倒计时效果
-var nums = 30;
-var validateCodeButton;
+let clock = 0;//定时器对象，用于页面30秒倒计时效果
+let nums = 30;
+let validateCodeButton;
 
 //基于定时器实现30秒倒计时效果
 function doLoop() {
