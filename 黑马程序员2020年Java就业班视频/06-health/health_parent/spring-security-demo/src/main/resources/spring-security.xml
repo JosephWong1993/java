@@ -20,7 +20,7 @@
       http：用于定义相关权限控制
       指定哪些资源不需要进行权限校验，可以使用通配符
     -->
-    <security:http security="none" pattern="/pages/*"/>
+    <!--<security:http security="none" pattern="/pages/*"/>-->
     <security:http security="none" pattern="/login.html"/>
 
     <!--
@@ -37,8 +37,19 @@
             access：在请求对应的URL时需要什么权限，默认配置时它应该是一个以逗号分隔的角色列表，
 				  请求的用户只需拥有其中的一个角色就能成功访问对应的URL
         -->
-        <security:intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>
+        <!--<security:intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')"/>-->
+        <!--只要认证通过就可以访问-->
+        <security:intercept-url pattern="/pages/a.html" access="isAuthenticated()"/>
 
+        <!--拥有add权限就可以访问b.html页面-->
+        <security:intercept-url pattern="/pages/b.html" access="hasAuthority('add')"/>
+
+        <!--拥有ROLE_ADMIN角色就可以访问c.html页面-->
+        <security:intercept-url pattern="/pages/c.html" access="hasRole('ROLE_ADMIN')"/>
+
+        <!--拥有ROLE_ADMIN角色就可以访问d.html页面，
+            注意：此处虽然写的是ADMIN角色，框架会自动加上前缀ROLE_-->
+        <security:intercept-url pattern="/pages/d.html" access="hasRole('ADMIN')"/>
         <!--
             form-login：定义表单登录信息
         -->
@@ -55,6 +66,14 @@
             disabled：是否启用CsrfFilter过滤器，如果使用自定义登录页面需要关闭此项，否则登录操作会被禁用（403）
         -->
         <security:csrf disabled="true"/>
+
+        <!--
+            logout：退出登录
+            logout-url：退出登录操作对应的请求路径
+            logout-success-url：退出登录后的跳转页面
+        -->
+        <security:logout logout-url="/logout.do"
+                         logout-success-url="/login.html" invalidate-session="true"/>
     </security:http>
 
     <!--
@@ -64,19 +83,33 @@
         <!--
             authentication-provider：认证提供者，执行具体的认证逻辑
         -->
-        <security:authentication-provider>
+        <security:authentication-provider user-service-ref="userService">
+            <security:password-encoder ref="passwordEncoder"/>
             <!--
                 user-service：用于获取用户信息，提供给authentication-provider进行认证
             -->
-            <security:user-service>
-                <!--
+            <!--<security:user-service>
+                &lt;!&ndash;
                     user：定义用户信息，可以指定用户名、密码、角色，后期可以改为从数据库查询用户信息
 				  {noop}：表示当前使用的密码为明文
-                -->
+                &ndash;&gt;
                 <security:user name="admin"
                                password="{noop}admin"
                                authorities="ROLE_ADMIN"/>
-            </security:user-service>
+            </security:user-service>-->
         </security:authentication-provider>
     </security:authentication-manager>
+
+    <bean id="userService" class="com.wong.security.UserService"/>
+    <!--配置密码加密对象-->
+    <bean id="passwordEncoder"
+          class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
+    <context:annotation-config/>
+
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.wong.controller"/>
+
+    <!--开启注解方式权限控制-->
+    <security:global-method-security pre-post-annotations="enabled"/>
 </beans>
