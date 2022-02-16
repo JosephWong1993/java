@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Set;
 
 @Component
-public class SpringSecurityService implements UserDetailsService {
+public class SpringSecurityUserService implements UserDetailsService {
 
     @Reference
     private UserService userService;

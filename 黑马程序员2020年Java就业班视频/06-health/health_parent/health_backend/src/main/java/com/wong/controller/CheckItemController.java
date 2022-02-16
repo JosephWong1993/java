@@ -7,6 +7,7 @@ import com.wong.entity.QueryPageBean;
 import com.wong.entity.Result;
 import com.wong.pojo.CheckItem;
 import com.wong.service.CheckItemService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +39,7 @@ public class CheckItemController {
      * 编辑
      */
     @RequestMapping("/edit")
+    @PreAuthorize(value = "hasAuthority('CHECKITEM_EDIT')")
     public Result edit(@RequestBody CheckItem checkItem) {
         try {
             checkItemService.edit(checkItem);
@@ -71,6 +73,7 @@ public class CheckItemController {
      * 删除检查项
      */
     @RequestMapping("/deleteById")
+    @PreAuthorize(value = "hasAuthority('CHECKITEM_DELETE')")
     public Result deleteById(Integer id) {
         try {
             checkItemService.deleteById(id);

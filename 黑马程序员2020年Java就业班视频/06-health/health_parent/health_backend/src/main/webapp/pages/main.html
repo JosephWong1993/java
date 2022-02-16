@@ -37,7 +37,8 @@
                     <el-dropdown class="avatar-container right-menu-item" trigger="click">
                         <div class="avatar-wrapper">
                             <img src="../img/user2-160x160.jpg" class="user-avatar">
-                            Jay.Liu
+                            <!--展示用户名-->
+                            {{username}}
                         </div>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item divided>
@@ -83,6 +84,7 @@
     new Vue({
         el: '#app',
         data: {
+            username: null,
             menuList: [
                 {
                     "path": "1",
@@ -178,6 +180,12 @@
                     ]
                 }
             ]
+        },
+        created() {
+            //发送请求获取当前登录用户的用户名
+            axios.get('/user/getrUsername.do').then(response => {
+                this.username = response.data.data;
+            })
         }
     });
     $(function () {

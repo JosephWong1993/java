@@ -50,4 +50,5 @@
 
     <!--添加一些新内容-->
     <import resource="classpath:spring-redis.xml"/>
+    <import resource="classpath:spring-security.xml"/>
 </beans>
