@@ -10,14 +10,24 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>wong-mybatis-plus-simple</module>
+        <module>wong-mybatis-plus-spring</module>
     </modules>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+
+        <spring.version>5.3.16</spring.version>
     </properties>
 
     <dependencies>
+        <!--spring-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
         <!--mybatis-plus插件依赖-->
         <dependency>
             <groupId>com.baomidou</groupId>
