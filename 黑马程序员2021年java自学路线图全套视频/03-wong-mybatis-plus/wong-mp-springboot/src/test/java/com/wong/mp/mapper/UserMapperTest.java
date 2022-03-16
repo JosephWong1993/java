@@ -2,6 +2,8 @@ package com.wong.mp.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.wong.mp.pojo.User;
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -48,16 +51,6 @@ public class UserMapperTest {
     }
 
     @Test
-    public void updateById() {
-        User user = new User();
-        user.setId(1L);
-        user.setAge(19);
-        user.setPassword("666666");
-        int modifyRowCount = userMapper.updateById(user);
-        System.out.println("modifyRowCount = " + modifyRowCount);
-    }
-
-    @Test
     public void deleteById() {
         int modifyRowCount = userMapper.deleteById(9L);
         System.out.println("modifyRowCount = " + modifyRowCount);
@@ -69,6 +62,37 @@ public class UserMapperTest {
         map.put("user_name", "zhangsan");
         map.put("password", "888888");
         int modifyRowCount = userMapper.deleteByMap(map);
+        System.out.println("modifyRowCount = " + modifyRowCount);
+    }
+
+    @Test
+    public void delete() {
+//        QueryWrapper<User> wrapper=new QueryWrapper<>();
+//        wrapper.eq("user_name","caocao1")
+//                .eq("password","123456");
+
+        User user = new User();
+        user.setPassword("123456");
+        user.setUserName("caocao");
+        QueryWrapper<User> wrapper = new QueryWrapper<>(user);
+        int modifyRowCount = userMapper.delete(wrapper);
+        System.out.println("modifyRowCount = " + modifyRowCount);
+    }
+
+    @Test
+    public void deleteBatchIds() {
+        //根据id集合批量删除
+        int modifyRowCount = this.userMapper.deleteBatchIds(Arrays.asList(1L, 10L, 20L));
+        System.out.println("modifyRowCount = " + modifyRowCount);
+    }
+
+    @Test
+    public void updateById() {
+        User user = new User();
+        user.setId(1L);
+        user.setAge(19);
+        user.setPassword("666666");
+        int modifyRowCount = userMapper.updateById(user);
         System.out.println("modifyRowCount = " + modifyRowCount);
     }
 
@@ -97,15 +121,60 @@ public class UserMapperTest {
 
     @Test
     public void selectById() {
-        User user = userMapper.selectById(1L);
+        User user = userMapper.selectById(2L);
         System.out.println(user);
     }
 
     @Test
+    public void selectBatchIds() {
+        //根据id集合批量查询
+        List<User> users = this.userMapper.selectBatchIds(Arrays.asList(2L, 3L, 10L));
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public void testSelectOne() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("name", "李四");
+        //根据条件查询一条数据，如果结果超过一条会报错
+        User user = this.userMapper.selectOne(wrapper);
+        System.out.println(user);
+    }
+
+    @Test
+    public void testSelectCount() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.gt("age", 23); //年龄大于23岁
+        // 根据条件查询数据条数
+        Long count = this.userMapper.selectCount(wrapper);
+        System.out.println("count = " + count);
+    }
+
+    @Test
     public void selectList() {
-        List<User> userList = userMapper.selectList(null);
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.like("email", "itcast");
+        List<User> userList = userMapper.selectList(wrapper);
         for (User user : userList) {
             System.out.println(user);
+        }
+    }
+
+    @Test
+    public void selectPage() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.gt("age", 20); //年龄大于20岁
+        Page<User> page = new Page<>(1, 1);
+        //根据条件查询数据  `
+        IPage<User> iPage = this.userMapper.selectPage(page, wrapper);
+        System.out.println("数据总条数：" + iPage.getTotal());
+        System.out.println("数据总页数：" + iPage.getPages());
+        System.out.println("当前页数：" + iPage.getCurrent());
+        List<User> users = iPage.getRecords();
+        for (User user : users) {
+            System.out.println("user = " + user);
         }
     }
 }
