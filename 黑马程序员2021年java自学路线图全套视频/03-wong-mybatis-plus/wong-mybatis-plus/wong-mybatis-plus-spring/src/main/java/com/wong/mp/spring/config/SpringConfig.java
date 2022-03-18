@@ -4,6 +4,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import(MybatisConfig.class)
+@Import(MybatisPlusConfig.class)
 public class SpringConfig {
 }
