@@ -7,9 +7,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 @Data
-@TableName(value = "tb_user")
+//@TableName(value = "tb_user")
 public class User {
-    @TableId(type = IdType.AUTO)
+    //    @TableId(type = IdType.AUTO)
     private Long id;
     private String userName;
     @TableField(select = false)

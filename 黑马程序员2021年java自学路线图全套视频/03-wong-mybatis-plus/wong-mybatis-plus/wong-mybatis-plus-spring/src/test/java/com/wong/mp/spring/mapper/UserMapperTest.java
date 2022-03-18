@@ -33,6 +33,20 @@ public class UserMapperTest {
     }
 
     @Test
+    public void insert() {
+        User user = new User();
+        user.setEmail("2@wong.com");
+        user.setAge(31);
+        user.setUserName("caocao1");
+        user.setName("曹操1");
+        user.setPassword("123456");
+        int modifyRowCount = userMapper.insert(user);
+        System.out.println("modifyRowCount = " + modifyRowCount);
+        //获取自增长后的id值，自增长后的id值会回填到user对象中
+        System.out.println(user.getId());
+    }
+
+    @Test
     public void selectList() {
         List<User> users = userMapper.selectList(null);
         for (User user : users) {

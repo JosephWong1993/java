@@ -1,7 +1,9 @@
 package com.wong.mp.spring.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
+import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
@@ -36,15 +38,31 @@ public class MybatisPlusConfig {
     }
 
     @Bean
+    public GlobalConfig.DbConfig config() {
+        GlobalConfig.DbConfig dbConfig = new GlobalConfig.DbConfig();
+        dbConfig.setIdType(IdType.AUTO);
+        return dbConfig;
+    }
+
+    @Bean
+    public GlobalConfig globalConfig(GlobalConfig.DbConfig dbConfig) {
+        GlobalConfig globalConfig = new GlobalConfig();
+        globalConfig.setDbConfig(dbConfig);
+        return globalConfig;
+    }
+
+    @Bean
     public MybatisSqlSessionFactoryBean mybatisSqlSessionFactoryBean(DataSource dataSource,
                                                                      MybatisConfiguration configuration,
+                                                                     GlobalConfig globalConfig,
                                                                      MybatisPlusInterceptor mybatisPlusInterceptor) {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
         //配置相关信息（数据源，pojo的别名）
         sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setTypeAliasesPackage("com.wong.mp.spring.pojo");
         sqlSessionFactory.setConfiguration(configuration);
+        sqlSessionFactory.setGlobalConfig(globalConfig);
         sqlSessionFactory.setPlugins(mybatisPlusInterceptor);
+        sqlSessionFactory.setTypeAliasesPackage("com.wong.mp.spring.pojo");
         return sqlSessionFactory;
     }
 
