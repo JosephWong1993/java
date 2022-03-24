@@ -135,7 +135,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public void testSelectOne() {
+    public void selectOne() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.eq("name", "李四");
         //根据条件查询一条数据，如果结果超过一条会报错
