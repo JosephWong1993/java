@@ -256,4 +256,52 @@ public class UserMapperTest {
             System.out.println(user);
         }
     }
+
+    @Test
+    public void arSelectById() {
+        User user = new User();
+        user.setId(2L);
+        user = user.selectById();
+        System.out.println(user);
+    }
+
+    @Test
+    public void arInsert() {
+        User user = new User();
+        user.setName("刘备");
+        user.setAge(30);
+        user.setPassword("123456");
+        user.setUserName("liubei");
+        user.setMail("liubei@itcast.cn");
+        boolean insert = user.insert();
+        System.out.println(insert);
+    }
+
+    @Test
+    public void arUpdateById() {
+        User user = new User();
+        user.setId(13L);
+        user.setAge(31);
+        boolean update = user.updateById();
+        System.out.println(update);
+    }
+
+    @Test
+    public void arDeleteById() {
+        User user = new User();
+        user.setId(13L);
+        boolean delete = user.deleteById();
+        System.out.println(delete);
+    }
+
+    @Test
+    public void arSelectList() {
+        User user = new User();
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        userQueryWrapper.le("age", "20");
+        List<User> users = user.selectList(userQueryWrapper);
+        for (User user1 : users) {
+            System.out.println(user1);
+        }
+    }
 }
