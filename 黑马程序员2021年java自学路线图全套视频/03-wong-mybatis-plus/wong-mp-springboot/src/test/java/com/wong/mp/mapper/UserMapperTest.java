@@ -304,4 +304,18 @@ public class UserMapperTest {
             System.out.println(user1);
         }
     }
+
+    @Test
+    public void version() {
+        User user = new User();
+        user.setId(2L);
+
+        User userVersion = user.selectById();
+
+        user.setAge(22);
+        user.setVersion(userVersion.getVersion());
+
+        boolean result = user.updateById();
+        System.out.println("result = " + result);
+    }
 }
