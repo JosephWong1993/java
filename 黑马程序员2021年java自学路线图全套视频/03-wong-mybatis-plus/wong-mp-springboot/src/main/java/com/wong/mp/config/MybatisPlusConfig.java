@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.IllegalSQLInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
+import com.wong.mp.injectors.MySqlInjector;
 import com.wong.mp.plugins.MyInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
@@ -26,5 +27,10 @@ public class MybatisPlusConfig {
     @Bean
     public MyInterceptor myInterceptor() {
         return new MyInterceptor();
+    }
+
+    @Bean
+    public MySqlInjector mySqlInjector() {
+        return new MySqlInjector();
     }
 }

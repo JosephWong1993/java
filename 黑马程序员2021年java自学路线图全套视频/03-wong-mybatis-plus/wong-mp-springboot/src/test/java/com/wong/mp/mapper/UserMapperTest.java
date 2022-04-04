@@ -318,4 +318,12 @@ public class UserMapperTest {
         boolean result = user.updateById();
         System.out.println("result = " + result);
     }
+
+    @Test
+    public void findAll(){
+        List<User> users = this.userMapper.findAll();
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
 }
