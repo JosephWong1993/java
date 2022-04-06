@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.wong.mp.enums.SexEnum;
 import com.wong.mp.pojo.User;
 import org.junit.After;
 import org.junit.Before;
@@ -38,11 +39,11 @@ public class UserMapperTest {
     @Test
     public void insert() {
         User user = new User();
-        user.setMail("2@wong.com");
-        user.setAge(31);
-        user.setUserName("caocao1");
-        user.setName("曹操1");
-        user.setPassword("123456");
+        user.setMail("guanyu@wong.com");
+        user.setAge(29);
+        user.setUserName("guanyu");
+        user.setName("关羽");
+//        user.setPassword("123456");
         user.setAddress("上海");
         int modifyRowCount = userMapper.insert(user);
         System.out.println("modifyRowCount = " + modifyRowCount);
@@ -52,7 +53,7 @@ public class UserMapperTest {
 
     @Test
     public void deleteById() {
-        int modifyRowCount = userMapper.deleteById(9L);
+        int modifyRowCount = userMapper.deleteById(2L);
         System.out.println("modifyRowCount = " + modifyRowCount);
     }
 
@@ -163,6 +164,16 @@ public class UserMapperTest {
     }
 
     @Test
+    public void selectBySex() {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("sex", SexEnum.WOMAN);
+        List<User> users = this.userMapper.selectList(wrapper);
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
+
+    @Test
     public void selectPage() {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.gt("age", 20); //年龄大于20岁
@@ -268,13 +279,14 @@ public class UserMapperTest {
     @Test
     public void arInsert() {
         User user = new User();
-        user.setName("刘备");
-        user.setAge(30);
+        user.setName("貂蝉");
         user.setPassword("123456");
-        user.setUserName("liubei");
-        user.setMail("liubei@itcast.cn");
-        boolean insert = user.insert();
-        System.out.println(insert);
+        user.setAge(20);
+        user.setUserName("diaochan");
+        user.setMail("diaochan@wong.cn");
+        user.setSex(SexEnum.WOMAN);
+        boolean result = user.insert();
+        System.out.println("result = " + result);
     }
 
     @Test
@@ -320,7 +332,7 @@ public class UserMapperTest {
     }
 
     @Test
-    public void findAll(){
+    public void findAll() {
         List<User> users = this.userMapper.findAll();
         for (User user : users) {
             System.out.println(user);
