@@ -1,0 +1,5 @@
+# 单引号忽略转义字符
+message1: 'hello \n world'
+
+# 双引号识别转义字符
+message2: "hello \n world"
