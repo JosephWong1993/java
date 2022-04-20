@@ -3,3 +3,19 @@ message1: 'hello \n world'
 
 # 双引号识别转义字符
 message2: "hello \n world"
+
+person:
+  name: haohao
+  age: 31
+  address: beijing
+  cityArray:
+    - beijing
+    - shanghai
+    - guangzhou
+  animals:
+    - name: dog
+      age: 2
+    - name: tomcat
+      age: 3
+    - name: pig
+      age: 5
