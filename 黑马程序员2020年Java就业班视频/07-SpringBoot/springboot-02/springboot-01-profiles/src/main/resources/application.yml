@@ -3,7 +3,12 @@
 # 第二种，通过配置文件的命名，application-[dev,pro,test].yml
 
 # 激活多环境配置文件中的一个
-spring.profiles.active: pro
+spring.profiles.active: dev
+
+# 松散绑定
+#wong.spring-boot.one-example: dilireba
+#wong.springBoot.oneExample: dilireba
+wong.spring_boot.one_example: dilireba
 
 #---
 ## 开发环境的配置
