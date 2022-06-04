@@ -1,0 +1,4 @@
+# 设置自定义的应用容器初始化监听器
+org.springframework.context.ApplicationContextInitializer=com.wong.listener.My03ApplicationInitializerListener
+# 全流程的监听器
+org.springframework.boot.SpringApplicationRunListener=com.wong.listener.My04SpringApplicationRunListener
