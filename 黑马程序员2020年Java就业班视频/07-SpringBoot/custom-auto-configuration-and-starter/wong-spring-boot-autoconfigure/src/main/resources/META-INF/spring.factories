@@ -1,0 +1,2 @@
+# 注册自定义自动配置
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.wong.config.WongAutoConfiguration
