@@ -7,47 +7,20 @@
         <artifactId>wong-spring-cloud-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>provider-service</artifactId>
-    <name>provider-service</name>
-    <description>provider-service</description>
+    <artifactId>eureka-server</artifactId>
+    <name>eureka-server</name>
+    <description>eureka-server</description>
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!--eureka客户端starter-->
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>3.5.2</version>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -64,7 +37,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.1.18.RELEASE</version>
                 <configuration>
-                    <mainClass>com.wong.ProviderServiceApplication</mainClass>
+                    <mainClass>com.wong.EurekaServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
@@ -77,5 +50,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
