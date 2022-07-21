@@ -6,6 +6,10 @@ spring:
     # 当前应用的名称
     name: eureka-server
 eureka:
+  server:
+    #向Eureka服务中心集群注册服务
+    # 关闭自我保护模式（默认值是打开）
+    enable-self-preservation: false
   client:
     # 注册中心的地址
     service-url:
