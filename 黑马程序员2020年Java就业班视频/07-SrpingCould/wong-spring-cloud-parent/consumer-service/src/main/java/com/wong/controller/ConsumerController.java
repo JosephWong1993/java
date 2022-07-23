@@ -1,5 +1,6 @@
 package com.wong.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.ribbon.proxy.annotation.Hystrix;
 import com.wong.pojo.User;
@@ -15,8 +16,12 @@ import java.util.Map;
 
 /**
  * 消费者的控制层，提供服务，访问提供者接口，为真实用户返回信息
+ *
+ * @DefaultProperties(defaultFallback = "defaultFallBackMethods")
+ * defaultFallback设置全局的服务降级的默认方法
  */
 @RestController
+@DefaultProperties(defaultFallback = "defaultFallBackMethods") // 设置全局的
 public class ConsumerController {
     private final RestTemplate restTemplate;
     private final DiscoveryClient discoveryClient;
@@ -60,7 +65,8 @@ public class ConsumerController {
      * f
      * */
     @GetMapping("/ribbon_consumer/{id}")
-    @HystrixCommand(fallbackMethod = "ribbonQueryByIdFallBack")
+//    @HystrixCommand(fallbackMethod = "ribbonQueryByIdFallBack")
+    @HystrixCommand
     public User ribbonQueryById(@PathVariable Integer id) {
         // 负载均衡访问服务的url地址，注意host和port变为服务名称，传统的地址随即失效
         String url = "http://provider-service/user/query_by_id?id=" + id;
@@ -76,6 +82,15 @@ public class ConsumerController {
         // 负载均衡访问服务的url地址，注意host和port变为服务名称，传统的地址随即失效
         User user = new User();
         user.setUsername("您好，非常抱歉您访问的用户信息不存在！！！");
+        return user;
+    }
+
+    /**
+     * 全局的默认的熔断方法
+     */
+    public User defaultFallBackMethods() {
+        User user = new User();
+        user.setUsername("全局默认的服务降级方法：您好，非常抱歉，您访问的用户信息不存在！！！");
         return user;
     }
 }
