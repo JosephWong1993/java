@@ -3,6 +3,7 @@ package com.wong.controller;
 import com.wong.pojo.User;
 import com.wong.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
     private final UserService userService;
+
+    @Value("${server.port}")
+    private String port;
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -21,6 +25,8 @@ public class UserController {
      */
     @RequestMapping("/query_by_id")
     public User queryById(@RequestParam("id") Integer id) {
-        return userService.queryById(id);
+        User user = userService.queryById(id);
+        user.setNote("当前服务端口：" + port);
+        return user;
     }
 }

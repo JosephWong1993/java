@@ -51,4 +51,11 @@ public class ConsumerController {
         String url = "http://" + host + ":" + port + "/user/query_by_id?id=" + id;
         return restTemplate.getForObject(url, User.class);
     }
+
+    @GetMapping("/ribbon_consumer/{id}")
+    public User ribbonQueryById(@PathVariable Integer id) {
+        // 负载均衡访问服务的url地址，注意host和port变为服务名称，传统的地址随即失效
+        String url = "http://provider-service/user/query_by_id?id=" + id;
+        return restTemplate.getForObject(url, User.class);
+    }
 }
