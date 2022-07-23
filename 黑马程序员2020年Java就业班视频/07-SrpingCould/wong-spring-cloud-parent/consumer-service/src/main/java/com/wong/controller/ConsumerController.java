@@ -1,5 +1,7 @@
 package com.wong.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 import com.wong.pojo.User;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -52,10 +54,28 @@ public class ConsumerController {
         return restTemplate.getForObject(url, User.class);
     }
 
+    /*
+     * @HystrixCommand
+     * 注解作用：指定服务降级方法的名称
+     * f
+     * */
     @GetMapping("/ribbon_consumer/{id}")
+    @HystrixCommand(fallbackMethod = "ribbonQueryByIdFallBack")
     public User ribbonQueryById(@PathVariable Integer id) {
         // 负载均衡访问服务的url地址，注意host和port变为服务名称，传统的地址随即失效
         String url = "http://provider-service/user/query_by_id?id=" + id;
         return restTemplate.getForObject(url, User.class);
+    }
+
+    /*
+     * 编写服务降级方法
+     * 与被降级方法，参数，与返回值，必须保持一致
+     * 方法名称一定不能保持一致
+     * */
+    public User ribbonQueryByIdFallBack(Integer id) {
+        // 负载均衡访问服务的url地址，注意host和port变为服务名称，传统的地址随即失效
+        User user = new User();
+        user.setUsername("您好，非常抱歉您访问的用户信息不存在！！！");
+        return user;
     }
 }

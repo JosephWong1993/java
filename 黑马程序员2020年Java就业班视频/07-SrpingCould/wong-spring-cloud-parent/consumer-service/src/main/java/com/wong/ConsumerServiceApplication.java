@@ -2,13 +2,17 @@ package com.wong;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
-@EnableDiscoveryClient // 开启客户端发现的自动配置
+//@SpringBootApplication // 当前的应用是一个SpringBoot的应用
+//@EnableDiscoveryClient // 开启客户端发现的自动配置
+//@EnableCircuitBreaker // 开启当前服务的熔断器支持
+@SpringCloudApplication // 一个SpringCloud的应用，包含SpringBoot,注册中心客户端，熔断器
 public class ConsumerServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerServiceApplication.class, args);
