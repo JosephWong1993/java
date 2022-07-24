@@ -32,3 +32,7 @@ hystrix:
           thread:
             # 熔断超时设置，默认为1秒
             timeoutInMilliseconds: 6000
+# 修改服务地址轮询策略，默认是轮询，配置之后变随机，RoundRobinRule
+provider-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
