@@ -11,6 +11,7 @@ eureka:
     service-url:
       defaultZone: http://127.0.0.1:10086/eureka
     registry-fetch-interval-seconds: 30
+
 # 服务彻底不可用
 # 服务访问超时了
 # 服务熔断器开启了，服务降级
@@ -35,4 +36,30 @@ hystrix:
 # 修改服务地址轮询策略，默认是轮询，配置之后变随机，RoundRobinRule
 provider-service:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+feign:
+  hystrix:
+    # 手动开启feign客户端支持熔断器
+    enabled: true
+  compression:
+    request:
+      # 开启请求压缩
+      enabled: true
+      # 设置触发压缩的大小下限
+      min-request-size: 2048
+      mime-types: text/html,application/xml,application/json
+    response:
+      # 开启响应压缩
+      enabled: true
+# 配置熔断器超时时间
+ribbon:
+  # 连接超时时长
+  ConnectTimeout: 6000
+  # 读取数据超时时长
+  ReadTimeout: 6000
+
+#日志配置
+logging:
+  level:
+    com.wong.service: debug

@@ -151,7 +151,7 @@ ribbon.OkToRetryOnAllOperations: false
 
 ## 1.4 熔断器支持
 
-Feign本身也集成Hystrix熔断器，starter内查看。![image-20191107051528025](C:\Users\liuyaxiong\AppData\Roaming\Typora\typora-user-images\image-20191107051528025.png)
+Feign本身也集成Hystrix熔断器，starter内查看。![image-20191107051528025](07-SpringCloud-02-assets/1564917299932.png)
 
 **服务降级方法实现步骤：**
 

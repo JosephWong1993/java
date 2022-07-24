@@ -6,6 +6,7 @@ import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
@@ -13,6 +14,7 @@ import org.springframework.web.client.RestTemplate;
 //@EnableDiscoveryClient // 开启客户端发现的自动配置
 //@EnableCircuitBreaker // 开启当前服务的熔断器支持
 @SpringCloudApplication // 一个SpringCloud的应用，包含SpringBoot,注册中心客户端，熔断器
+@EnableFeignClients // 开启当前cloud应用的feign客户端的支持
 public class ConsumerServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConsumerServiceApplication.class, args);
