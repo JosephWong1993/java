@@ -25,7 +25,7 @@ public class UserController {
      */
     @RequestMapping("/query_by_id")
     public User queryById(@RequestParam("id") Integer id) throws InterruptedException {
-        Thread.sleep(3000);
+//        Thread.sleep(3000);
         // 手动抛出异常
         if (id == 1) {
             throw new RuntimeException("啊，我死掉了！！！");

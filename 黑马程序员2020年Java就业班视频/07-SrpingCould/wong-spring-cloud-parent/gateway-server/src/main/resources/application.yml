@@ -8,10 +8,18 @@ spring:
         # 当前路由的唯一标识
         - id: provider-service-route
           # 转发到服务器的地址
-          uri: http://127.0.0.1:29091
+          # uri: http://127.0.0.1:29091
+          # 配置动态路由
+          uri: lb://provider-service
           # 断言，当前路由转发的规则（拦截规则）
           predicates:
-            - Path=/user/**
+            # - Path=/user/**
+            - Path=/**
+          filters:
+            # 添加前缀
+            # - PrefixPath=/user
+            # 去除前缀
+            - StripPrefix=1
 server:
   port: 10010
 # 注册中心的地址
