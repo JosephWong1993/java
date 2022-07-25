@@ -4,6 +4,9 @@ spring:
     name: gateway-server
   cloud:
     gateway:
+      # 全局过滤器：对所有路由都生效的过滤器
+      default-filters:
+        - AddResponseHeader=i-love,java
       routes:
         # 当前路由的唯一标识
         - id: provider-service-route
@@ -15,6 +18,7 @@ spring:
           predicates:
             # - Path=/user/**
             - Path=/**
+          # 局部过滤器：对当前路由(1)生效的过滤器
           filters:
             # 添加前缀
             # - PrefixPath=/user
