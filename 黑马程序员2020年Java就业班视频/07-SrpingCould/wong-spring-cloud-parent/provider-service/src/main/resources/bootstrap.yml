@@ -1,0 +1,16 @@
+# 配置注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+spring:
+  cloud:
+    config:
+      discovery:
+        # 配置网关整合
+        service-id: "config-server"
+        # 是否开启配置中心微服务支持
+        enabled: true
+      name: provider
+      profile: dev
+      label: master
