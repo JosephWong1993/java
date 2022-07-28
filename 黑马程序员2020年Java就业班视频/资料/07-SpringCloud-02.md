@@ -813,11 +813,9 @@ token，一把钥匙![img](07-SpringCloud-02-assets/0091A6FC.png)
            user.setName(name);
            return user;
        }
-   
    }
-   
    ```
-
+   
 3. 测试：
 
    - 依次启动Eureka，配置中心，用户微服务；
