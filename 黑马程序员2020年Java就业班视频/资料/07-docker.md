@@ -523,13 +523,13 @@ docker search mysql
 2. 拉取mysql镜像
 
 ```shell
-docker pull mysql:5.6
+docker pull mysql:8.0.29
 ```
 
 3. 创建容器，设置端口映射、目录映射
 
 ```shell
-docker run -di --name=c_mysql -p 3307:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:5.6
+docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.29
 ```
 
 - 参数说明：
@@ -567,7 +567,7 @@ docker search tomcat
 2. 拉取tomcat镜像
 
 ```shell
-docker pull tomcat:8-jdk8
+docker pull tomcat:8-就热1
 ```
 
 3. 创建容器，设置端口映射、目录映射
@@ -605,13 +605,13 @@ docker search redis
 2. 拉取redis镜像
 
 ```shell
-docker pull redis:5.0
+docker pull redis:6.2.6
 ```
 
 3. 创建容器，设置端口映射
 
 ```shell
-docker run -id --name=c_redis -p 6379:6379 redis:5.0
+docker run -id --name=redis -p 6379:6379 redis:6.2.6 --requirepass “password”
 ```
 
 4. 使用外部机器连接redis，测试
