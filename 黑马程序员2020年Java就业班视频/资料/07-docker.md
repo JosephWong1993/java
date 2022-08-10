@@ -201,7 +201,7 @@ vim /etc/docker/daemon.json 
 
 ```shell
 {
-  "registry-mirrors": ["https://3ad96kxd.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://kehnk0sf.mirror.aliyuncs.com"]
 }
 ```
 
@@ -573,7 +573,7 @@ docker pull tomcat:8-jre11
 3. 创建容器，设置端口映射、目录映射
 
 ```shell
-docker run -id --name=c_tomcat -p 8080:8080 -v /root/tomcat/webapps:/usr/local/tomcat/webapps tomcat:8-jdk8
+docker run -id --name=c_tomcat -p 8080:8080 -v /root/tomcat/webapps:/usr/local/tomcat/webapps tomcat:8-jre11
 ```
 
 - 参数说明：
