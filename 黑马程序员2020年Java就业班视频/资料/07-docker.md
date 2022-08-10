@@ -567,7 +567,7 @@ docker search tomcat
 2. 拉取tomcat镜像
 
 ```shell
-docker pull tomcat:8-就热1
+docker pull tomcat:8-jre11
 ```
 
 3. 创建容器，设置端口映射、目录映射
