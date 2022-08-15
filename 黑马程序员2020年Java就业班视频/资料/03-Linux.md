@@ -407,7 +407,7 @@
 
 - tar -xvf 解开压缩包
 
-  -  tar -xvf jdk-8u191-linux-i586.tar.gz 
+  -  tar -xvf jdk-11.0.15.1_linux-x64_bin.tar.gz 
 
 - 配置环境变量
 
@@ -416,7 +416,7 @@
 
   ```
   #set java environment
-  JAVA_HOME=/usr/local/jdk1.8.0_191
+  JAVA_HOME=/usr/local/jdk-11.0.15.1
   PATH=$JAVA_HOME/bin:$PATH
   export JAVA_HOME PATH 
   ```
