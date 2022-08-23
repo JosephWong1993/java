@@ -1,4 +1,4 @@
-package com.wong.listener;
+package com.wong.listener.simple;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

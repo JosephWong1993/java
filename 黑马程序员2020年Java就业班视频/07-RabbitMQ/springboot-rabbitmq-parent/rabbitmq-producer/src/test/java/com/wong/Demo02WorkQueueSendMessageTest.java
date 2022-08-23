@@ -8,20 +8,19 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * 消息队列的五种模式：简单模式，向消息队列发送一次消息
- * 需要向当前的测试类注入RabbitTemplate对象，发送请求
+ * RabbitMQ五种工作模式之二：工作队列，一个生产者，多个消费者接收任务
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class Demo01SimpleQueueSendMessage {
-
+public class Demo02WorkQueueSendMessageTest {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @Test
-    public void testSendMsg() {
-        // 参数1：消息队列的名称
-        // 参数2：消息的内容
-        rabbitTemplate.convertAndSend("simple_queue", "Hello Rabbit!!!");
+    public void sendMessage() {
+        for (int i = 0; i < 1000; i++) {
+            // 循环一千次，用工作队列发送请求
+            rabbitTemplate.convertAndSend("work_queue", "Hello Rabbit【" + i + "】");
+        }
     }
 }
