@@ -121,7 +121,7 @@ RabbitMQ提供了6种模式：Hello Word简单模式，work工作模式，Publis
 - **Queue：** 消息队列载体，每个消息都会被投入到一个或多个队列
 - **VHost：** 虚拟主机，一个broker里可以开设多个vhost，用作不同用户的权限分离。
 
-![image-20191226053108367](07-RabbitMQ-assets/image-20191226053108367.png)
+![image-20191226053108367](07-RabbitMQ-01-assets/image-20191226053108367.png)
 
 ==**由Exchange、Queue、RoutingKey三个才能决定一个消息从Exchange到Queue的唯一的线路。**==
 
@@ -138,7 +138,7 @@ docker pull rabbitmq:management
 - 创建容器 
 
 ```shell
-docker run -di --name=changgou_rabbitmq -p 5671:5617 -p 5672:5672 -p4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
+docker run -di --name=changgou_rabbitmq -p 5671:5671 -p 5672:5672 -p4369:4369 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
 ```
 
 ```
@@ -168,7 +168,7 @@ http://192.168.200.128:15672/
 docker update --restart=always 容器ID
 ```
 
-![image-20191224135410717](07-RabbitMQ-assets/image-20191224135410717.png)
+![image-20191224135410717](07-RabbitMQ-01-assets/image-20191224135410717.png)
 
 ## 2.2. 用户以及Virtual Hosts配置
 
@@ -176,7 +176,7 @@ docker update --restart=always 容器ID
 
 RabbitMQ在安装好后，可以访问http://localhost:15672；其自带了guest/guest的用户名和密码；如果需要创建自定义用户；那么也可以登录管理界面后，如下操作：
 
-![image-20191224130727629](07-RabbitMQ-assets/image-20191224130727629.png)
+![image-20191224130727629](07-RabbitMQ-01-assets/image-20191224130727629.png)
 
 **角色说明：**
 
@@ -196,19 +196,19 @@ RabbitMQ的权限管理；在RabbitMQ中可以虚拟消息服务器Virtual Host�
 
 1. 创建Virtual Hosts
 
-   ![image-20191224130914131](07-RabbitMQ-assets/image-20191224130914131.png)
+   ![image-20191224130914131](07-RabbitMQ-01-assets/image-20191224130914131.png)
 
 2. 设置Virtual Hosts权限
 
-   ![image-20191224131458585](07-RabbitMQ-assets/image-20191224131458585.png)
+   ![image-20191224131458585](07-RabbitMQ-01-assets/image-20191224131458585.png)
 
    
 
-   ![image-20191224131421263](07-RabbitMQ-assets/image-20191224131421263.png)
+   ![image-20191224131421263](07-RabbitMQ-01-assets/image-20191224131421263.png)
 
 ### 2.2.3 添加队列
 
-![image-20191224131854869](07-RabbitMQ-assets/image-20191224131854869.png)
+![image-20191224131854869](07-RabbitMQ-01-assets/image-20191224131854869.png)
 
 持久化：如果选durable，则队列消息自动持久化到磁盘上，如果选transient，则不会持久化；
 
@@ -216,7 +216,7 @@ RabbitMQ的权限管理；在RabbitMQ中可以虚拟消息服务器Virtual Host�
 
 ### 2.2.4 添加交换机
 
-![image-20191224132241282](07-RabbitMQ-assets/image-20191224132241282.png)
+![image-20191224132241282](07-RabbitMQ-01-assets/image-20191224132241282.png)
 
 自动删除：默认值no，如果是yes，则在将所有队列与交换机取消绑定之后，交换机将自动删除。
 
@@ -231,9 +231,9 @@ RabbitMQ的权限管理；在RabbitMQ中可以虚拟消息服务器Virtual Host�
 
 ### 2.2.5 队列与交换机进行绑定
 
-![image-20191224132352207](07-RabbitMQ-assets/image-20191224132352207.png)
+![image-20191224132352207](07-RabbitMQ-01-assets/image-20191224132352207.png)
 
-![image-20191224132603345](07-RabbitMQ-assets/image-20191224132603345.png)
+![image-20191224132603345](07-RabbitMQ-01-assets/image-20191224132603345.png)
 
 # 三、Spring Boot整合RabbitMQ
 
@@ -245,7 +245,7 @@ amqp的官方GitHub地址：https://github.com/spring-projects/spring-amqp
 
 一般在开发过程中，我们有两个角色：
 
-![image-20191224123350539](07-RabbitMQ-assets/image-20191224123350539.png)
+![image-20191224123350539](07-RabbitMQ-01-assets/image-20191224123350539.png)
 
 ## **3.2. 搭建步骤：**
 
@@ -269,7 +269,7 @@ amqp的官方GitHub地址：https://github.com/spring-projects/spring-amqp
 
 创建父maven空的工程：springboot-rabbitmq-parent
 
-![image-20191224124426479](07-RabbitMQ-assets/image-20191224124426479.png)
+![image-20191224124426479](07-RabbitMQ-01-assets/image-20191224124426479.png)
 
 ### 3.3.2 搭建生产者工程
 
@@ -277,11 +277,11 @@ amqp的官方GitHub地址：https://github.com/spring-projects/spring-amqp
 
 创建SpringBoot的生产者工程：rabbitmq-producer
 
-![image-20191224124514886](07-RabbitMQ-assets/image-20191224124514886.png)
+![image-20191224124514886](07-RabbitMQ-01-assets/image-20191224124514886.png)
 
 #### 2、起步依赖坐标
 
-![image-20191224124625375](07-RabbitMQ-assets/image-20191224124625375.png)
+![image-20191224124625375](07-RabbitMQ-01-assets/image-20191224124625375.png)
 
 pom.xml文件内容为如下：
 
@@ -349,11 +349,11 @@ spring.rabbitmq.password=heima
 
 创建SpringBoot的消费者工程：rabbitmq-consumer
 
-![image-20191224125050553](07-RabbitMQ-assets/image-20191224125050553.png)
+![image-20191224125050553](07-RabbitMQ-01-assets/image-20191224125050553.png)
 
 #### 2、勾选起步依赖坐标
 
-![image-20191224125207084](07-RabbitMQ-assets/image-20191224125207084.png)
+![image-20191224125207084](07-RabbitMQ-01-assets/image-20191224125207084.png)
 
 pom.xml文件内容为如下：
 
@@ -411,7 +411,7 @@ spring.rabbitmq.password=heima
 
 ### 4.1.1 什么是简单模式
 
-![1575274339325](07-RabbitMQ-assets/1575274339325.png)
+![1575274339325](07-RabbitMQ-01-assets/1575274339325.png)
 
 在上图的模型中，有以下概念：
 
@@ -428,17 +428,17 @@ spring.rabbitmq.password=heima
 - 创建simple_queue队列用于演示Hello World简单模式
 
 
-![07](images\07.png)
+![07](07-RabbitMQ-01-assets\07.png)
 
 - 点击 `simple_queue` 可以进入到这个queue的管理界面
 
 
-![08](images\08.png)
+![08](07-RabbitMQ-01-assets\08.png)
 
 - 点击 `Get Message` 按钮可以获取查看队列中的消息
 
 
-![09](images\09.png)
+![09](07-RabbitMQ-01-assets\09.png)
 
 ### 4.1.3 生产者代码
 
@@ -513,7 +513,7 @@ public class SimpleListener {
 
 ### 4.2.1 什么是工作队列模式
 
-![image-20191205102457994](07-RabbitMQ-assets/image-20191205102457994.png)
+![image-20191205102457994](07-RabbitMQ-01-assets/image-20191205102457994.png)
 
 Work Queues与入门程序的简单模式相比，多了一个或一些消费端，多个消费端共同消费同一个队列中的消息。**应用场景：对于任务过重或任务较多情况使用工作队列可以提高任务处理的速度。**
 
@@ -526,7 +526,7 @@ Work Queues与入门程序的简单模式相比，多了一个或一些消费端
 - 创建 `work_queue` 队列用于演示work工作队列模式
 
 
-![12](images\12.png)
+![12](07-RabbitMQ-01-assets\12.png)
 
 ### 4.2.3 生产者代码
 
@@ -617,7 +617,7 @@ public class WorkListener2 {
 
 ## 4.3 三种模式概览
 
-![image-20191205102917088](07-RabbitMQ-assets/image-20191205102917088.png)
+![image-20191205102917088](07-RabbitMQ-01-assets/image-20191205102917088.png)
 
 前面2个案例中，只有3个角色：
 
@@ -660,7 +660,7 @@ Exchange有常见以下3种类型：
 
 ### 4.4.1 什么是发布订阅模式
 
-![image-20191205102917088](07-RabbitMQ-assets/image-20191205102917088-1577312524234.png)
+![image-20191205102917088](07-RabbitMQ-01-assets/image-20191205102917088-1577312524234.png)
 
 发布订阅模式： 
 
@@ -674,15 +674,15 @@ Exchange有常见以下3种类型：
 
 - 创建两个队列 fanout_queue1和 fanout_queue2
 
-![image-20191226053743533](07-RabbitMQ-assets/image-20191226053743533.png)
+![image-20191226053743533](07-RabbitMQ-01-assets/image-20191226053743533.png)
 
 - 创建Exchange交换器 `fanout_exchange`
 
-![image-20191226053920763](07-RabbitMQ-assets/image-20191226053920763.png)
+![image-20191226053920763](07-RabbitMQ-01-assets/image-20191226053920763.png)
 
 - 将创建的fanout_exchange交换器和 fanout_queue1,  fanout_queue2队列绑定
 
-![image-20191226054038545](07-RabbitMQ-assets/image-20191226054038545.png)
+![image-20191226054038545](07-RabbitMQ-01-assets/image-20191226054038545.png)
 
 ### 4.4.3 生产者代码
 
@@ -784,7 +784,7 @@ public class PubAndSubListener2 {
 
 路由模式特点：队列与交换机的绑定，不能是任意绑定了，而是要指定一个RoutingKey（路由key）消息的发送方在向 Exchange发送消息时，也必须指定消息的RoutingKey。Exchange不再把消息交给每一个绑定的队列，而是根据消息的Routing Key进行判断，只有队列的Routingkey与消息的Routing key完全一致，才会接收到消息.
 
-![image-20191205103846484](07-RabbitMQ-assets/image-20191205103846484.png)
+![image-20191205103846484](07-RabbitMQ-01-assets/image-20191205103846484.png)
 
 图解：
 
@@ -800,11 +800,11 @@ C2：消费者，其所在队列指定了需要routing key 为 info、error、wa
 
 ### 4.5.2 RabbitMQ管理界面操作
 
-1. 创建两个队列分别叫做 `routing_queue1` 和 `routing_queue2` 用户演示![image-20191226055442517](07-RabbitMQ-assets/image-20191226055442517.png)
+1. 创建两个队列分别叫做 `routing_queue1` 和 `routing_queue2` 用户演示![image-20191226055442517](07-RabbitMQ-01-assets/image-20191226055442517.png)
 
-2. 创建交换器 `routing_exchange` , 类型为 `direct` , 用于演示路由模式![image-20191226055720887](07-RabbitMQ-assets/image-20191226055720887.png)
+2. 创建交换器 `routing_exchange` , 类型为 `direct` , 用于演示路由模式![image-20191226055720887](07-RabbitMQ-01-assets/image-20191226055720887.png)
 
-3. 设置绑定: 将创建的交换器` routing_exchange` 和 `routing_queue1 `, `routing_queue2` 绑定在一起, 路由键Routing Key分别为 `info` 和 `error`；![image-20191226055838905](07-RabbitMQ-assets/image-20191226055838905.png)
+3. 设置绑定: 将创建的交换器` routing_exchange` 和 `routing_queue1 `, `routing_queue2` 绑定在一起, 路由键Routing Key分别为 `info` 和 `error`；![image-20191226055838905](07-RabbitMQ-01-assets/image-20191226055838905.png)
 
 
 
@@ -924,21 +924,21 @@ public class RoutingListener2 {
 
 **item.*：**只能匹配`item.insert`
 
-![image-20191205104428234](07-RabbitMQ-assets/image-20191205104428234.png)
+![image-20191205104428234](07-RabbitMQ-01-assets/image-20191205104428234.png)
 
 【基于通配符接收消息】
 
 ### 4.6.2 RabbitMQ管理界面操作
 
-1. 创建队列 `topic_queue1` 和 `topic_queue1`![image-20191226060931347](07-RabbitMQ-assets/image-20191226060931347.png)
+1. 创建队列 `topic_queue1` 和 `topic_queue1`![image-20191226060931347](07-RabbitMQ-01-assets/image-20191226060931347.png)
 
-2. 创建交换器 `topic_exchange` , type类型为 `topic`![image-20191226061017346](07-RabbitMQ-assets/image-20191226061017346.png)
+2. 创建交换器 `topic_exchange` , type类型为 `topic`![image-20191226061017346](07-RabbitMQ-01-assets/image-20191226061017346.png)
 
 3. 设置绑定: 
 
    ​	`topic_queue1`绑定的Routing Key路由键为`item.*`
 
-   ​	`topic_queue2`绑定的Routing Key路由键为`item.#`![image-20191226061135494](07-RabbitMQ-assets/image-20191226061135494.png)
+   ​	`topic_queue2`绑定的Routing Key路由键为`item.#`![image-20191226061135494](07-RabbitMQ-01-assets/image-20191226061135494.png)
 
 
 
