@@ -18,8 +18,8 @@ public class Demo02WorkQueueSendMessageTest {
 
     @Test
     public void sendMessage() {
+        // 循环一千次，用工作队列发送请求
         for (int i = 0; i < 1000; i++) {
-            // 循环一千次，用工作队列发送请求
             rabbitTemplate.convertAndSend("work_queue", "Hello Rabbit【" + i + "】");
         }
     }

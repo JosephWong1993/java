@@ -23,5 +23,6 @@ public class SimpleConsumerListener {
     @RabbitHandler
     public void SimpleConsumerHandler(String msg) {
         System.out.println("简单消息队列接收消息内容：" + msg);
+//        throw new RuntimeException();
     }
 }
