@@ -1,0 +1,18 @@
+server:
+  port: ${port:9091}
+spring:
+  application:
+    # 配置应用名称
+    name: provider-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: url
+    username: username
+    password: password
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/**/*.xml
+eureka:
+  client:
+    service-url:
+      # 配置注册中心地址
+      defaultZone: http://127.0.0.1:10086/eureka
