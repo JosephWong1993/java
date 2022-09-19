@@ -57,7 +57,7 @@ public class CustomAckConsumerListener implements ChannelAwareMessageListener {
              * 签收消息：
              * 参数1：deliveryTag，投递标签
              * 参数2：multiple，是否批量签收，如果true将当前队列对应连接中的所有消息一次性签收，false只签收当前投递标签中的消息
-             * 参数3：requeue：是否重回队列
+             * 参数3：requeue：是否重回队列。如果不会队列，消息真的就应该让它消失吗？
              * */
             channel.basicNack(deliveryTag, false, true);
             System.out.println("手动拒签签收，异常信息" + ex);
