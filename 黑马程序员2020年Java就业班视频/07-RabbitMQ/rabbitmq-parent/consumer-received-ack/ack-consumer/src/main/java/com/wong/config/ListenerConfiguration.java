@@ -27,13 +27,14 @@ public class ListenerConfiguration {
      * 设置手动签收模式【重要】 acknowledgeMode 手动签收MANUAL
      */
     @Bean
-    public SimpleMessageListenerContainer simpleMessageListenerContainer(MessageListenerAdapter messageListenerAdapter, ConnectionFactory connectionFactory) {
+    public SimpleMessageListenerContainer simpleMessageListenerContainer(ConnectionFactory connectionFactory,
+                                                                         MessageListenerAdapter messageListenerAdapter) {
         // 监听器对象的容器对象
         SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-        // 设置自定义监听器对象的适配器对象MessageListenerAdapter
-        container.setMessageListener(messageListenerAdapter);
         // 设置连接工厂对象ConnectionFactory
         container.setConnectionFactory(connectionFactory);
+        // 设置自定义监听器对象的适配器对象MessageListenerAdapter
+        container.setMessageListener(messageListenerAdapter);
         // 设置绑定的消息队列
         container.setQueueNames("order.A");
         // 设置手动签收模式【重要】 MANUAL手动签收，NONE自动签收，AUTO出现异常之后签收
