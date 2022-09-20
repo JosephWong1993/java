@@ -40,9 +40,13 @@ public class CustomAckConsumerListener implements ChannelAwareMessageListener {
             /*
              * 模拟异常情况
              * */
-            if (msg.contains("苹果")) {
-                throw new RuntimeException("苹果手机不能卖！！！");
-            }
+//            if (msg.contains("苹果")) {
+//                throw new RuntimeException("苹果手机不能卖！！！");
+//            }
+
+            // 当前线程休眠3秒，演示消费端限流的效果
+            Thread.sleep(3 * 1000);
+
             // 4 正常，签收消息
             /*
              * 签收消息：

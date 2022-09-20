@@ -39,6 +39,9 @@ public class ListenerConfiguration {
         container.setQueueNames("order.A");
         // 设置手动签收模式【重要】 MANUAL手动签收，NONE自动签收，AUTO出现异常之后签收
         container.setAcknowledgeMode(AcknowledgeMode.MANUAL);
+
+        // 设置消费端限流，限制每次拉取1条消息。默认的每次拉取，250条。
+        container.setPrefetchCount(1);
         return container;
     }
 }
