@@ -891,15 +891,15 @@ docker run --link 可以用来链接2个容器，使得源容器（被链接的�
 
 ```shell
 # 1.1 启动RabbitMQ1
-docker run  -d --hostname rabbitmq1 --name=m1 -p 15673:15672 -p 5673:5672 -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
+docker run  -d --hostname rabbitmq1 --name=rabbitmq1 -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
 
 # -e 注入参数，RABBITMQ_ERLANG_COOKIE: erlang_cookie参数，集群中的节点必须保持一致
 
 # 1.2 启动RabbitMQ2
-docker run -d --hostname rabbitmq2 --name=m2 -p 15674:15672 -p 5674:5672 --link m1:rabbitmq1  -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
+docker run -d --hostname rabbitmq2 --name=rabbitmq2 -p 4370:4369 -p 5673:5671 -p 5674:5672 -p 15673:15671 -p 15674:15672 -p 25673:25672 --link rabbitmq1:rabbitmq1  -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
 
 # 1.3 启动RabbitMQ3
-docker run -d --hostname rabbitmq3 --name m3 -p 15675:15672 -p 5675:5672 --link m2:rabbitmq2 --link m1:rabbitmq1 -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
+docker run -d --hostname rabbitmq3 --name rabbitmq3 -p 4371:4369 -p 5675:5671 -p 5676:5672 -p 15675:15671 -p 15676:15672 -p 25674:25672 --link rabbitmq1:rabbitmq1 --link rabbitmq2:rabbitmq2 -e RABBITMQ_ERLANG_COOKIE='rabbitmqcookie' rabbitmq:management
 ```
 
 ### 2. 进入RabbitMQ容器m1，重置rabbitmq服务
@@ -910,7 +910,7 @@ docker run -d --hostname rabbitmq3 --name m3 -p 15675:15672 -p 5675:5672 --link 
 
 ```shell
 #进入myrabbiratmq1容器 
-docker exec -it m1 bash
+docker exec -it rabbitmq1 bash
 #停止rabbit应用
 rabbitmqctl stop_app
 #重置rabbitmq
@@ -928,7 +928,7 @@ rabbitmqctl start_app
 
 ```shell
 #3.进入myrabbitmq2容器 
-docker exec -it m2 bash
+docker exec -it rabbitmq2 bash
 #停止rabbit应用
 rabbitmqctl stop_app
 #重置rabbitmq
@@ -949,7 +949,7 @@ rabbitmqctl start_app
 
 ```shell
 #4.进入myrabbitmq3容器 
-docker exec -it m3 bash
+docker exec -it rabbitmq3 bash
 #停止rabbit应用
 rabbitmqctl stop_app
 #重置rabbitmq
