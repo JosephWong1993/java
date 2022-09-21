@@ -919,7 +919,7 @@ rabbitmqctl reset
 rabbitmqctl start_app
 ```
 
-### 3. 进入RabbitMQ容器m2，加入集群：连接节点1rabbitmq服务
+### 3. 进入RabbitMQ容器m2，加入集群：连接节点rabbitmq1服务
 
 1. 停止rabbitmq服务
 2. 重置rabbitmq服务
@@ -940,7 +940,7 @@ rabbitmqctl join_cluster --ram rabbit@rabbitmq1
 rabbitmqctl start_app
 ```
 
-### 4. 进入RabbitMQ容器m3，加入集群：连接节点1rabbitmq服务
+### 4. 进入RabbitMQ容器m3，加入集群：连接节点rabbitmq1服务
 
 1. 停止rabbitmq服务
 2. 重置rabbitmq服务
