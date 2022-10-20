@@ -1,0 +1,30 @@
+server:
+  port: 39011
+spring:
+  application:
+    name: changgou-service-goods
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: url
+    username: username
+    password: password
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:36868/eureka
+  instance:
+    prefer-ip-address: true
+feign:
+  hystrix:
+    enabled: true
+
+#hystrix 配置
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          #如果enabled设置为false，则请求超时交给ribbon控制
+          enabled: true
+        isolation:
+          strategy: SEMAPHORE
