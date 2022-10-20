@@ -547,7 +547,7 @@ server:
 
 使用@ConfigurationProperties方式必须提供Setter方法，使用@Value注解不需要Setter方法。
 
-![1558515690311](01-SpringBoot-讲义.assets\1558515690311.png)
+![1558515690311](07-SpringBoot-01-img\1558515690311.png)
 
 ### 3、使用Environment对象获取
 
