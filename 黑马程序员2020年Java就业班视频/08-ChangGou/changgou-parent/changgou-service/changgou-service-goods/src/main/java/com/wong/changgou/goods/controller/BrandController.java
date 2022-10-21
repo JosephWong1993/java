@@ -30,4 +30,31 @@ public class BrandController {
         Brand brand = brandService.findById(id);
         return new Result<>(true, StatusCode.OK, "查询成功", brand);
     }
+
+    /***
+     * 新增品牌数据
+     */
+    @PostMapping("/add")
+    public Result add(@RequestBody Brand brand) {
+        brandService.add(brand);
+        return new Result(true, StatusCode.OK, "添加成功");
+    }
+
+    /***
+     * 修改品牌数据
+     */
+    @PutMapping(value = "/{id}")
+    public Result update(@RequestBody Brand brand) {
+        brandService.update(brand);
+        return new Result(true, StatusCode.OK, "修改成功");
+    }
+
+    /***
+     * 根据ID删除品牌数据
+     */
+    @DeleteMapping(value = "/{id}" )
+    public Result delete(@PathVariable Integer id){
+        brandService.delete(id);
+        return new Result(true,StatusCode.OK,"删除成功");
+    }
 }
