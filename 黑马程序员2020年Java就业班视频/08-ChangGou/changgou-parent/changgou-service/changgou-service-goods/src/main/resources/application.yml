@@ -1,6 +1,8 @@
 server:
   port: 39011
 spring:
+  profiles:
+    active: local
   application:
     name: changgou-service-goods
   datasource:
