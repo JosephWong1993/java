@@ -1,8 +1,10 @@
 package com.wong.changgou.goods.service;
 
+import com.github.pagehelper.Page;
 import com.wong.changgou.pojo.Brand;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BrandService {
     /**
@@ -29,4 +31,9 @@ public interface BrandService {
      * 删除品牌
      */
     void delete(Integer id);
+
+    /***
+     * 根据查询条件查询品牌，结果分页
+     */
+    Page<Brand> searchPage(Map<String, String> searchMap, int pageNo, int pageSize);
 }

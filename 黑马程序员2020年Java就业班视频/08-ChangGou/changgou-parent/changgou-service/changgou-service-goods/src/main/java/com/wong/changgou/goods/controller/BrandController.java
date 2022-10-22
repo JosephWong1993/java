@@ -1,5 +1,7 @@
 package com.wong.changgou.goods.controller;
 
+import com.github.pagehelper.Page;
+import com.wong.changgou.entity.PageResult;
 import com.wong.changgou.entity.Result;
 import com.wong.changgou.entity.StatusCode;
 import com.wong.changgou.goods.service.BrandService;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/brand")
@@ -52,9 +55,19 @@ public class BrandController {
     /***
      * 根据ID删除品牌数据
      */
-    @DeleteMapping(value = "/{id}" )
-    public Result delete(@PathVariable Integer id){
+    @DeleteMapping(value = "/{id}")
+    public Result delete(@PathVariable Integer id) {
         brandService.delete(id);
-        return new Result(true,StatusCode.OK,"删除成功");
+        return new Result(true, StatusCode.OK, "删除成功");
+    }
+
+    /***
+     * 分页搜索实现
+     */
+    @GetMapping(value = "/searchPage/{pageNo}/{pageSize}")
+    public Result<List<Brand>> searchPage(@RequestParam Map<String, String> searchMap, @PathVariable int pageNo, @PathVariable int pageSize) {
+        Page<Brand> page = brandService.searchPage(searchMap, pageNo, pageSize);
+        PageResult<Brand> pageResult = new PageResult<>(page.getTotal(), page.getResult());
+        return new Result<>(true, StatusCode.OK, "根据条件分页查询成功", pageResult);
     }
 }
