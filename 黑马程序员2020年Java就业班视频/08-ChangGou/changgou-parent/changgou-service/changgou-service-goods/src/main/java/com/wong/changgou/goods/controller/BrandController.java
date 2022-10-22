@@ -15,8 +15,11 @@ import java.util.Map;
 @RestController
 @RequestMapping("/brand")
 public class BrandController {
-    @Autowired
-    private BrandService brandService;
+    private final BrandService brandService;
+
+    public BrandController(BrandService brandService) {
+        this.brandService = brandService;
+    }
 
     //    @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     @GetMapping("/findAll")
@@ -30,6 +33,7 @@ public class BrandController {
      */
     @GetMapping("/{id}")
     public Result<Brand> findById(@PathVariable Integer id) {
+//        int i = 1 / 0;
         Brand brand = brandService.findById(id);
         return new Result<>(true, StatusCode.OK, "查询成功", brand);
     }
