@@ -16,6 +16,7 @@ public interface SpecService {
 
     /**
      * 根据ID查询
+     *
      * @param id
      * @return
      */
@@ -66,11 +67,9 @@ public interface SpecService {
 
     /**
      * 根据分类名称查询规格列表
-     * @param cateName
-     * @return
+     *
+     * @param cateName 分类名称
+     * @return 规格列表
      */
     List<Spec> findByCateName(String cateName);
-
-
-
 }

@@ -16,6 +16,7 @@ public interface BrandService {
 
     /**
      * 根据ID查询
+     *
      * @param id
      * @return
      */
@@ -66,11 +67,9 @@ public interface BrandService {
 
     /**
      * 根据分类名称查询品牌列表
-     * @param cateName
-     * @return
+     *
+     * @param cateName 商品名称
+     * @return 品牌列表
      */
     List<Brand> findByCateName(String cateName);
-
-
-
 }
