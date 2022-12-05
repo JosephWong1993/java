@@ -69,7 +69,6 @@ public class FileController {
         return new ResponseEntity<>(content, headers, HttpStatus.CREATED);
     }
 
-
     @PostMapping("/remove")
     public Result removeFile() {
         String groupName = "group1";
@@ -82,5 +81,4 @@ public class FileController {
             return new Result(false, StatusCode.ERROR, "文件删除失败");
         }
     }
-
 }
