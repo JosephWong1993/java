@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 
 @RestController
 @RequestMapping("/file")
@@ -20,14 +21,14 @@ public class FileController {
 
 
     @PostMapping("/upload")
-    public Result upload(@RequestParam("file") MultipartFile file){
+    public Result upload(@RequestParam("file") MultipartFile file) {
         try {
             //1.获取文件的名称
             String orgName = file.getOriginalFilename();
 
             //2.获取文件的后缀
             int index = orgName.lastIndexOf(".");
-            String extName = orgName.substring(index);
+            String extName = orgName.substring(index + 1);
 
             //3.获取文件的内容
             byte[] content = file.getBytes();
@@ -39,7 +40,7 @@ public class FileController {
             String[] uploadResult = FastDFSClient.upload(fastDFSFile);
             String groupName = uploadResult[0];//获取远程文件的组名
             String remoteFilePath = uploadResult[1];//获取远程文件的路径
-            
+
             //6.拿到上传结果拼接URL
             String url = FastDFSClient.getTrackerUrl() + groupName + "/" + remoteFilePath;
 
@@ -50,20 +51,18 @@ public class FileController {
             e.printStackTrace();
             return new Result(false, StatusCode.ERROR, "上传文件失败");
         }
-
     }
 
-
     @GetMapping("/download")
-    public ResponseEntity<byte[]> download(){
+    public ResponseEntity<byte[]> download() {
         String groupName = "group1";
-        String remoteFilePath = "M00/00/00/wKjIgF4K63CADCL4AAExLnOmmB845..jpg";
+        String remoteFilePath = "M00/00/00/wKjIgGONuQCAYLYyAAH3EReag6c09..jpg";
         byte[] content = FastDFSClient.downFile2(groupName, remoteFilePath);
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
         try {
-            headers.setContentDispositionFormData("attachment", new String("黑马程序员.jpg".getBytes("UTF-8"),"iso8859-1"));
+            headers.setContentDispositionFormData("attachment", new String("黑马程序员.jpg".getBytes(StandardCharsets.UTF_8), "iso8859-1"));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
@@ -72,9 +71,9 @@ public class FileController {
 
 
     @PostMapping("/remove")
-    public Result removeFile(){
+    public Result removeFile() {
         String groupName = "group1";
-        String remoteFilePath = "M00/00/00/wKjIgF4K63CADCL4AAExLnOmmB845..jpg";
+        String remoteFilePath = "M00/00/00/wKjIgGONuLmAAqOcAAH3EReag6c32..jpg";
         try {
             FastDFSClient.deleteFile(groupName, remoteFilePath);
             return new Result(true, StatusCode.OK, "文件删除成功");

@@ -105,8 +105,7 @@ public class FastDFSClient {
 			StorageClient storageClient = getTrackerClient();
 
 			//下载文件
-			byte[] fileByte = storageClient.download_file(groupName, remoteFileName);
-			return fileByte;
+			return storageClient.download_file(groupName, remoteFileName);
 		} catch (Exception e) {
 			logger.error("Exception: Get File from Fast DFS failed", e);
 		}
@@ -177,8 +176,7 @@ public class FastDFSClient {
 	 */
 	private static StorageClient getTrackerClient() throws IOException {
 		TrackerServer trackerServer = getTrackerServer();
-		StorageClient storageClient = new StorageClient(trackerServer, null);
-		return  storageClient;
+		return new StorageClient(trackerServer, null);
 	}
 
 
