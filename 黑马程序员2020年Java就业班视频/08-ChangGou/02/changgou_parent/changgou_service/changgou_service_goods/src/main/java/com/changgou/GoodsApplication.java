@@ -19,12 +19,9 @@ public class GoodsApplication {
     @Value("${datacenterId}")
     private long datacenterId;
 
-
     public static void main(String[] args) {
         SpringApplication.run( GoodsApplication.class);
     }
-
-
 
     @Bean
     public IdWorker idWorker(){

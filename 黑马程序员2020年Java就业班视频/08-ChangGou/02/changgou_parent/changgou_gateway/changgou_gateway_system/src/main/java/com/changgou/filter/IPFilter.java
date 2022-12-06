@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.net.InetSocketAddress;
+
 /**
  * 记录用户请求IP地址的过滤器
  */
@@ -19,11 +21,13 @@ public class IPFilter implements GlobalFilter, Ordered {
 
         //得到IP地址
         ServerHttpRequest request = exchange.getRequest();
-        String ip = request.getRemoteAddress().getHostName();
+        InetSocketAddress remoteAddress = request.getRemoteAddress();
+        if (remoteAddress != null) {
+            String ip = remoteAddress.getHostName();
 
-        //TODO 记录到DB
-        System.out.println("第一个过滤器，记录用户请求的IP地址：" + ip);
-
+            //TODO 记录到DB
+            System.out.println("第一个过滤器，记录用户请求的IP地址：" + ip);
+        }
         return chain.filter(exchange);//放行
     }
 

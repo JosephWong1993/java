@@ -16,8 +16,6 @@ public class GatewayApplication {
         SpringApplication.run(GatewayApplication.class,args);
     }
 
-
-
     @Bean
     public KeyResolver ipKeyResolver(){
         return new KeyResolver() {
