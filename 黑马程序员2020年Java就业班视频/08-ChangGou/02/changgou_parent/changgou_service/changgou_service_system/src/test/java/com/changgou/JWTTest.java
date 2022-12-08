@@ -17,7 +17,8 @@ public class JWTTest {
     public void createJwt(){
         String secret = "itheima";
 
-        String jwt = Jwts.builder().signWith(SignatureAlgorithm.HS256, secret) //设置头部的算法和签名的密钥
+        String jwt = Jwts.builder()
+                .signWith(SignatureAlgorithm.HS256, secret) //设置头部的算法和签名的密钥
                 .setId(UUID.randomUUID().toString()) //设置JWT的唯一ID标识
                 .setSubject("黑马程序员") //设置JWT的主题
                 .setIssuedAt(new Date()) //设置JWT的系统签发时间

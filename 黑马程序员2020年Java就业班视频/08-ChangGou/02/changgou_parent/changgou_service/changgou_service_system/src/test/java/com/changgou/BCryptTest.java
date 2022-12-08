@@ -8,10 +8,10 @@ public class BCryptTest {
 
     /**
      * Bcrypt的加密测试
-     *
+     * <p>
      * 模拟管理后台管理员添加用户的操作
-     *
-     *
+     * <p>
+     * <p>
      * 密文密码：$2a$10$w3NCnlzszakhCDcI5s9REuqbBBPwYktRyxQtWOQWXa183g4zxLqgO
      * 密文密码：$2a$10$QIIGR4Kf38137EdVvlzDGOjfJATHqnI3nNIQOLdbdB69vF6Ldz//y
      * 密文密码：$2a$10$Hk0gQX1Ay01bQ8yT3utcouJVMit1xAucGUSJhhNISJxelek0iqUK6
@@ -24,9 +24,9 @@ public class BCryptTest {
      * 密文密码：$2a$10$CXDt5VWgFyXnddL15ab0Bet8467v9GVrU0aiZWeXx8jdpHo/hcgaO
      */
     @Test
-    public void testEncrypt(){
+    public void testEncrypt() {
 
-        for(int i=0;i<10; i++){
+        for (int i = 0; i < 10; i++) {
             //用户的明文密码
             String pwdText = "itheima";
 
@@ -34,16 +34,14 @@ public class BCryptTest {
             String pwdEncrypt = BCrypt.hashpw(pwdText, BCrypt.gensalt());
             System.out.println("密文密码：" + pwdEncrypt);
         }
-
     }
-
 
     /**
      * BCypt的密码校验
      * 模拟用户登录管理后台，后台代码校验密码的逻辑
      */
     @Test
-    public void testCheckPwd(){
+    public void testCheckPwd() {
 
         //用户登录管理后台输入的明文密码
         String pwdText = "itheima";
@@ -55,11 +53,10 @@ public class BCryptTest {
 //        System.out.println("校验登录是否成功：" + checkpw);
 
 
-
         String[] encryptPwdArr = {"$2a$10$QIIGR4Kf38137EdVvlzDGOjfJATHqnI3nNIQOLdbdB69vF6Ldz//y"
-        ,"$2a$10$7y76MQf7OQWFRB2KasXUxexEL3N2T.INMc8FvYfqu1H/tSd6Sdz6y"
-        ,"$2a$10$1werlzFvSbQgTp4.tv6rZ.X7ZrQTmuO1ljH2Kvku3LXH4agIZ4if6"
-        ,"$2a$10$jeYHemA/ZQXXaS6QwYK14OEVS7qdQroEA43tXLk65iEI2EnZfTKwu"};
+                , "$2a$10$7y76MQf7OQWFRB2KasXUxexEL3N2T.INMc8FvYfqu1H/tSd6Sdz6y"
+                , "$2a$10$1werlzFvSbQgTp4.tv6rZ.X7ZrQTmuO1ljH2Kvku3LXH4agIZ4if6"
+                , "$2a$10$jeYHemA/ZQXXaS6QwYK14OEVS7qdQroEA43tXLk65iEI2EnZfTKwu"};
         for (String encryptPassword : encryptPwdArr) {
             boolean check = BCrypt.checkpw(pwdText, encryptPassword);
             System.out.println("校验登录是否成功：" + check);

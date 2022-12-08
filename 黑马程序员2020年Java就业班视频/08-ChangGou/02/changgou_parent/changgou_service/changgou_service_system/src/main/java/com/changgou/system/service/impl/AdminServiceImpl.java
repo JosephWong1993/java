@@ -16,8 +16,11 @@ import java.util.Map;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    @Autowired
-    private AdminMapper adminMapper;
+    private final AdminMapper adminMapper;
+
+    public AdminServiceImpl(AdminMapper adminMapper) {
+        this.adminMapper = adminMapper;
+    }
 
     /**
      * 查询全部列表
@@ -160,8 +163,6 @@ public class AdminServiceImpl implements AdminService {
         //根据用户登录的明文密码，和基于该用户查询到的数据库中用户信息的密文密码进行校验
         String pwdText = admin.getPassword(); //用户登录的明文密码
         String pwdEncrypt = dbAdmin.getPassword();//用户在数据库表中的密文密码
-        boolean checkpw = BCrypt.checkpw(pwdText, pwdEncrypt);
-
-        return checkpw;
+        return BCrypt.checkpw(pwdText, pwdEncrypt);
     }
 }

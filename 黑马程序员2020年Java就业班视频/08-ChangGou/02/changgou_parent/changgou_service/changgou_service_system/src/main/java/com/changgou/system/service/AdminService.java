@@ -16,6 +16,7 @@ public interface AdminService {
 
     /**
      * 根据ID查询
+     *
      * @param id
      * @return
      */
@@ -66,10 +67,6 @@ public interface AdminService {
 
     /**
      * 用户名密码登录
-     * @param admin
-     * @return
      */
     boolean login(Admin admin);
-
-
 }
