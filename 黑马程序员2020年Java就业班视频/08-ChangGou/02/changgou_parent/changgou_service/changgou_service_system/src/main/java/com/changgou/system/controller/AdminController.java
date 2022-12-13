@@ -111,7 +111,6 @@ public class AdminController {
         return new Result(true, StatusCode.OK, "查询成功", pageResult);
     }
 
-
     @PostMapping("/login")
     public Result login(@RequestBody Admin admin) {
 
