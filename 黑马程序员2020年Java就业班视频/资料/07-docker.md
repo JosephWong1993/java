@@ -523,17 +523,17 @@ docker search mysql
 2. 拉取mysql镜像
 
 ```shell
-docker pull mysql:8.0.29
+docker pull mysql:8.0.31
 ```
 
 3. 创建容器，设置端口映射、目录映射
 
 ```shell
-docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.29
+docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.31
 ```
 
 - 参数说明：
-  - **-p 3307:3306**：将容器的 3306 端口映射到宿主机的 3307 端口。
+  - **-p 3306:3306**：将容器的 3306 端口映射到宿主机的 3306 端口。
   - **-v /root/mysql/logs:/logs**：将主机目录(/root/mysql)下的 logs 目录挂载到容器中的 /logs。日志目录
   - **-v /root/mysql/data:/var/lib/mysql** ：将主机目录(/root/mysql)下的data目录挂载到容器的 /var/lib/mysql 。数据目录
   - **-e MYSQL_ROOT_PASSWORD=123456：**初始化 root 用户的密码。
@@ -541,7 +541,7 @@ docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysq
 4. 进入容器，操作mysql
 
 ```shell
-docker exec –it c_mysql /bin/bash
+docker exec -ti mysql /bin/bash
 ```
 
 5. 使用Navicat连接容器中的mysql

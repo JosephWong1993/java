@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: mybatisPlus-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: url
+    username: username
+    password: password
+logging:
+  level:
+    com.itheima: debug
+server:
+  port: 9300
