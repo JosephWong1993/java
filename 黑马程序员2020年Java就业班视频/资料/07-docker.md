@@ -529,7 +529,7 @@ docker pull mysql:8.0.31
 3. 创建容器，设置端口映射、目录映射
 
 ```shell
-docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.31
+docker run -di --name=mysql -p 3306:3306 -v /root/mysql/logs:/logs -v /root/mysql/data:/var/lib/mysql -e TZ=Asia/Shanghai -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.31
 ```
 
 - 参数说明：
