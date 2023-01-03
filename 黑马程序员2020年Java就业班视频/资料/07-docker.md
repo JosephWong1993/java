@@ -611,7 +611,7 @@ docker pull redis:6.2.6
 3. 创建容器，设置端口映射
 
 ```shell
-docker run -id --name=redis -p 6379:6379 redis:6.2.6 --requirepass “password”
+docker run -id --name=redis -p 6379:6379 redis:6.2.6 --requirepass "password"
 ```
 
 4. 使用外部机器连接redis，测试
