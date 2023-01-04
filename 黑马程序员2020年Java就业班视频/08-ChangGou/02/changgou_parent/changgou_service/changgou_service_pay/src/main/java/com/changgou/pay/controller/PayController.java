@@ -2,7 +2,7 @@ package com.changgou.pay.controller;
 
 import com.changgou.pay.config.TokenDecode;
 import com.changgou.pay.service.PayService;
-import com.github.wxpay.sdk.WXPayUtil;
+//import com.github.wxpay.sdk.WXPayUtil;
 import org.apache.commons.io.IOUtils;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,19 +62,19 @@ public class PayController {
         //将输入流借助工具包转换成字符串
         String wxResultstr = IOUtils.toString(inputStream, "utf-8");
         //借助微信工具类, 将xml格式字符串转换成Map格式
-        Map<String, String> wxResultMap = WXPayUtil.xmlToMap(wxResultstr);
+//        Map<String, String> wxResultMap = WXPayUtil.xmlToMap(wxResultstr);
 
 
         /**
          * 2. 将支付成功的订单号和交易流水号发送到rabbitMq的order_pay做后续订单业务处理
          */
-        rabbitTemplate.convertAndSend("", "order_pay", wxResultMap);
+//        rabbitTemplate.convertAndSend("", "order_pay", wxResultMap);
 
         /**
          * 3. 将支付成功的订单号发送到rabbitMq的paynotify交换器中, 从而推送到消费者页面
          *  让消费者页面跳转到支付成功页面
          */
-        rabbitTemplate.convertAndSend("paynotify", "", wxResultMap.get("out_trade_no"));
+//        rabbitTemplate.convertAndSend("paynotify", "", wxResultMap.get("out_trade_no"));
 
         /**
          * 给微信服务器返回成功信息

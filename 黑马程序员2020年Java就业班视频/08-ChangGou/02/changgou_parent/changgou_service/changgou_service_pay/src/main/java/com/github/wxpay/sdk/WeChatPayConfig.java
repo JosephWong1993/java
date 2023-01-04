@@ -6,8 +6,9 @@ import java.io.InputStream;
  * 微信 支付 Java配置
  * 
  */
-public class WeChatPayConfig extends WXPayConfig {
-
+public class WeChatPayConfig
+//        extends WXPayConfig {
+{
 
 
     /**
@@ -35,14 +36,14 @@ public class WeChatPayConfig extends WXPayConfig {
         return null;
     }
 
-    IWXPayDomain getWXPayDomain() {
-        return new IWXPayDomain() {
-            public void report(String domain, long elapsedTimeMillis, Exception ex) {
-
-            }
-            public DomainInfo getDomain(WXPayConfig config) {
-                return new DomainInfo("api.mch.weixin.qq.com",true);
-            }
-        };
-    }
+//    IWXPayDomain getWXPayDomain() {
+//        return new IWXPayDomain() {
+//            public void report(String domain, long elapsedTimeMillis, Exception ex) {
+//
+//            }
+//            public DomainInfo getDomain(WXPayConfig config) {
+//                return new DomainInfo("api.mch.weixin.qq.com",true);
+//            }
+//        };
+//    }
 }

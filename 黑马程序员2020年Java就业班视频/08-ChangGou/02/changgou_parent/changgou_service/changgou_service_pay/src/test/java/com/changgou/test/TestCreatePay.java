@@ -1,6 +1,7 @@
 package com.changgou.test;
 
-import com.github.wxpay.sdk.WXPay;
+//import com.github.wxpay.sdk.WXPay;
+import com.changgou.pay.WXPay;
 import com.github.wxpay.sdk.WeChatPayConfig;
 
 import java.util.HashMap;

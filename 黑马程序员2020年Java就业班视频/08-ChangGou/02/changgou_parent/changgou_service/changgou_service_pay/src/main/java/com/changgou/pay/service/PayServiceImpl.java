@@ -2,7 +2,8 @@ package com.changgou.pay.service;
 
 import com.changgou.entity.Constants;
 import com.changgou.order.pojo.Order;
-import com.github.wxpay.sdk.WXPay;
+//import com.github.wxpay.sdk.WXPay;
+import com.changgou.pay.WXPay;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;

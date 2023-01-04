@@ -1,8 +1,9 @@
 package com;
 
 import com.changgou.interceptor.FeignInterceptor;
+import com.changgou.pay.WXPay;
 import com.changgou.pay.config.TokenDecode;
-import com.github.wxpay.sdk.WXPay;
+//import com.github.wxpay.sdk.WXPay;
 import com.github.wxpay.sdk.WeChatPayConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
