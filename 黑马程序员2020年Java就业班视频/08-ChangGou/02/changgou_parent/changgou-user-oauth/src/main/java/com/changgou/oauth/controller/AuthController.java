@@ -35,27 +35,30 @@ public class AuthController {
     private Integer cookieMaxAge;
 
     @GetMapping("/toLogin")
-    public String toLogin(@RequestParam(value = "ReturnUrl",required = false, defaultValue = "http://www.changgou.com")String ReturnUrl, Model model){
+    public String toLogin(@RequestParam(value = "ReturnUrl", required = false, defaultValue = "http://www.changgou.com") String ReturnUrl,
+                          Model model) {
         model.addAttribute("ReturnUrl", ReturnUrl);
         return "login";
     }
 
 
     @PostMapping("/login")
-    public String login(@RequestParam("username") String username,@RequestParam("password") String password,@RequestParam(value = "ReturnUrl",required = false, defaultValue = "http://www.changgou.com")String ReturnUrl){
+    public String login(@RequestParam("username") String username,
+                        @RequestParam("password") String password,
+                        @RequestParam(value = "ReturnUrl", required = false, defaultValue = "http://www.changgou.com") String ReturnUrl) {
         try {
             AuthToken authToken = authService.applyToken(clientId, clientSecret, username, password);
             saveJtiToCookie(authToken.getJti());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "redirect:"+ ReturnUrl;
+        return "redirect:" + ReturnUrl;
     }
 
 
     @PostMapping("/interface/login")
     @ResponseBody
-    public Result interfaceLogin(@RequestParam("username") String username,@RequestParam("password") String password){
+    public Result interfaceLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
         try {
             AuthToken authToken = authService.applyToken(clientId, clientSecret, username, password);
             saveJtiToCookie(authToken.getJti());
@@ -64,11 +67,10 @@ public class AuthController {
             e.printStackTrace();
             return new Result(false, StatusCode.LOGINERROR, "登录失败！");
         }
-
     }
 
-    private void saveJtiToCookie(String jti){
-        ServletRequestAttributes servletRequestAttributes =  (ServletRequestAttributes)RequestContextHolder.getRequestAttributes();
+    private void saveJtiToCookie(String jti) {
+        ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletResponse response = servletRequestAttributes.getResponse();
         CookieUtil.addCookie(response, cookieDomain, "/", "uid", jti, cookieMaxAge, false);
     }

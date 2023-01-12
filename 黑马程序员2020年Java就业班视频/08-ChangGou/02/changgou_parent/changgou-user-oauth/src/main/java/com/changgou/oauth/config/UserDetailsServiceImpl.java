@@ -22,11 +22,15 @@ import org.springframework.util.StringUtils;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private ClientDetailsService clientDetailsService;
+    private final ClientDetailsService clientDetailsService;
 
-    @Autowired
-    private UserFeign userFeign;
+    private final UserFeign userFeign;
+
+    public UserDetailsServiceImpl(ClientDetailsService clientDetailsService,
+                                  UserFeign userFeign) {
+        this.clientDetailsService = clientDetailsService;
+        this.userFeign = userFeign;
+    }
 
     /****
      * 自定义授权认证
@@ -39,15 +43,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         //没有认证统一采用httpbasic认证，httpbasic中存储了client_id和client_secret，
         //开始认证client_id和client_secret
-        if(authentication==null){
+        if (authentication == null) {
             ClientDetails clientDetails = clientDetailsService.loadClientByClientId(username);
-            if(clientDetails!=null){
+            if (clientDetails != null) {
                 //秘钥
                 String clientSecret = clientDetails.getClientSecret();
                 //静态方式
                 //return new User(username,new BCryptPasswordEncoder().encode(clientSecret), AuthorityUtils.commaSeparatedStringToAuthorityList(""));
                 //数据库查找方式, 创建用户对象
-                return new User(username,clientSecret, AuthorityUtils.commaSeparatedStringToAuthorityList(""));
+                return new User(username, clientSecret, AuthorityUtils.commaSeparatedStringToAuthorityList(""));
             }
         }
 
@@ -57,7 +61,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         }
 
         com.changgou.user.pojo.User user = userFeign.load(username);
-        if(user==null){
+        if (user == null) {
             throw new RuntimeException("用户不存在！");
         }
 

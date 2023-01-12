@@ -35,10 +35,10 @@ public class TokenTest {
      */
     @Test
     public void testApplyToken(){
-        String clientId = "wujintao"; //客户端应用的ID
-        String clientSecret = "wujintao"; //客户端应用的密钥
+        String clientId = "changgou"; //客户端应用的ID
+        String clientSecret = "changgou"; //客户端应用的密钥
         String username = "heima"; //用户（资源所有者）的用户名
-        String password = "itcast"; //用户（资源所有者）的密码
+        String password = "itheima"; //用户（资源所有者）的密码
 
 
         //1.获取及拼接URL
@@ -77,7 +77,6 @@ public class TokenTest {
                 System.out.println(key + " <====> " + resultMap.get(key));
             }
         }
-
     }
 
     private String getHttpBasic(String clientId, String clientSecret){

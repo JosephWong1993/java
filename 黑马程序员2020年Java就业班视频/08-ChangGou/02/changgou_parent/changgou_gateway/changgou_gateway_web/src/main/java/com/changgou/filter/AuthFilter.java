@@ -17,8 +17,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
 
-    @Autowired
-    private AuthService authService;
+    private final AuthService authService;
+
+    public AuthFilter(AuthService authService) {
+        this.authService = authService;
+    }
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
