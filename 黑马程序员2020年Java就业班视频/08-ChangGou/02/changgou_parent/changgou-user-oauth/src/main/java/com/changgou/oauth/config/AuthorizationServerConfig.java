@@ -31,37 +31,35 @@ import java.security.KeyPair;
 //开启认证服务
 @EnableAuthorizationServer
 class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-
     //数据源，用于从数据库获取数据进行认证操作，测试可以从内存中获取
-    @Autowired
-    private DataSource dataSource;
-
+    private final DataSource dataSource;
     //jwt令牌转换器
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
+    //授权认证管理器
+    private final AuthenticationManager authenticationManager;
+    //令牌持久化存储接口
+    @Autowired
+    private TokenStore tokenStore;
 
     //SpringSecurity 用户自定义授权认证类
     @Autowired
     private UserDetailsService userDetailsService;
 
-    //授权认证管理器
-    @Autowired
-    private AuthenticationManager authenticationManager;
-
-    //令牌持久化存储接口
-    @Autowired
-    private TokenStore tokenStore;
-
     @Autowired
     private CustomUserAuthenticationConverter customUserAuthenticationConverter;
+
+    public AuthorizationServerConfig(DataSource dataSource,
+                                     AuthenticationManager authenticationManager) {
+        this.dataSource = dataSource;
+        this.authenticationManager = authenticationManager;
+    }
 
     /***
      * 客户端信息配置
      * 畅购用户中心
      *      校验:   畅购应用是否在数据库 oauth_client_details 表中有此用户
      *      方式:   数据库(持久化保存用户信息)
-     * @param clients
-     * @throws Exception
      */
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
@@ -70,8 +68,6 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     /***
      * 授权服务器端点配置
-     * @param endpoints
-     * @throws Exception
      */
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
@@ -83,8 +79,6 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     /***
      * 授权服务器的安全配置
-     * @param oauthServer
-     * @throws Exception
      */
     @Override
     public void configure(AuthorizationServerSecurityConfigurer oauthServer) throws Exception {
@@ -97,7 +91,7 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     //读取密钥的配置
     @Bean("keyProp")
-    public KeyProperties keyProperties(){
+    public KeyProperties keyProperties() {
         return new KeyProperties();
     }
 
@@ -120,7 +114,6 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
     /**
      * 令牌保存
-     * @return
      */
     @Bean
     @Autowired
@@ -132,7 +125,6 @@ class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     /**
      * JWT令牌转换器
      * 生成使用RSA方式加密的 Jwt令牌
-     * @return
      */
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter(CustomUserAuthenticationConverter customUserAuthenticationConverter) {

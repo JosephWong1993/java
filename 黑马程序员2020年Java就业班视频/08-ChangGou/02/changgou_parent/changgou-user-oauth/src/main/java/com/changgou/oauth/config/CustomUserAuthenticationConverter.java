@@ -23,7 +23,7 @@ public class CustomUserAuthenticationConverter extends DefaultUserAuthentication
 
     @Override
     public Map<String, ?> convertUserAuthentication(Authentication authentication) {
-        Map<String, Object> response = new LinkedHashMap();
+        Map<String, Object> response = new LinkedHashMap<>();
         //获取用户名
         String name = authentication.getName();
         response.put("username", name);

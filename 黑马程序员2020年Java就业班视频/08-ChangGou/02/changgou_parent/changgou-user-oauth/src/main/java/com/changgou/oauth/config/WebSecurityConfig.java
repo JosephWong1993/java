@@ -49,14 +49,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     /***
      * 创建授权管理认证对象
-     * @return
-     * @throws Exception
      */
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
-        AuthenticationManager manager = super.authenticationManagerBean();
-        return manager;
+        return super.authenticationManagerBean();
     }
 
     /***
@@ -71,8 +68,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     /**
      * 配置必须拦截的请求
      * 配置登录表单
-     * @param http
-     * @throws Exception
      */
     @Override
     public void configure(HttpSecurity http) throws Exception {

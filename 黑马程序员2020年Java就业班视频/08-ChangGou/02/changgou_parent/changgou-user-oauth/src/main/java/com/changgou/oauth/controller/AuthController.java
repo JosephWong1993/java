@@ -41,7 +41,6 @@ public class AuthController {
         return "login";
     }
 
-
     @PostMapping("/login")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
@@ -58,7 +57,8 @@ public class AuthController {
 
     @PostMapping("/interface/login")
     @ResponseBody
-    public Result interfaceLogin(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public Result interfaceLogin(@RequestParam("username") String username,
+                                 @RequestParam("password") String password) {
         try {
             AuthToken authToken = authService.applyToken(clientId, clientSecret, username, password);
             saveJtiToCookie(authToken.getJti());
