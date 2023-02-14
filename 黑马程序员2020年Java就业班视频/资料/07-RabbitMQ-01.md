@@ -130,13 +130,13 @@ RabbitMQ提供了6种模式：Hello Word简单模式，work工作模式，Publis
 - 下载镜像 
 
 ```shell
-docker pull rabbitmq:management
+sudo docker pull rabbitmq:3.10.6-management
 ```
 
 - 创建容器 
 
 ```shell
-docker run -di --name=rabbitmq -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:management
+sudo docker run -di --name=rabbitmq -p 4369:4369 -p 5671:5671 -p 5672:5672 -p 15671:15671 -p 15672:15672 -p 25672:25672 rabbitmq:3.10.6-management
 ```
 
 ```
@@ -159,7 +159,7 @@ http://192.168.200.128:15672/
 - 设置容器开机自动启动
 
 ```shell
-docker update --restart=always 容器ID
+sudo docker update --restart=always 容器ID
 ```
 
 ![image-20191224135410717](07-RabbitMQ-01-assets/image-20191224135410717.png)
