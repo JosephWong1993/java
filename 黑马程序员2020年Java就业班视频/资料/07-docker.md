@@ -573,12 +573,12 @@ docker pull tomcat:8-jre11
 3. 创建容器，设置端口映射、目录映射
 
 ```shell
-docker run -id --name=c_tomcat -p 8080:8080 -v /root/tomcat/webapps:/usr/local/tomcat/webapps tomcat:8-jre11
+docker run -id --name=c_tomcat -p 10000:8080 -v /root/tomcat/webapps:/usr/local/tomcat/webapps tomcat:8-jre11
 ```
 
 - 参数说明：
 
-  - **-p 8080:8080：**将容器的8080端口映射到主机的8080端口
+  - **-p 8080:8080：**将容器的8080端口映射到主机的10000端口
 
     **-v /root/tomcat/webapps:/usr/local/tomcat/webapps：**将主机目录(/root/tomcat/webapps)挂载到容器的webapps
 
