@@ -1,0 +1,34 @@
+# 端口
+server:
+  port: 12000
+# 应用名称
+spring:
+  profiles:
+    active: dev
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: uri
+          username: username
+          password: password
+  # RabbitMQ服务的 host，port，用户名，密码
+  rabbitmq:
+    host: host
+    port: 5672
+    username: username
+    password: password
+    virtual-host: /
+# 触发配置文件广播的地址 actuator 的 endpoint
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+# 注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka

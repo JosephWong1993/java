@@ -7,7 +7,7 @@ spring:
     name: eureka-server
 eureka:
   server:
-    #向Eureka服务中心集群注册服务
+    # 向 Eureka 服务中心集群注册服务
     # 关闭自我保护模式（默认值是打开）
     enable-self-preservation: false
   client:

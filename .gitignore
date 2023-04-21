@@ -34,12 +34,3 @@ hs_err_pid*
 .idea
 out
 target
-
-# Java
-#配置文件过滤
-c3p0-config.xml
-db.properties
-jdbc.properties
-druid.properties
-redis.properties
-/黑马程序员2020年Java就业班视频/07-SrpingCould/wong-spring-cloud-parent/provider-service/src/main/resources/bootstrap.yml
