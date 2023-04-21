@@ -28,7 +28,7 @@ public class UserController {
      * 根据id查询
      */
     @RequestMapping("/findById")
-    public User findById(@RequestParam("id") Integer id) throws InterruptedException {
+    public User findById(@RequestParam("id") Integer id) {
 //        Thread.sleep(3000);
         // 手动抛出异常
         if (id == 1) {
