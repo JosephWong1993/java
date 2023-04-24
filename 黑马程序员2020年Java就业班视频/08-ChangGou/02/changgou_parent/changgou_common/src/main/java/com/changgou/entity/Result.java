@@ -22,6 +22,7 @@ public class Result<T> {
         this.flag = flag;
         this.code = code;
         this.message = message;
+        this.data = null;
     }
 
     public Result() {
