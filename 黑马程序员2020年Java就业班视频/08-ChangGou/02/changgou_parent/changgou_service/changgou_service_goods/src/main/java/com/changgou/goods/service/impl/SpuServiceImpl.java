@@ -394,54 +394,41 @@ public class SpuServiceImpl implements SpuService {
     public void deleteLogic(String spuId) {
         //1.根据spuId查询spu
         Spu spu = spuMapper.selectByPrimaryKey(spuId);
-
         //2.判断当前商品状态是否是已下架状态，如果是上架状态抛异常
         if ("1".equals(spu.getIsMarketable())) {
             throw new RuntimeException("上架中的商品不能删除！！！");
         }
-
         //3.设置商品状态为已删除
         spu.setIsDelete("1");
         //设置商品为未审核
         spu.setStatus("0");
-
         //4.执行更新
         spuMapper.updateByPrimaryKeySelective(spu);
     }
-
 
     @Override
     public void restore(String spuId) {
         //1.根据spuId查询spu
         Spu spu = spuMapper.selectByPrimaryKey(spuId);
-
         //2.判断当前商品状态是否为逻辑删除状态，如果不是抛异常
         if ("0".equals(spu.getIsDelete())) {
             throw new RuntimeException("未删除的商品不需要恢复！！！");
         }
-
-
         //3.设置商品状态为未删除状态
         spu.setIsDelete("0");
-
         //4.执行更行
         spuMapper.updateByPrimaryKeySelective(spu);
     }
-
 
     @Transactional
     @Override
     public void deleteReal(String spuId) {
         //1.根据spuid查询spu
         Spu spu = spuMapper.selectByPrimaryKey(spuId);
-
-
         //2.判断当前商品状态是否是下架状态，如果不是抛异常
         if ("1".equals(spu.getIsMarketable())) {
             throw new RuntimeException("上架中的商品不能删除！！！");
         }
-
-
         //3.删除spu和sku
         spuMapper.deleteByPrimaryKey(spuId);
         Example example = new Example(Sku.class);

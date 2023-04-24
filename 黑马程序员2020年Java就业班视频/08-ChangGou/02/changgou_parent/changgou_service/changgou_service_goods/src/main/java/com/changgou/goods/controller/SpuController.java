@@ -77,9 +77,9 @@ public class SpuController {
      * @return
      */
     @DeleteMapping(value = "/{id}")
-    public Result delete(@PathVariable String id) {
+    public Result<?> delete(@PathVariable String id) {
         spuService.delete(id);
-        return new Result(true, StatusCode.OK, "删除成功");
+        return new Result<>(true, StatusCode.OK, "删除成功");
     }
 
     /***
@@ -140,26 +140,26 @@ public class SpuController {
     }
 
     @PostMapping("/downGoods/{spuId}")
-    public Result downGoods(@PathVariable String spuId) {
+    public Result<?> downGoods(@PathVariable String spuId) {
         spuService.downGoods(spuId);
-        return new Result(true, StatusCode.OK, "商品下架成功");
+        return new Result<>(true, StatusCode.OK, "商品下架成功");
     }
 
     @PostMapping("/deleteLogic/{spuId}")
-    public Result deleteLogic(@PathVariable String spuId) {
+    public Result<?> deleteLogic(@PathVariable String spuId) {
         spuService.deleteLogic(spuId);
-        return new Result(true, StatusCode.OK, "逻辑删除商品成功");
+        return new Result<>(true, StatusCode.OK, "逻辑删除商品成功");
     }
 
     @PostMapping("/restore/{spuId}")
-    public Result restore(@PathVariable String spuId) {
+    public Result<?> restore(@PathVariable String spuId) {
         spuService.restore(spuId);
-        return new Result(true, StatusCode.OK, "恢复逻辑删除的商品成功");
+        return new Result<>(true, StatusCode.OK, "恢复逻辑删除的商品成功");
     }
 
     @PostMapping("/deleteReal/{spuId}")
-    public Result deleteReal(@PathVariable String spuId) {
+    public Result<?> deleteReal(@PathVariable String spuId) {
         spuService.deleteReal(spuId);
-        return new Result(true, StatusCode.OK, "物理删除商品成功");
+        return new Result<>(true, StatusCode.OK, "物理删除商品成功");
     }
 }
