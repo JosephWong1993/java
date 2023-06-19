@@ -12,8 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 @CanalEventListener
 public class BusinessListener {
 
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
+    private final RabbitTemplate rabbitTemplate;
+
+    public BusinessListener(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     @ListenPoint(schema = "changgou_business", table = {"tb_ad"})
     public void adUpdate(CanalEntry.EventType eventType, CanalEntry.RowData rowData) {
@@ -29,10 +32,10 @@ public class BusinessListener {
 //        }
 
         //修改后数据
-        for(CanalEntry.Column column: rowData.getAfterColumnsList()) {
-            if(column.getName().equals("position")){
-                System.out.println("发送消息到mq  ad_update_queue:"+column.getValue());
-                rabbitTemplate.convertAndSend("","ad_update_queue",column.getValue());  //发送消息到mq
+        for (CanalEntry.Column column : rowData.getAfterColumnsList()) {
+            if (column.getName().equals("position")) {
+                System.out.println("发送消息到mq  ad_update_queue:" + column.getValue());
+                rabbitTemplate.convertAndSend("", "ad_update_queue", column.getValue());  //发送消息到mq
                 break;
             }
         }
