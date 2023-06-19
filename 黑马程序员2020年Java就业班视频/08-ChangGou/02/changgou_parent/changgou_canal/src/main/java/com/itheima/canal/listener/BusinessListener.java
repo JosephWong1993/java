@@ -4,7 +4,6 @@ import com.alibaba.otter.canal.protocol.CanalEntry;
 import com.xpand.starter.canal.annotation.CanalEventListener;
 import com.xpand.starter.canal.annotation.ListenPoint;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author ZJ
