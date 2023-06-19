@@ -10,10 +10,8 @@ import java.io.IOException;
 @Component
 @RabbitListener(queues = "ad_update_queue")
 public class BusinessListener {
-
-
     @RabbitHandler
-    public void msgHandle(String position){
+    public void msgHandle(String position) {
         //1.拼接大广告预热更新的URL
         String url = "http://192.168.200.128/ad_update?position=" + position;
 
@@ -28,14 +26,13 @@ public class BusinessListener {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                System.out.println("请求大广告预热更新失败！" +position );
+                System.out.println("请求大广告预热更新失败！" + position);
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                System.out.println("请求大广告预热更新成功！" +position );
+            public void onResponse(Call call, Response response) {
+                System.out.println("请求大广告预热更新成功！" + position);
             }
         });
-
     }
 }
