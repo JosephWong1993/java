@@ -23,11 +23,11 @@
 
 但还需注意：加入坐标之后，如果想要代码立即生效，必须在修改代码之后进行代码构建。默认情况IDEA不会自动构建，需要手动构建。如图两处地方均可。
 
-![image-20191116073526958](/07-SpringBoot-02-img/image-20191116073526958.png)
+![image-20191116073526958](07-SpringBoot-02-assets/image-20191116073526958.png)
 
 每次手动构建很麻烦？！！还有一种自动构建解决方案，但不建议使用。就是设置`Build Project Automatically`。同时打开Maintenance维护(打开快捷键`Shift + Ctrl + Alt + /`)，选择Registry(注册表)，设置运行时自动编译。
 
-![image-20191116073950737](/07-SpringBoot-02-img/image-20191116073950737.png)
+![image-20191116073950737](07-SpringBoot-02-assets/image-20191116073950737.png)
 
 # 八、配置文件延伸
 
@@ -75,7 +75,7 @@ Springboot程序启动时，会从以下位置加载配置文件：
 
 加载顺序为上文的排列顺序，高优先级配置的属性会生效
 
-![image-20191129115637643](/07-SpringBoot-02-img/image-20191129115637643.png)
+![image-20191129115637643](07-SpringBoot-02-assets/image-20191129115637643.png)
 
 **注意：在多个model的工程中，这种配置顺序不生效**
 
@@ -105,11 +105,11 @@ Springboot程序启动时，会从以下位置加载配置文件：
 
 第一种方式：IDEA通过参数注入方式配置：
 
-![image-20191129120809657](/07-SpringBoot-02-img/image-20191129120809657.png)
+![image-20191129120809657](07-SpringBoot-02-assets/image-20191129120809657.png)
 
 第二种方式：命令行：
 
-![image-20191129121309318](/07-SpringBoot-02-img/image-20191129121309318.png)
+![image-20191129121309318](07-SpringBoot-02-assets/image-20191129121309318.png)
 
 ```yml
 # 自定义配置文件名称
@@ -138,7 +138,7 @@ JavaEE包括13门规范，其中 Servlet规范包括三个技术点：Servlet、
 
 - **响应行为：**监听器监听到事件源的状态变化时 所涉及的功能代码 ---- 程序员编写的代码
 
-<img src="/07-SpringBoot-02-img/clip_image002.jpg" alt="img" style="zoom: 50%;" />    
+<img src="07-SpringBoot-02-assets/clip_image002.jpg" alt="img" style="zoom: 50%;" />    
 
 **1、js中的事件监听机制：onclick=fun()**
 
@@ -252,19 +252,19 @@ public class InitialzerRedisCacheListnener implements ApplicationRunner {
 
 Redis的自动配置
 
-![image-20191128175029652](/07-SpringBoot-02-img/image-20191128175029652.png)
+![image-20191128175029652](07-SpringBoot-02-assets/image-20191128175029652.png)
 
 Mybatis的自动配置
 
-![image-20191128175943991](/07-SpringBoot-02-img/image-20191128175943991.png)
+![image-20191128175943991](07-SpringBoot-02-assets/image-20191128175943991.png)
 
 ### 3、@EnableAutoConfiguration注解
 
 其本质是配置类@Import与@Configuration的组合
 
-![image-20191128180244863](/07-SpringBoot-02-img/image-20191128180244863.png)
+![image-20191128180244863](07-SpringBoot-02-assets/image-20191128180244863.png)
 
-![image-20191128180821680](/07-SpringBoot-02-img/image-20191128180821680.png)
+![image-20191128180821680](07-SpringBoot-02-assets/image-20191128180821680.png)
 
 ## 9.3 自定义auto-configuration及starter
 
@@ -316,7 +316,7 @@ Mybatis的自动配置
 
 ### **实现过程：**
 
-1. 获取准备好的框架--黑马架构师-代码生成器![image-20191217043940737](/07-SpringBoot-02-img/image-20191217043940737.png)
+1. 获取准备好的框架--黑马架构师-代码生成器![image-20191217043940737](07-SpringBoot-02-assets/image-20191217043940737.png)
 
    - CodeUtils：
 
@@ -333,7 +333,7 @@ Mybatis的自动配置
      }
      ```
    
-2. 创建 itcast-spring-boot-autoconfigure 模块![image-20191217043914579](/07-SpringBoot-02-img/image-20191217043914579.png)
+2. 创建 itcast-spring-boot-autoconfigure 模块![image-20191217043914579](07-SpringBoot-02-assets/image-20191217043914579.png)
 
    - HeimaConfiguration
 
@@ -403,7 +403,7 @@ Mybatis的自动配置
      </project>
      ```
 
-3. 创建 itcast-spring-boot-starter 模块![image-20191217044311090](/07-SpringBoot-02-img/image-20191217044311090.png)
+3. 创建 itcast-spring-boot-starter 模块![image-20191217044311090](07-SpringBoot-02-assets/image-20191217044311090.png)
 
    - pom.xml
 
@@ -436,7 +436,7 @@ Mybatis的自动配置
 
 4. 将自动配置模块及starter模块安装到本地仓库，执行maven的install命令
 
-5. 测试模块springboot04-test-my-auto-configuration![image-20191217051715315](/07-SpringBoot-02-img/image-20191217051715315.png)
+5. 测试模块springboot04-test-my-auto-configuration![image-20191217051715315](07-SpringBoot-02-assets/image-20191217051715315.png)
 
    - 引入自定义的 itcast-spring-boot-starter依赖坐标
 
@@ -449,7 +449,7 @@ Mybatis的自动配置
      </dependency>
      ```
 
-   - 测试核心代码生成器对象，是否自动配置成功了![image-20191217051826363](/07-SpringBoot-02-img/image-20191217051826363.png)
+   - 测试核心代码生成器对象，是否自动配置成功了![image-20191217051826363](07-SpringBoot-02-assets/image-20191217051826363.png)
 
 ## 9.4 切换内置的web应用服务器
 
@@ -489,13 +489,13 @@ Undertow： 是红帽公司开发的一款**基于 NIO 的高性能 Web 嵌入�
    </dependency>
    ```
 
-3. 配置之后的效果![image-20191128210602147](/07-SpringBoot-02-img/image-20191128210602147.png)
+3. 配置之后的效果![image-20191128210602147](07-SpringBoot-02-assets/image-20191128210602147.png)
 
 ## 9.5 SpringBoot启动流程分析
 
 **执行流程图：**
 
-![SpringBoot启动流程](/07-SpringBoot-02-img/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B-1576531480954.png)
+![SpringBoot启动流程](07-SpringBoot-02-assets/SpringBoot%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B-1576531480954.png)
 
 **源码分析：**
 
@@ -628,11 +628,11 @@ SpringBoot自带监控功能Actuator，可以帮助实现对程序内部运行�
 
 http://localhost:8080/actuator/beans
 
-![image-20191217063204378](/07-SpringBoot-02-img/image-20191217063204378.png)
+![image-20191217063204378](07-SpringBoot-02-assets/image-20191217063204378.png)
 
 http://localhost:8080/actuator/mappings
 
-![image-20191217063320936](/07-SpringBoot-02-img/image-20191217063320936.png)
+![image-20191217063320936](07-SpringBoot-02-assets/image-20191217063320936.png)
 
 ## 10.3 配置
 
@@ -661,7 +661,7 @@ spring.boot.admin.client.url=http://localhost:9000
 
 ①创建 admin-server 模块
 
-![image-20191217065058593](/07-SpringBoot-02-img/image-20191217065058593.png)
+![image-20191217065058593](07-SpringBoot-02-assets/image-20191217065058593.png)
 
 ②导入依赖坐标 admin-starter-server
 
@@ -799,9 +799,9 @@ spring.boot.admin.client.url=http://localhost:9000
 
 ④启动server和client服务，访问server
 
-![image-20191217065601483](/07-SpringBoot-02-img/image-20191217065601483.png)
+![image-20191217065601483](07-SpringBoot-02-assets/image-20191217065601483.png)
 
-![image-20191217065635826](/07-SpringBoot-02-img/image-20191217065635826.png)
+![image-20191217065635826](07-SpringBoot-02-assets/image-20191217065635826.png)
 
 # 总结
 

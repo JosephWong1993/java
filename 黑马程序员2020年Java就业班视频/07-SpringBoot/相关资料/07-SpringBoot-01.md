@@ -41,7 +41,7 @@
 - 强大的整合其他技术的能力
 - 测试：强悍的应用测试
 
-![1558504218790](07-SpringBoot-01-img/1558504218790.png)
+![1558504218790](07-SpringBoot-01-assets/1558504218790.png)
 
 ## 1.3 开发环境要求
 
@@ -153,7 +153,7 @@ Maven搭建SpringBoot工程，实现web的请求响应。浏览器访问在页�
       
       ```
    
-5. 访问http://localhost:8080/hello测试![1565659397803](07-SpringBoot-01-img/1565659397803.png)
+5. 访问http://localhost:8080/hello测试![1565659397803](07-SpringBoot-01-assets/1565659397803.png)
 
 
 
@@ -179,11 +179,11 @@ Maven搭建SpringBoot工程，实现web的请求响应。浏览器访问在页�
 **实现过程：**
 
 1. 使用创建SpringBoot工程![1558506156697](01-SpringBoot-讲义.assets\1558506156697.png)
-2. 配置项目信息![1565659578859](07-SpringBoot-01-img/1565659578859.png)
-3. 勾选起步依赖![1565659897567](07-SpringBoot-01-img/1565659897567.png)
+2. 配置项目信息![1565659578859](07-SpringBoot-01-assets/1565659578859.png)
+3. 勾选起步依赖![1565659897567](07-SpringBoot-01-assets/1565659897567.png)
 4. 配置文件存储路径地址
-5. 创建完成后工程目录结构![1565660154120](07-SpringBoot-01-img/1565660154120.png)
-   - pom文件介绍![1565660436392](07-SpringBoot-01-img/1565660436392-1566906919444.png)
+5. 创建完成后工程目录结构![1565660154120](07-SpringBoot-01-assets/1565660154120.png)
+   - pom文件介绍![1565660436392](07-SpringBoot-01-assets/1565660436392-1566906919444.png)
 6. 编写入门案例代码
 7. 访问http://localhost:8080/hello接口测试
 
@@ -201,11 +201,11 @@ Maven搭建SpringBoot工程，实现web的请求响应。浏览器访问在页�
 
 但还需注意：加入坐标之后，如果想要代码立即生效，必须在修改代码之后进行代码构建。默认情况IDEA不会自动构建，需要手动构建。如图两处地方均可。
 
-![image-20191116073526958](07-SpringBoot-01-img/image-20191116073526958.png)
+![image-20191116073526958](07-SpringBoot-01-assets/image-20191116073526958.png)
 
 每次手动构建很麻烦？！！还有一种自动构建解决方案，但不建议使用。就是设置`Build Project Automatically`。同时打开Maintenance维护(打开快捷键`Shift + Ctrl + Alt + /`)，选择Registry(注册表)，设置运行时自动编译。
 
-![image-20191116073950737](07-SpringBoot-01-img/image-20191116073950737.png)
+![image-20191116073950737](07-SpringBoot-01-assets/image-20191116073950737.png)
 
 # 三、SpringBoot原理分析
 
@@ -230,11 +230,11 @@ Maven搭建SpringBoot工程，实现web的请求响应。浏览器访问在页�
 </dependency>
 ```
 
-每个Starter包含了当前功能下的许多必备依赖坐标，这些依赖坐标是项目开发，上线和运行必须的。同时这些依赖也支持依赖传递。举例：`spring-boot-starter-web`包含了所有web开发必须的依赖坐标<img src="07-SpringBoot-01-img/image-20191029224813130.png" alt="image-20191029224813130" style="zoom:33%;" />
+每个Starter包含了当前功能下的许多必备依赖坐标，这些依赖坐标是项目开发，上线和运行必须的。同时这些依赖也支持依赖传递。举例：`spring-boot-starter-web`包含了所有web开发必须的依赖坐标<img src="07-SpringBoot-01-assets/image-20191029224813130.png" alt="image-20191029224813130" style="zoom:33%;" />
 
 [常用的starters有哪些？](https://docs.spring.io/spring-boot/docs/2.1.6.RELEASE/reference/html/using-boot-build-systems.html#using-boot-starter)非常多，一下只列举部分：
 
-<img src="07-SpringBoot-01-img/1564625140011.png" alt="1564625140011" style="zoom: 25%;" />
+<img src="07-SpringBoot-01-assets/1564625140011.png" alt="1564625140011" style="zoom: 25%;" />
 
 starter为什么不需要写版本？
 
@@ -286,7 +286,7 @@ jar包里，存放的都是配置类，让配置类生效的"规则类"
 
 **==自动配置的值在哪里？==**
 
-<img src="07-SpringBoot-01-img/1565661799265.png" alt="1565661799265" style="zoom: 33%;" />
+<img src="07-SpringBoot-01-assets/1565661799265.png" alt="1565661799265" style="zoom: 33%;" />
 
 **==自动配置的值怎么才能生效？==**
 
@@ -301,7 +301,7 @@ jar包里，存放的都是配置类，让配置类生效的"规则类"
 6. @EnableConfigurationProperties({ServerProperties.class})
 7. private final ServerProperties.Tomcat tomcat = new ServerProperties.Tomcat();
 
-![1558508958144](07-SpringBoot-01-img/1558508958144.png)
+![1558508958144](07-SpringBoot-01-assets/1558508958144.png)
 
 **有了自动配置，那么基本全部采用默认配置。当然也可以更改默认配置，怎么改？**
 
@@ -478,7 +478,7 @@ person:
 
 第一种：
 
-![1566907147015](07-SpringBoot-01-img/1566907147015.png)
+![1566907147015](07-SpringBoot-01-assets/1566907147015.png)
 
 第二种：
 
@@ -553,7 +553,7 @@ server:
 
 注入Environment对象，即可从对象中获取配置文件中的值
 
-![image-20191127102315407](07-SpringBoot-01-img/image-20191127102315407.png)
+![image-20191127102315407](07-SpringBoot-01-assets/image-20191127102315407.png)
 
 
 
@@ -574,11 +574,11 @@ server:
 
 **实现过程：**
 
-1. 创建SpringBoot工程，day01_springboot_mybatis；<img src="07-SpringBoot-01-img/1564725443950.png" alt="1564725443950" style="zoom: 50%;" />
+1. 创建SpringBoot工程，day01_springboot_mybatis；<img src="07-SpringBoot-01-assets/1564725443950.png" alt="1564725443950" style="zoom: 50%;" />
 
    勾选依赖坐标
 
-   <img src="07-SpringBoot-01-img/1564725499935.png" alt="1564725499935" style="zoom:50%;" />
+   <img src="07-SpringBoot-01-assets/1564725499935.png" alt="1564725499935" style="zoom:50%;" />
 
 2. 创建User表—>创建实体UserBean
 
@@ -790,7 +790,7 @@ SpringBoot整合了Redis之后，做用户数据查询缓存。
    }
    ```
 
-3. 测试定时器。![1558524182866](07-SpringBoot-01-img/1558524182866.png)
+3. 测试定时器。![1558524182866](07-SpringBoot-01-assets/1558524182866.png)
 
 ## 5.4 发送HTTP请求
 
@@ -815,11 +815,11 @@ SpringBoot整合了Redis之后，做用户数据查询缓存。
 
 **实现过程：**
 
-1. 创建一个springboot的工程，勾选Web的Starter<img src="07-SpringBoot-01-img/1564627023872.png" alt="1564627023872" style="zoom: 50%;" />
+1. 创建一个springboot的工程，勾选Web的Starter<img src="07-SpringBoot-01-assets/1564627023872.png" alt="1564627023872" style="zoom: 50%;" />
 
    勾选web开发的Starter
 
-   <img src="07-SpringBoot-01-img/1564627174416.png" alt="1564627174416" style="zoom: 50%;" />
+   <img src="07-SpringBoot-01-assets/1564627174416.png" alt="1564627174416" style="zoom: 50%;" />
 
 2. 在项目启动类位置中注册一个RestTemplate对象
 
@@ -857,7 +857,7 @@ SpringBoot整合了Redis之后，做用户数据查询缓存。
    - RestTemplate会自动发起请求，接收响应
    - 并且帮我们对响应结果进行反序列化
 
-5. 运行测试类中的testREST方法；![1564627515537](07-SpringBoot-01-img/1564627515537.png)
+5. 运行测试类中的testREST方法；![1564627515537](07-SpringBoot-01-assets/1564627515537.png)
 
 ## 5.5 扩展了解：除此之外还可以整合什么?
 
@@ -910,7 +910,7 @@ SpringBoot整合了Redis之后，做用户数据查询缓存。
      }
      ```
 
-3. 控制台打印信息![1558522980982](07-SpringBoot-01-img/1558522980982.png)
+3. 控制台打印信息![1558522980982](07-SpringBoot-01-assets/1558522980982.png)
 
 # 七、Spring Boot 如何打包部署
 

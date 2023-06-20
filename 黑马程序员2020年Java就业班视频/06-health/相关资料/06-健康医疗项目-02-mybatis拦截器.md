@@ -44,31 +44,31 @@ public PageResult findPage(QueryPageBean queryPageBean) {
 
 SqlSessionFactoryBuilder：
 
-![1](06-健康医疗项目-02-mybatis拦截器-img/1.png)
+![1](06-健康医疗项目-02-mybatis拦截器-assets/1.png)
 
  XMLConfigBuilder：
 
-![2](06-健康医疗项目-02-mybatis拦截器-img/2.png)
+![2](06-健康医疗项目-02-mybatis拦截器-assets/2.png)
 
 
 
-![3](06-健康医疗项目-02-mybatis拦截器-img/3.png)
+![3](06-健康医疗项目-02-mybatis拦截器-assets/3.png)
 
 
 
-![4](06-健康医疗项目-02-mybatis拦截器-img/4.png)
+![4](06-健康医疗项目-02-mybatis拦截器-assets/4.png)
 
 
 
 Configuration：
 
-![5](06-健康医疗项目-02-mybatis拦截器-img/5.png)
+![5](06-健康医疗项目-02-mybatis拦截器-assets/5.png)
 
 
 
 InterceptorChain：
 
-![6](06-健康医疗项目-02-mybatis拦截器-img/6.png)
+![6](06-健康医疗项目-02-mybatis拦截器-assets/6.png)
 
 通过上面的代码，加载了全局配置文件及映射文件同时还将配置的拦截器PageHelper添加到了拦截器链中
 
@@ -76,13 +76,13 @@ InterceptorChain：
 
 上面代码的调用关系如下：
 
-![24](06-健康医疗项目-02-mybatis拦截器-img/24.png)
+![24](06-健康医疗项目-02-mybatis拦截器-assets/24.png)
 
 ### 1.3 源码分析（项目运行中执行）
 
 PageHelper：
 
-![7](06-健康医疗项目-02-mybatis拦截器-img/7.png)
+![7](06-健康医疗项目-02-mybatis拦截器-assets/7.png)
 
 通过上面的代码可以发现，PageHelper插件提供了一个类（PageHelper）实现了Interceptor接口，其本质就是一个拦截器，用于拦截Executor接口的query方法。Executor主要是用于创建Statement对象，在创建过程中依靠 MappedStatement 对象将赋值内容给 sql 占位符进行绑定。
 
@@ -90,79 +90,79 @@ PageHelper：
 
 DefaultSqlSessionFactory：
 
-![8](06-健康医疗项目-02-mybatis拦截器-img/8.png)
+![8](06-健康医疗项目-02-mybatis拦截器-assets/8.png)
 
-![9](06-健康医疗项目-02-mybatis拦截器-img/9.png)
+![9](06-健康医疗项目-02-mybatis拦截器-assets/9.png)
 
 
 
 Configuration：
 
-![10](06-健康医疗项目-02-mybatis拦截器-img/10.png)
+![10](06-健康医疗项目-02-mybatis拦截器-assets/10.png)
 
 
 
 InterceptorChain：
 
-![11](06-健康医疗项目-02-mybatis拦截器-img/11.png)
+![11](06-健康医疗项目-02-mybatis拦截器-assets/11.png)
 
 
 
 PageHelper：
 
-![12](06-健康医疗项目-02-mybatis拦截器-img/12.png)
+![12](06-健康医疗项目-02-mybatis拦截器-assets/12.png)
 
 
 
 Plugin：
 
-![13](06-健康医疗项目-02-mybatis拦截器-img/13.png)
+![13](06-健康医疗项目-02-mybatis拦截器-assets/13.png)
 
 
 
-![14](06-健康医疗项目-02-mybatis拦截器-img/14.png)
+![14](06-健康医疗项目-02-mybatis拦截器-assets/14.png)
 
 
 
 PageHelper：
 
-![15](06-健康医疗项目-02-mybatis拦截器-img/15.png)
+![15](06-健康医疗项目-02-mybatis拦截器-assets/15.png)
 
 
 
 SqlUtil：
 
-![16](06-健康医疗项目-02-mybatis拦截器-img/16.png)
+![16](06-健康医疗项目-02-mybatis拦截器-assets/16.png)
 
 
 
-![17](06-健康医疗项目-02-mybatis拦截器-img/17.png)
+![17](06-健康医疗项目-02-mybatis拦截器-assets/17.png)
 
-![18](06-健康医疗项目-02-mybatis拦截器-img/18.png)
+![18](06-健康医疗项目-02-mybatis拦截器-assets/18.png)
 
-![19](06-健康医疗项目-02-mybatis拦截器-img/19.png)
+![19](06-健康医疗项目-02-mybatis拦截器-assets/19.png)
 
-![20](06-健康医疗项目-02-mybatis拦截器-img/20.png)
+![20](06-健康医疗项目-02-mybatis拦截器-assets/20.png)
 
-![21](06-健康医疗项目-02-mybatis拦截器-img/21.png)
+![21](06-健康医疗项目-02-mybatis拦截器-assets/21.png)
 
 
 
 MappedStatement：
 
-![22](06-健康医疗项目-02-mybatis拦截器-img/22.png)
+![22](06-健康医疗项目-02-mybatis拦截器-assets/22.png)
 
 
 
 观察控制台，可以看到mybatis框架执行的sql，已经进行了分页处理：
 
-![23](06-健康医疗项目-02-mybatis拦截器-img/23.png)
+![23](06-健康医疗项目-02-mybatis拦截器-assets/23.png)
 
 
 
 下面的时序图可以看到创建SqlSession对象的过程：
 
-![25](06-健康医疗项目-02-mybatis拦截器-img/25.png)
+![25](06-健康医疗项目-02-mybatis拦截器-assets/25.png)
 
 
 
