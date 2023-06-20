@@ -68,7 +68,7 @@
 
   SpringMVC全局只需要一个servlet。
 
-![](img/1.jpg)
+![](05-spring_mvc-01-assets/1.jpg)
 
 
 
@@ -228,13 +228,13 @@ public class DefaultController {
 
 浏览器访问:
 
-![1574127631824](assets/1574127631824.png) 
+![1574127631824](05-spring_mvc-01-assets/1574127631824.png) 
 
 
 
 ## SpringMVC架构
 
-![](img/2.jpg)
+![](05-spring_mvc-01-assets/2.jpg)
 
 ### 组件说明
 
@@ -254,7 +254,7 @@ public class DefaultController {
 
   不同的接口类型转换成usb，体现了万物归一的思想，通过HandlerAdapter对Handler处理器进行执行，这是适配器模式的应用。
 
-  ![](img/3.jpg)
+  ![](05-spring_mvc-01-assets/3.jpg)
 
 - ViewResolver：视图解析器
 

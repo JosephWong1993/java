@@ -272,11 +272,11 @@ BufferedReader readLine()
 
 #### 1）静态代理—装饰者模式
 
-![静态代理图](img/静态代理图.jpg)
+![静态代理图](05-spring-03-aop-assets/静态代理图.jpg)
 
 #### 2）动态代理—代理模式
 
-![动态代理图](img/动态代理图.jpg)
+![动态代理图](05-spring-03-aop-assets/动态代理图.jpg)
 
 #### 3）结论
 
@@ -580,11 +580,11 @@ public class SpringBasicAnnoTest {
 
 在讲解AOP术语之前，我们先来看一下下面这两张图，它们就是第一章节案例中的需求，只不过把它完善成了使用三层架构实现账户的操作：
 
-![未使用AOP思想的程序设计](img/未使用AOP思想的程序设计.jpg)
+![未使用AOP思想的程序设计](05-spring-03-aop-assets/未使用AOP思想的程序设计.jpg)
 
 上图描述的就是未采用AOP思想设计的程序，当我们红色框中圈定的方法时，会带来大量的重复劳动。程序中充斥着大量的重复代码，使我们程序的独立性很差。而下图中是采用了AOP思想设计的程序，它把红框部分的代码抽取出来的同时，运用动态代理技术，在运行期对需要使用的业务逻辑方法进行增强。
 
-![使用了AOP思想的程序设计](img/使用了AOP思想的程序设计.jpg)
+![使用了AOP思想的程序设计](05-spring-03-aop-assets/使用了AOP思想的程序设计.jpg)
 
 #### 2）AOP术语
 
@@ -766,7 +766,7 @@ public class SpringAOPTest {
 }
 ```
 
-![AOP入门案例执行结果图](img/AOP入门案例执行结果图.png)
+![AOP入门案例执行结果图](05-spring-03-aop-assets/AOP入门案例执行结果图.png)
 
 ## 3.2 基于XML的AOP配置细节
 
@@ -1022,7 +1022,7 @@ AspectJ是一个基于Java语言的AOP框架，Spring框架从2.0版本之后集
 
 类视图：
 
-​	![ProceedingJoinPoint](img/ProceedingJoinPoint.png)
+​	![ProceedingJoinPoint](05-spring-03-aop-assets/ProceedingJoinPoint.png)
 
 源码：
 

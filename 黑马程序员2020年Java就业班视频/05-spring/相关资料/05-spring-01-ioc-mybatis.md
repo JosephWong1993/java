@@ -129,13 +129,13 @@ Spring 是分层的 Java SE/EE 应用 ==full-stack== 轻量级开源框架，以
 
 ### 1.2.4 Spring的体系结构
 
-![1569647271474](img/1569647271474.png)
+![1569647271474](05-spring-01-ioc-mybatis-assets/1569647271474.png)
 
 ### 1.2.5  Spring Framework的版本
 
 <https://spring.io/projects/spring-framework#learn>
 
-![1572673860509](img/1572673860509.png) 
+![1572673860509](05-spring-01-ioc-mybatis-assets/1572673860509.png) 
 
  
 
@@ -480,11 +480,11 @@ public class AccountTest {
 
 **传统方式**
 
-![img](img/clip_image002.png) 
+![img](05-spring-01-ioc-mybatis-assets/clip_image002.png) 
 
 **使用IoC后**
 
-![img](img/clip_image001.png) 
+![img](05-spring-01-ioc-mybatis-assets/clip_image001.png) 
 
 **IoC的作用**
 
@@ -580,7 +580,7 @@ public class AccountDaoImpl implements AccountDao {
 
 ##### 步骤2: 创建Spring的配置文件 beans.xml (文件名可任意起名)
 
-![1569645267159](img/1569645267159.png)
+![1569645267159](05-spring-01-ioc-mybatis-assets/1569645267159.png)
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -639,7 +639,7 @@ public class SpringIocTest {
 
 ### 4.1.1 Spring中工厂类结构图
 
-![1569641865437](img/1569641865437.png)
+![1569641865437](05-spring-01-ioc-mybatis-assets/1569641865437.png)
 
 ### 4.1.2 BeanFactory和ApplicationContext的区别 
 
@@ -1566,16 +1566,16 @@ public class TestSpring {
 
 * 快捷键 , 代码提示的作用
 
-![1572771638678](img/1572771638678.png) 
+![1572771638678](05-spring-01-ioc-mybatis-assets/1572771638678.png) 
 
 
 
 * 代码模板配置
 
-![1572771996048](img/1572771996048.png)
+![1572771996048](05-spring-01-ioc-mybatis-assets/1572771996048.png)
 
 
 
 * Maven中的pom文件的修改
 
-![1572772085084](img/1572772085084.png) 
+![1572772085084](05-spring-01-ioc-mybatis-assets/1572772085084.png) 

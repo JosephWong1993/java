@@ -955,7 +955,7 @@ public class AccountServiceTest {
 
 ## 2.3 Spring基于XML的事务配置
 
-![1573111033600](img/1573111033600.png) 
+![1573111033600](05-spring-04-事务-assets/1573111033600.png) 
 
 ### 2.3.1 配置步骤
 
@@ -1325,7 +1325,7 @@ public class SpringTransactionTest {
 
 ## 2.4 Spring基于注解的事务配置
 
-![1573977851252](img/1573977851252.png) 
+![1573977851252](05-spring-04-事务-assets/1573977851252.png) 
 
 ### 2.4.1 配置步骤 
 
@@ -1613,7 +1613,7 @@ public @interface Transactional {
 
 spring基于注解驱动开发的事务控制配置，我们可以沿用上一个案例中的基础代码，只需要把xml配置部分改为注解实现。在前面的课程学习中，针对注解驱动配置IoC和AOP已经都讲过了，所以我们只需要改造即可。只是需要一个注解替换掉xml配置文件中的`<tx:annotation-driven transaction-manager="transactionManager"/>`配置。
 
-![1573113985868](img/1573113985868.png) 
+![1573113985868](05-spring-04-事务-assets/1573113985868.png) 
 
 ### 2.5.1 改造配置文件
 
