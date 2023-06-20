@@ -23,7 +23,7 @@
 
   Linux系统的应用非常广泛，不仅可以长时间的运行我们编写的程序代码，还可以安装在各种计算机硬件设备中，比如手机、平板电脑、路由器等。尤其在这里提及一下，我们熟知是Android程序最底层就是运行在linux系统上的。
 
-![](img/1.jpg)
+![](03-linux-assets/1.jpg)
 
 ## Linux分类
 
@@ -37,7 +37,7 @@
 - 内核版本：在Linus领导下的内核小组开发维护的系统内核的版本号。
 
 - 发行版本：一些组织或公司在内核版基础上进行二次开发而重新发行的版本。
-  - Linux发行版本不同，又可以分为n多种：![](img/2.jpg)
+  - Linux发行版本不同，又可以分为n多种：![](03-linux-assets/2.jpg)
 
 ## Linux操作系统安装
 
@@ -45,21 +45,21 @@
 
   因为Linux也是一个系统，本质上跟我们电脑的Window没有区别，所以我们要学习Linux就首先将我们电脑的Window系统换成Linux系统，或者在我们电脑上安装双系统，听上去是不是很可怕。其实我们可以在我们电脑上安装一个软件，这个软甲可以模拟一台或多台虚拟的电脑机器，这就是虚拟机。
 
-![](img/3.jpg)
+![](03-linux-assets/3.jpg)
 
-![](img/4.jpg)
+![](03-linux-assets/4.jpg)
 
-![](img/5.jpg)
+![](03-linux-assets/5.jpg)
 
-![](img/6.jpg)
+![](03-linux-assets/6.jpg)
 
-![](img/7.jpg)
+![](03-linux-assets/7.jpg)
 
-![](img/8.jpg)
+![](03-linux-assets/8.jpg)
 
-![](img/9.jpg)
+![](03-linux-assets/9.jpg)
 
-![](img/10.jpg)
+![](03-linux-assets/10.jpg)
 
 
 
@@ -69,69 +69,69 @@
 
   CentOS是一个Linux的发行版本，是目前企业中用来做应用服务器系统的主要版本，CentOS的安装，其实是将该系统安装到VMware虚拟机软件中，让VMware虚拟机软件模拟出一台Linux系统的电脑。
 
-![](img/11.jpg)
+![](03-linux-assets/11.jpg)
 
-![](img/12.jpg)
+![](03-linux-assets/12.jpg)
 
-![](img/13.jpg)
+![](03-linux-assets/13.jpg)
 
-![](img/14.jpg)
+![](03-linux-assets/14.jpg)
 
-![](img/15.jpg)
+![](03-linux-assets/15.jpg)
 
-![](img/16.jpg)
+![](03-linux-assets/16.jpg)
 
-![](img/17.jpg)
+![](03-linux-assets/17.jpg)
 
-![](img/18.jpg)
+![](03-linux-assets/18.jpg)
 
-![](img/19.jpg)
+![](03-linux-assets/19.jpg)
 
-![](img/20.jpg)
+![](03-linux-assets/20.jpg)
 
-![](img/21.jpg)
+![](03-linux-assets/21.jpg)
 
-![](img/22.jpg)
+![](03-linux-assets/22.jpg)
 
-![](img/23.jpg)
+![](03-linux-assets/23.jpg)
 
-![](img/24.jpg)
+![](03-linux-assets/24.jpg)
 
-![](img/25.jpg)
+![](03-linux-assets/25.jpg)
 
-![](img/26.jpg)
+![](03-linux-assets/26.jpg)
 
-![](img/27.jpg)
+![](03-linux-assets/27.jpg)
 
-![](img/28.jpg)
+![](03-linux-assets/28.jpg)
 
-![](img/29.jpg)
+![](03-linux-assets/29.jpg)
 
-![](img/30.jpg)
+![](03-linux-assets/30.jpg)
 
-![](img/31.jpg)
+![](03-linux-assets/31.jpg)
 
-![](img/32.jpg)
+![](03-linux-assets/32.jpg)
 
-![](img/33.jpg)
+![](03-linux-assets/33.jpg)
 
-![](img/34.jpg)
+![](03-linux-assets/34.jpg)
 
-![](img/36.jpg)
+![](03-linux-assets/36.jpg)
 
-![](img/37.jpg)
+![](03-linux-assets/37.jpg)
 
-![](img/38.jpg)
+![](03-linux-assets/38.jpg)
 
-![](img/39.jpg)
+![](03-linux-assets/39.jpg)
 
-![](img/40.jpg)
+![](03-linux-assets/40.jpg)
 
 
 
 ## Linux操作系统目录结构
 
-![](img/41.jpg)
+![](03-linux-assets/41.jpg)
 
 ### 目录切换命令
 
@@ -147,29 +147,29 @@
 
 ### SSH安装
 
-![](img/ssh_1.jpg)
+![](03-linux-assets/ssh_1.jpg)
 
-![](img/ssh_2.jpg)
+![](03-linux-assets/ssh_2.jpg)
 
-![](img/ssh_3.jpg)
+![](03-linux-assets/ssh_3.jpg)
 
-![](img/ssh_4.jpg)
+![](03-linux-assets/ssh_4.jpg)
 
-![](img/ssh_5.jpg)
+![](03-linux-assets/ssh_5.jpg)
 
-![](img/ssh_6.jpg)
+![](03-linux-assets/ssh_6.jpg)
 
 ### SSH的使用
 
   打开安装好的软件：SSH Secure File Transfer Client
 
-![](img/ssh_7.jpg)
+![](03-linux-assets/ssh_7.jpg)
 
-![](img/ssh_8.jpg)
+![](03-linux-assets/ssh_8.jpg)
 
-![](img/ssh_9.jpg)
+![](03-linux-assets/ssh_9.jpg)
 
-![](img/ssh_10.jpg)
+![](03-linux-assets/ssh_10.jpg)
 
 
 
@@ -333,9 +333,9 @@
 
   示例：在随意某个目录下ls -l
 
-![](img/42.jpg)
+![](03-linux-assets/42.jpg)
 
-![](img/43.jpg)
+![](03-linux-assets/43.jpg)
 
 - 文件的类型：
   - d：代表目录
@@ -347,7 +347,7 @@
   - w：代表权限是可写，w也可以用数字2表示
   - x：代表权限是可执行，x也可以用数字1表示
 
-![](img/44.jpg)
+![](03-linux-assets/44.jpg)
 
 ### chmod命令设置权限
 
@@ -381,7 +381,7 @@
 - 示例：查询已经安装的java
   - rpm -qa | grep java
 
-![](img/45.jpg)
+![](03-linux-assets/45.jpg)
 
 ### 卸载已经安装的软件包
 
