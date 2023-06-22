@@ -56,9 +56,7 @@ Elasticsearch分为Linux和Window版本，基于我们主要学习的是Elastics
 
 Elasticsearch的官方地址：https://www.elastic.co/cn/downloads/past-releases
 
-在资料中已经提供了下载好的6.8.0的压缩包：
-
-![image-20191108161258353](C:\Users\liuyaxiong\AppData\Roaming\Typora\typora-user-images\image-20191108161258353.png)
+在资料中已经提供了下载好的6.8.0的压缩包
 
 ### 2、安装ES服务
 
